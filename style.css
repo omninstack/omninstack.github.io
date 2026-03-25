@@ -137,6 +137,44 @@ h2 { font-size: clamp(2.5rem, 6vw, 4rem); margin-bottom: 1.5rem; }
     box-shadow: 0 40px 80px rgba(0, 0, 0, 0.7), 0 0 40px rgba(0, 229, 255, 0.15);
 }
 
+.card-icon {
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    height: 3rem;
+}
+
+.card-icon-img {
+    height: 100%;
+    width: auto;
+    filter: drop-shadow(0 0 10px rgba(0, 229, 255, 0.3));
+}
+
+.card-featured {
+    border-color: var(--cyan);
+    background: linear-gradient(135deg, rgba(0, 31, 63, 0.6) 0%, rgba(0, 0, 0, 0.8) 100%);
+}
+
+.concept-visual-wrapper {
+    margin: -3.5rem -3.5rem 2rem -3.5rem;
+    height: 180px;
+    overflow: hidden;
+    position: relative;
+}
+
+.concept-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.7;
+    transition: var(--ease);
+}
+
+.glass-card:hover .concept-img {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
 .btn {
     display: inline-flex;
     align-items: center;
@@ -204,15 +242,16 @@ nav {
 .logo {
     display: flex;
     align-items: center;
-    gap: 0.6rem;
+    gap: 0.4rem;
     font-family: 'Inter', sans-serif;
     font-weight: 900;
     font-size: 1.8rem;
     color: #fff;
     text-decoration: none;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
+    letter-spacing: -0.02em;
 }
+
+/* Remove nav-logo-img styles as we reverted to text */
 
 .logo span { 
     color: var(--cyan); 
@@ -261,15 +300,37 @@ nav {
     width: 100%;
 }
 
-.hero {
-    min-height: 100vh;
-    display: flex;
+.hero .container {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 4rem;
     align-items: center;
-    position: relative;
-    padding-top: 80px;
 }
 
 .hero-content { max-width: 900px; }
+
+.hero-visual {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.floating-ui {
+    width: 110%;
+    max-width: none;
+    height: auto;
+    border-radius: 24px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 229, 255, 0.1);
+    animation: float 6s ease-in-out infinite;
+    border: 1px solid var(--glass-border);
+}
+
+@keyframes float {
+    0% { transform: translateY(0) rotate(0); }
+    50% { transform: translateY(-20px) rotate(1deg); }
+    100% { transform: translateY(0) rotate(0); }
+}
 
 .hero p {
     font-size: 1.5rem;
@@ -362,9 +423,14 @@ footer {
 
 /* Responsive */
 @media (max-width: 1024px) {
-    .nav-links { gap: 2rem; }
-    .hero-content { text-align: center; margin: 0 auto; }
+    .hero .container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 3rem;
+    }
+    .hero-content { margin: 0 auto; }
     .hero p { margin: 0 auto 4rem; }
+    .floating-ui { width: 100%; }
 }
 
 @media (max-width: 768px) {
