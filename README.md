@@ -26,11 +26,11 @@ graph TD
     C --> D[Data Layer]
     D --> E[Infrastructure Layer]
 
-    style A fill:#1e293b,stroke:#334155
-    style B fill:#1e293b,stroke:#334155
-    style C fill:#1e293b,stroke:#334155
-    style D fill:#1e293b,stroke:#334155
-    style E fill:#1e293b,stroke:#334155
+    style A fill:#001F3F,stroke:#00E5FF,stroke-width:2px,color:#fff
+    style B fill:#001F3F,stroke:#00E5FF,stroke-width:2px,color:#fff
+    style C fill:#001F3F,stroke:#00E5FF,stroke-width:2px,color:#fff
+    style D fill:#001F3F,stroke:#00E5FF,stroke-width:2px,color:#fff
+    style E fill:#001F3F,stroke:#00E5FF,stroke-width:2px,color:#fff
 ```
 
 ## 🌐 Contact
