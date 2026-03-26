@@ -1,6 +1,6 @@
 # OmniNStack
 
-**OmniNStack** is a next-generation AI platform designed for the era of sovereign intelligence. It provides a unified, self-hosted infrastructure that empowers organizations to build, deploy, and manage AI applications with absolute control over their data and operations.
+**OmniNStack** is a next-generation AI platform designed for the era of On-premise Sovereign AI. It provides a unified, self-hosted infrastructure that empowers organizations to build, deploy, and manage AI applications with absolute control over their data and operations.
 
 ## 🌟 Vision
 
@@ -46,4 +46,4 @@ Ready to take control of your AI future? Contact us to schedule a demo or learn 
 
 ---
 
-**OmniNStack** - *Sovereign Intelligence. Non-negotiable Security.*
+**OmniNStack** - *On-premise Sovereign AI. Non-negotiable Security.*
