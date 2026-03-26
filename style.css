@@ -104,12 +104,23 @@ h2 { font-size: clamp(2.5rem, 6vw, 4rem); margin-bottom: 1.5rem; }
 }
 .mono { 
     font-family: 'Roboto Mono', monospace; 
-    font-weight: 600;
-    letter-spacing: 0.3em;
-    font-size: 0.75rem;
-    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    font-size: 0.8rem;
     color: var(--cyan);
 }
+
+/* Increased Section Headers */
+h4.mono {
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+}
+
+
+
 
 /* ─── Components ─────────────────────────────────── */
 .glass-card {
