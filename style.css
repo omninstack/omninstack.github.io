@@ -253,25 +253,36 @@ nav {
 .logo {
     display: flex;
     align-items: center;
-    gap: 0.4rem;
+    gap: 0.2rem; /* Tighter logo feel */
     font-family: 'Inter', sans-serif;
     font-weight: 900;
     font-size: 1.8rem;
     color: #fff;
     text-decoration: none;
     letter-spacing: -0.02em;
+    transition: var(--ease);
 }
-
-/* Remove nav-logo-img styles as we reverted to text */
 
 .logo span { 
     color: var(--cyan); 
     text-shadow: 
-        0 0 10px rgba(0, 229, 255, 0.8),
-        0 0 20px rgba(0, 229, 255, 0.4),
-        0 0 30px rgba(0, 229, 255, 0.2);
-    filter: drop-shadow(0 0 5px rgba(0, 229, 255, 0.5));
+        0 0 10px rgba(0, 229, 255, 0.9),
+        0 0 20px rgba(0, 229, 255, 0.5),
+        0 0 30px rgba(0, 229, 255, 0.3);
+    filter: drop-shadow(0 0 8px rgba(0, 229, 255, 0.6));
+    animation: neon-pulse 2s infinite alternate ease-in-out;
 }
+
+@keyframes neon-pulse {
+    0% { filter: drop-shadow(0 0 5px rgba(0, 229, 255, 0.4)); }
+    100% { filter: drop-shadow(0 0 15px rgba(0, 229, 255, 0.8)); }
+}
+
+.logo:hover {
+    transform: scale(1.02);
+}
+
+
 
 .nav-links {
     display: flex;
