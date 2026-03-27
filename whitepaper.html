@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Whitepaper | OmniNStack Sovereign AI</title>
+    <meta name="description" content="Technical Whitepaper: Architecting On-premise AI for High-Trust Enterprises. Explore the OmniNStack 5-layer sovereign architecture.">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <style>
+        .whitepaper-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .wp-header {
+            text-align: center;
+            margin-bottom: 6rem;
+        }
+
+        .wp-section {
+            margin-bottom: 5rem;
+            animation: fadeIn 1s ease-out forwards;
+            opacity: 0;
+        }
+
+        .wp-section.reveal.active {
+            opacity: 1;
+        }
+
+        .wp-section h3 {
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+            color: var(--cyan);
+            border-bottom: 1px solid var(--glass-border);
+            padding-bottom: 1rem;
+        }
+
+        .wp-section p {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .wp-list {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .wp-list li {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 1.2rem;
+            font-size: 1.1rem;
+            color: var(--text-primary);
+        }
+
+        .wp-list li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--cyan);
+            font-weight: bold;
+        }
+
+        .sidebar-nav {
+            position: fixed;
+            left: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            z-index: 100;
+        }
+
+        @media (max-width: 1200px) {
+            .sidebar-nav { display: none; }
+        }
+
+        .toc-link {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            transition: var(--ease);
+            padding: 0.5rem;
+            border-left: 2px solid transparent;
+        }
+
+        .toc-link:hover, .toc-link.active {
+            color: var(--cyan);
+            border-left: 2px solid var(--cyan);
+            padding-left: 1rem;
+        }
+
+        .architecture-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .layer-box {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            padding: 2rem;
+            border-radius: 20px;
+            transition: var(--ease);
+        }
+
+        .layer-box:hover {
+            border-color: var(--cyan);
+            transform: translateY(-5px);
+            background: rgba(0, 229, 255, 0.05);
+        }
+
+        .layer-box h4 {
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .layer-box p {
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+
+        .executive-summary {
+            background: linear-gradient(135deg, rgba(0, 229, 255, 0.05) 0%, transparent 100%);
+            border: 1px solid var(--glass-border);
+            padding: 3rem;
+            border-radius: 32px;
+            margin-bottom: 6rem;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+
+    <nav>
+        <div class="container nav-content">
+            <a href="index.html" class="logo">Omni<span>N</span>Stack</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="index.html#architecture">Architecture</a>
+                <a href="documents/OmniNStack_Sovereign_AI_v2.pdf" class="btn btn-outline" style="padding: 0.6rem 1.4rem; font-size: 0.7rem;">Download PDF</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="whitepaper-content">
+        <header class="wp-header reveal">
+            <h4 class="accent-text mono">Technical Whitepaper</h4>
+            <h2>The <span class="gradient-text">Sovereign Artificial Intelligence</span></h2>
+            <p style="font-size: 1.4rem; color: var(--silver);">Architecting On-premise AI for High-Trust Enterprises</p>
+            <div style="margin-top: 2rem; color: var(--text-muted); font-size: 0.9rem;" class="mono">
+                MARCH 2026 | VERSION 2.1 | OMNINSTACK CORE TEAM
+            </div>
+        </header>
+
+        <section class="executive-summary reveal" id="summary">
+            <h3 style="border: none; font-size: 1.8rem;">Executive Summary</h3>
+            <p>In an era where data is the most critical asset, the reliance on public cloud AI infrastructure introduces unprecedented risks: data leakage, vendor lock-in, and regulatory non-compliance. <strong>OmniNStack</strong> is the definitive solution—a platform designed for <strong>Sovereignty-by-Design</strong>.</p>
+            <p>By providing a 5-layer stack that is network-isolated and hardware-agnostic, OmniNStack ensures that organizational intelligence remains within the boundaries of absolute ownership. This document outlines the technical architecture and strategic philosophy behind the world's most secure AI operating platform.</p>
+        </section>
+
+        <section class="wp-section reveal" id="challenge">
+            <h3>I. The Challenge: The Sovereignty Gap</h3>
+            <p>As enterprises adopt Large Language Models (LLMs), the "Gravity of Data" creates an inherent conflict between intelligence and security. Traditional cloud-centric fine-tuning workflows necessitate the traversal of organizational boundaries, exposing sensitive intellectual property to multi-tenant environments and cross-jurisdictional data transit risks.</p>
+            <ul class="wp-list">
+                <li><strong>Data Gravity:</strong> The risk of sensitive IP being used to train third-party models.</li>
+                <li><strong>Network Dependency:</strong> Fragility in operations during connectivity disruptions.</li>
+                <li><strong>Compliance Friction:</strong> Inability to meet strict GDPR, HIPAA, or sovereign data mandates in the cloud.</li>
+            </ul>
+        </section>
+
+        <section class="wp-section reveal" id="architecture">
+            <h3>II. The 5-Layer Sovereign Stack</h3>
+            <p>OmniNStack is built on five distinct layers, each engineered for modularity and security. This modularity allows enterprises to swap components without rebuilding the entire stack.</p>
+            
+            <div class="architecture-grid">
+                <div class="layer-box">
+                    <h4>01. Presentation Layer</h4>
+                    <p>Unified Command Center featuring Open WebUI and native IDE Plugins for seamless human-AI collaboration.</p>
+                </div>
+                <div class="layer-box">
+                    <h4>02. Governance Layer</h4>
+                    <p>Enforces "Policy-as-Code" via OPA. Immutable, identity-aware auditing for every inference request.</p>
+                </div>
+                <div class="layer-box">
+                    <h4>03. Orchestration Layer</h4>
+                    <p>Cognitive Nervous System managing task decomposition and Multi-Agent coordination via LangGraph.</p>
+                </div>
+                <div class="layer-box">
+                    <h4>04. Data Layer</h4>
+                    <p>Air-gapped RAG system with secure Vector Stores. Zero data leakage to the public internet.</p>
+                </div>
+                <div class="layer-box">
+                    <h4>05. Infrastructure Layer</h4>
+                    <p>Hardware-flexible foundation. Server-grade performance on everything from air-gapped server racks to edge nodes.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="wp-section reveal" id="aiot">
+            <h3>III. Industrial AIoT & Edge Intelligence</h3>
+            <p>Unlike traditional AI platforms, OmniNStack bridges the gap between software and the physical world. By integrating with industrial protocols and edge robotics, OmniNStack transforms physical assets into cognitive actors.</p>
+            <p>This "Physical AI" approach enables real-time autonomous decision-making in manufacturing, energy, and transportation sectors where millisecond latency and absolute uptime are non-negotiable.</p>
+        </section>
+
+        <section class="wp-section reveal" id="security">
+            <h3>IV. Security & Governance</h3>
+            <p>Security is not a feature in OmniNStack; it is the substrate. The platform supports native air-gap deployment, ensuring that no request ever leaves the local network.</p>
+            <ul class="wp-list">
+                <li><strong>Model Agnosticity:</strong> Toggle between 100+ local models (Llama 3, Mistral) and public APIs via a secure gateway.</li>
+                <li><strong>Immutable Auditing:</strong> Every action is signed and stored in a tamper-proof ledger.</li>
+                <li><strong>Differential Privacy:</strong> On-premise PII redaction and noise-injection for sensitive data handling.</li>
+            </ul>
+        </section>
+
+        <section class="wp-section reveal" id="conclusion" style="text-align: center; margin-top: 8rem;">
+            <h2 class="gradient-text">Intelligence Owned. Future Secured.</h2>
+            <p style="max-width: 700px; margin: 2rem auto;">OmniNStack is the Platform of Last Resort for data security—a sanctuary where organizational autonomy is guaranteed.</p>
+            <a href="mailto:info@omninstack.com" class="btn btn-primary">Request Technical Consultation</a>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-logo logo" style="justify-content: center; margin-bottom: 2rem;">Omni<span>N</span>Stack</div>
+            <p class="footer-copy">&copy; 2026 OmniNStack. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Simple Scroll Reveal for Whitepaper
+        const wpReveals = document.querySelectorAll('.reveal');
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        wpReveals.forEach(el => observer.observe(el));
+    </script>
+</body>
+
+</html>
