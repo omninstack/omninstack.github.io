@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMAMAPP Omnichannel Messaging & Attribution Platform | OmniNStack Solutions</title>
+    <meta name="description" content="IMAMAPP: AI-Powered Omnichannel Messaging & Offline POS Attribution Platform. Bridge the gap between digital campaigns and physical retail sales with guaranteed delivery and real-time ROI tracking.">
+
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" type="image/png" href="../assets/favicon.png">
+    <style>
+        .page-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .lang-switcher {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 3rem;
+        }
+
+        .lang-pill {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            padding: 0.4rem;
+            border-radius: 100px;
+            display: inline-flex;
+            gap: 0.5rem;
+        }
+
+        .lang-btn {
+            padding: 0.5rem 1.5rem;
+            border-radius: 100px;
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: var(--ease);
+        }
+
+        .lang-btn:hover {
+            color: var(--cyan);
+        }
+
+        .lang-btn.active {
+            background: var(--grad-cyan);
+            color: var(--navy);
+        }
+
+        .section-block {
+            margin-bottom: 5rem;
+            animation: fadeIn 1s ease-out forwards;
+            opacity: 0;
+        }
+
+        .section-block.reveal.active {
+            opacity: 1;
+        }
+
+        .section-block h3 {
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+            color: var(--cyan);
+            border-bottom: 1px solid var(--glass-border);
+            padding-bottom: 0.8rem;
+        }
+
+        .section-block p {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .glass-box {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            padding: 3rem;
+            border-radius: 28px;
+            margin-bottom: 2rem;
+            transition: var(--ease);
+        }
+
+        .glass-box:hover {
+            border-color: var(--cyan);
+            transform: translateY(-5px);
+            background: rgba(0, 229, 255, 0.02);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .glass-box h4 {
+            font-size: 1.4rem;
+            color: var(--text-primary);
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .highlight-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .highlight-list li {
+            position: relative;
+            padding-left: 1.75rem;
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+        }
+
+        .highlight-list li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--cyan);
+            font-weight: bold;
+        }
+
+        /* Table Design */
+        .table-responsive {
+            overflow-x: auto;
+            margin-bottom: 3rem;
+            border-radius: 20px;
+            border: 1px solid var(--glass-border);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--glass-bg);
+            text-align: left;
+        }
+
+        th, td {
+            padding: 1.25rem 1.5rem;
+        }
+
+        th {
+            background-color: rgba(0, 229, 255, 0.08);
+            color: var(--cyan);
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 0.05em;
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        td {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        @media (max-width: 1024px) {
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .tech-pill {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--glass-border);
+            padding: 1rem 1.8rem;
+            border-radius: 16px;
+            font-size: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .tech-pill strong {
+            color: var(--cyan);
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+
+    <nav>
+        <div class="container nav-content">
+            <a href="../index.html" class="logo">Omni<span>N</span>Stack</a>
+            <div class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="../index.html#architecture">Architecture</a>
+                <a href="imamapp.html" class="active">IMAMAPP Platform</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="page-content">
+        <header class="page-header reveal">
+            <h4 class="accent-text mono">Omnichannel Marketing & attribution</h4>
+            <h2>IMAMAPP Platform <span class="gradient-text">Overview</span></h2>
+            <p style="font-size: 1.35rem; color: var(--silver); margin-top: 1rem; max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.6;">
+                Bridge the Gap Between Digital Campaigns and Physical Retail Sales
+            </p>
+        </header>
+
+        <div class="lang-switcher reveal">
+            <div class="lang-pill">
+                <a href="imamapp.html" class="lang-btn active">🇺🇸 English</a>
+                <a href="imamapp_ko.html" class="lang-btn">🇰🇷 한국어</a>
+            </div>
+        </div>
+
+        <!-- HERO INTRODUCTION -->
+        <section class="section-block reveal" id="overview-sec">
+            <div class="glass-box" style="border-color: var(--cyan); background: linear-gradient(135deg, rgba(0, 31, 63, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%); padding: 3.5rem;">
+                <h4 style="font-size: 1.6rem; color: #fff; margin-bottom: 1.5rem; line-height: 1.4;">
+                    Transform messaging apps into high-converting, measurable offline sales pipelines.
+                </h4>
+                <p style="font-size: 1.15rem; color: var(--text-secondary); line-height: 1.8;">
+                    In today’s mobile-first world, customers expect businesses to meet them where they already hang out—on instant messaging apps. However, managing campaigns across WhatsApp, KakaoTalk, Telegram, and SMS is fragmented, and proving that a digital message actually drove a physical in-store sale has historically been nearly impossible.
+                </p>
+                <p style="font-size: 1.15rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 2.5rem;">
+                    <strong>IMAMAPP</strong> (Instant Message Advertising Marketing AI-Powered Platform) bridges this gap by unifying conversational messaging with AI-driven content generation, resilient failover systems, and real-time offline POS/Kiosk coupon attribution.
+                </p>
+                <div class="btn-group">
+                    <a href="mailto:info@omninstack.com" class="btn btn-primary" style="padding: 1rem 2.5rem; font-size: 0.8rem; border-radius: 12px;">Book a Live Demo</a>
+                    <a href="#" class="btn btn-outline" style="padding: 1rem 2.5rem; font-size: 0.8rem; border-radius: 12px;">Explore API Sandbox</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CAPABILITIES MATRIX -->
+        <section class="section-block reveal" id="matrix-sec">
+            <h3>Capability Matrix</h3>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Product Capabilities</th>
+                            <th>Core Functions</th>
+                            <th>Business Impact</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="color: #fff; font-weight: 700;">POS Gateway Connector</td>
+                            <td>Connects with Clover, Toast, OKPOS, and Force systems.</td>
+                            <td>Verifiable, closed-loop marketing ROI.</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #fff; font-weight: 700;">AI Copywriter & RAG</td>
+                            <td>Multi-variant template generation and natural language directory search.</td>
+                            <td>Higher text open rates and lower customer drop-offs.</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #fff; font-weight: 700;">Failover Routing Service</td>
+                            <td>Cross-channel fallback execution (e.g., WhatsApp &rarr; SMS).</td>
+                            <td>Guaranteed delivery of critical store offers.</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #fff; font-weight: 700;">High-Volume Webhook Queue</td>
+                            <td>Powered by an asynchronous Kafka / RabbitMQ data pipeline.</td>
+                            <td>99.9% uptime and zero dropped message logs.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- CORE VALUE PILLARS -->
+        <section class="section-block reveal" id="pillars-sec">
+            <h3>Key Value Propositions</h3>
+            <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                
+                <div class="glass-box">
+                    <h4><span>📈</span> 1. True Offline Attribution & POS Integration</h4>
+                    <p>Stop guessing your digital marketing ROI. IMAMAPP connects digital conversations to physical retail terminals.</p>
+                    <ul class="highlight-list">
+                        <li><strong>Instant Coupon Redemption:</strong> Customers receive custom barcode/QR coupons directly in their messaging apps, which can be scanned and validated in real time at the counter or self-service kiosks (<strong>Clover, Toast, OKPOS, Force</strong>, etc.).</li>
+                        <li><strong>ROI Attribution:</strong> Automatically link physical in-store sales back to the specific digital message or campaign variant that drove the customer to the store.</li>
+                        <li><strong>Post-Purchase Automation:</strong> Automatically trigger follow-up surveys, digital receipts, or return-discount coupons via WhatsApp or KakaoTalk the second a transaction is registered at the POS.</li>
+                    </ul>
+                </div>
+
+                <div class="glass-box">
+                    <h4><span>🤖</span> 2. AI-Powered Copywriting & Conversational RAG Search</h4>
+                    <p>Boost engagement and conversions using built-in LLM assistants.</p>
+                    <ul class="highlight-list">
+                        <li><strong>Copywriting Copilot:</strong> Instantly generate multi-variant message copies, headlines, and call-to-actions (CTAs) optimized for different channels and brand voices.</li>
+                        <li><strong>Directory & Catalog Recommendation Search:</strong> Allow customers to discover nearby physical stores or products via natural, conversational queries (e.g., <em>"Find a Korean restaurant near me serving Jjajangmyeon"</em>), powered by vector database searches (pgvector/Qdrant) and geographical coordinate filtering.</li>
+                        <li><strong>Alternative Suggestion Engine:</strong> If an exact item or location is unavailable, the AI automatically proposes the best nearby alternatives and asks clarifying questions to maintain engagement.</li>
+                    </ul>
+                </div>
+
+                <div class="glass-box">
+                    <h4><span>🔄</span> 3. Omnichannel Delivery & Resilient Fallback Routing</h4>
+                    <p>Never lose a lead due to delivery issues. IMAMAPP supports WhatsApp, KakaoTalk, Telegram, LINE, Viber, Zalo, WeChat, SMS, and RCS.</p>
+                    <ul class="highlight-list">
+                        <li><strong>Automated Fallback:</strong> Configure rules like: <em>"Attempt delivery via WhatsApp first; if the message is not delivered in 15 minutes, automatically send it via SMS."</em></li>
+                        <li><strong>Consent & Compliance Sync:</strong> Centralized, highly-available opt-out datastore (Redis) updates unsubscribe requests in real time across all channels, performing pre-flight consent checks to guarantee spam compliance.</li>
+                    </ul>
+                </div>
+
+                <div class="glass-box">
+                    <h4><span>⚡</span> 4. Enterprise-Grade High Availability & Monitoring</h4>
+                    <p>Engineered from the ground up for high-availability enterprise environments. Our modern, cloud-native stack handles complex messaging workloads with low-latency stability.</p>
+                    <ul class="highlight-list">
+                        <li><strong>Asynchronous Ingestion:</strong> Built using NestJS and distributed message queues (Kafka / RabbitMQ) to absorb sudden spikes in incoming webhook traffic without system slowdowns.</li>
+                        <li><strong>Real-Time System Alerts:</strong> Monitors system webhooks continuously; if an external provider callback times out, the system routes diagnostic telemetry and Telegram alerts to internal engineering admin tools.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- TARGET AUDIENCE -->
+        <section class="section-block reveal" id="audience-sec">
+            <h3>Target Customer Profiles</h3>
+            <div class="grid-3">
+                <div class="glass-box" style="padding: 2.5rem; margin-bottom: 0;">
+                    <h4 style="color: var(--cyan); font-size: 1.25rem; margin-bottom: 1rem;">Retail Chains & Franchises</h4>
+                    <p style="font-size: 1rem; margin-bottom: 0; line-height: 1.6;">Track foot traffic and sales generated from SMS/WhatsApp coupon campaigns in real time. Monitor your actual customer foot traffic and purchase numbers generated from regional coupon drops in real time.</p>
+                </div>
+                <div class="glass-box" style="padding: 2.5rem; margin-bottom: 0;">
+                    <h4 style="color: var(--cyan); font-size: 1.25rem; margin-bottom: 1rem;">Digital Marketing Agencies</h4>
+                    <p style="font-size: 1rem; margin-bottom: 0; line-height: 1.6;">Provide clients with undeniable, data-backed proof that your digital ad spend directly expands physical register revenues. Verifiable, closed-loop ROI metrics connecting digital spend to physical store purchases.</p>
+                </div>
+                <div class="glass-box" style="padding: 2.5rem; margin-bottom: 0;">
+                    <h4 style="color: var(--cyan); font-size: 1.25rem; margin-bottom: 1rem;">Small & Medium Businesses (SMBs)</h4>
+                    <p style="font-size: 1rem; margin-bottom: 0; line-height: 1.6;">Automate customer onboarding, FAQ handling, and promotional cycles without dedicated developer teams. Automate client onboarding cycles, run interactive FAQs, and manage repeat discount rewards effortlessly without specialized in-house IT teams.</p>
+                </div>
+            </div>
+        </section>
+
+
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-logo logo" style="justify-content: center; margin-bottom: 2rem;">Omni<span>N</span>Stack</div>
+            <div class="footer-nav" style="display: flex; justify-content: center; gap: 2rem; margin-bottom: 2rem; flex-wrap: wrap;">
+                <a href="../index.html" style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">Home</a>
+                <a href="../whitepaper.html" style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">Whitepaper</a>
+                <a href="imamapp.html" style="color: var(--cyan); text-decoration: none; font-size: 0.85rem; font-weight: bold;">IMAMAPP Platform</a>
+            </div>
+            <p class="footer-copy">&copy; 2026 OmniNStack. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple Scroll Reveal
+        const reveals = document.querySelectorAll('.reveal');
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+        reveals.forEach(el => observer.observe(el));
+    </script>
+</body>
+
+</html>

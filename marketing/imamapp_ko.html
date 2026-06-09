@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMAMAPP 옴니채널 메시징 & 오프라인 POS 기여도 분석 플랫폼 | OmniNStack Solutions</title>
+    <meta name="description" content="IMAMAPP: AI 기반 옴니채널 메시징 & 오프라인 POS 기여도 분석 플랫폼. 디지털 마케팅 캠페인과 오프라인 매장 매출의 간극을 연결하고 실시간 ROI를 확인해 보세요.">
+
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" type="image/png" href="../assets/favicon.png">
+    <style>
+        .page-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .lang-switcher {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 3rem;
+        }
+
+        .lang-pill {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            padding: 0.4rem;
+            border-radius: 100px;
+            display: inline-flex;
+            gap: 0.5rem;
+        }
+
+        .lang-btn {
+            padding: 0.5rem 1.5rem;
+            border-radius: 100px;
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: var(--ease);
+        }
+
+        .lang-btn:hover {
+            color: var(--cyan);
+        }
+
+        .lang-btn.active {
+            background: var(--grad-cyan);
+            color: var(--navy);
+        }
+
+        .section-block {
+            margin-bottom: 5rem;
+            animation: fadeIn 1s ease-out forwards;
+            opacity: 0;
+        }
+
+        .section-block.reveal.active {
+            opacity: 1;
+        }
+
+        .section-block h3 {
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+            color: var(--cyan);
+            border-bottom: 1px solid var(--glass-border);
+            padding-bottom: 0.8rem;
+        }
+
+        .section-block p {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .glass-box {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            padding: 3rem;
+            border-radius: 28px;
+            margin-bottom: 2rem;
+            transition: var(--ease);
+        }
+
+        .glass-box:hover {
+            border-color: var(--cyan);
+            transform: translateY(-5px);
+            background: rgba(0, 229, 255, 0.02);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .glass-box h4 {
+            font-size: 1.4rem;
+            color: var(--text-primary);
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .highlight-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .highlight-list li {
+            position: relative;
+            padding-left: 1.75rem;
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+        }
+
+        .highlight-list li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--cyan);
+            font-weight: bold;
+        }
+
+        /* Table Design */
+        .table-responsive {
+            overflow-x: auto;
+            margin-bottom: 3rem;
+            border-radius: 20px;
+            border: 1px solid var(--glass-border);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--glass-bg);
+            text-align: left;
+        }
+
+        th, td {
+            padding: 1.25rem 1.5rem;
+        }
+
+        th {
+            background-color: rgba(0, 229, 255, 0.08);
+            color: var(--cyan);
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 0.05em;
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        td {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        @media (max-width: 1024px) {
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .tech-pill {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--glass-border);
+            padding: 1rem 1.8rem;
+            border-radius: 16px;
+            font-size: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .tech-pill strong {
+            color: var(--cyan);
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+
+    <nav>
+        <div class="container nav-content">
+            <a href="../index.html" class="logo">Omni<span>N</span>Stack</a>
+            <div class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="../index.html#architecture">Architecture</a>
+                <a href="imamapp_ko.html" class="active">IMAMAPP 플랫폼</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="page-content">
+        <header class="page-header reveal">
+            <h4 class="accent-text mono">옴니채널 마케팅 & 기여도 분석</h4>
+            <h2>IMAMAPP 플랫폼 <span class="gradient-text">상세 소개</span></h2>
+            <p style="font-size: 1.35rem; color: var(--silver); margin-top: 1rem; max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.6;">
+                디지털 캠페인과 오프라인 매장 매출의 간극을 메우다
+            </p>
+        </header>
+
+        <div class="lang-switcher reveal">
+            <div class="lang-pill">
+                <a href="imamapp.html" class="lang-btn">🇺🇸 English</a>
+                <a href="imamapp_ko.html" class="lang-btn active">🇰🇷 한국어</a>
+            </div>
+        </div>
+
+        <!-- HERO INTRODUCTION -->
+        <section class="section-block reveal" id="overview-sec">
+            <div class="glass-box" style="border-color: var(--cyan); background: linear-gradient(135deg, rgba(0, 31, 63, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%); padding: 3.5rem;">
+                <h4 style="font-size: 1.6rem; color: #fff; margin-bottom: 1.5rem; line-height: 1.4;">
+                    메신저 대화창을 가장 확실하고 성과가 측정되는 매장 매출 파이프라인으로 전환해 보세요.
+                </h4>
+                <p style="font-size: 1.15rem; color: var(--text-secondary); line-height: 1.8;">
+                    오늘날의 모바일 우선 시대에 고객은 비즈니스가 자신들이 가장 활발하게 사용하는 인스턴트 메시징 앱 내에서 소통하기를 기대합니다. 하지만 카카오톡, WhatsApp, 텔레그램, SMS에 걸쳐 캠페인을 파편적으로 관리해야 하고, 디지털로 전송한 메시지가 실제로 오프라인 매장에서의 물리적인 구매로 이어졌는지를 입증하는 것은 거의 불가능했습니다.
+                </p>
+                <p style="font-size: 1.15rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 2.5rem;">
+                    <strong>IMAMAPP</strong> (Instant Message Advertising Marketing AI-Powered Platform)은 대화형 메시징을 AI 기반 카피라이팅, 안정적인 페일오버 시스템, 실시간 오프라인 POS/키오스크 쿠폰 기여도 분석 기능과 하나로 결합하여 이 문제를 완벽하게 해결합니다.
+                </p>
+                <div class="btn-group">
+                    <a href="mailto:info@omninstack.com" class="btn btn-primary" style="padding: 1rem 2.5rem; font-size: 0.8rem; border-radius: 12px;">실시간 데모 예약</a>
+                    <a href="#" class="btn btn-outline" style="padding: 1rem 2.5rem; font-size: 0.8rem; border-radius: 12px;">API 샌드박스 탐색</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CAPABILITIES MATRIX -->
+        <section class="section-block reveal" id="matrix-sec">
+            <h3>기능 매트릭스 (Feature Matrix)</h3>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>제품 기능</th>
+                            <th>핵심 역할</th>
+                            <th>비즈니스 영향</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="color: #fff; font-weight: 700;">POS 게이트웨이 커넥터</td>
+                            <td>Clover, Toast, OKPOS, Force 단말기 연동</td>
+                            <td>검증 가능하고 확실한 마케팅 ROI 측정</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #fff; font-weight: 700;">AI 카피라이터 및 RAG</td>
+                            <td>다변량 템플릿 생성 및 대화형 디렉토리 검색</td>
+                            <td>메시지 오픈율 상승 및 고객 이탈률 감소</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #fff; font-weight: 700;">페일오버 라우팅 서비스</td>
+                            <td>교차 채널 폴백 실행 (예: WhatsApp &rarr; SMS)</td>
+                            <td>중요 오프라인 혜택 및 알림 전송 확실성 보장</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #fff; font-weight: 700;">대용량 웹훅 대기열</td>
+                            <td>비동기 Kafka / RabbitMQ 데이터 파이프라인 탑재</td>
+                            <td>99.9% 가동율 및 메시지 로그 누락 제로화</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- CORE VALUE PILLARS -->
+        <section class="section-block reveal" id="pillars-sec">
+            <h3>핵심 가치 제안</h3>
+            <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                
+                <div class="glass-box">
+                    <h4><span>📈</span> 1. 오프라인 매장 방문 기여도 분석 & POS 연동 (True Offline Attribution)</h4>
+                    <p>디지털 마케팅의 실제 투자 대비 효과(ROI)를 더 이상 추측에 의존하지 마세요. IMAMAPP은 디지털 대화와 오프라인 매장의 결제 단말기를 긴밀히 연결합니다.</p>
+                    <ul class="highlight-list">
+                        <li><strong>실시간 쿠폰 검증 및 사용:</strong> 고객은 메신저 앱으로 실시간 바코드/QR 쿠폰을 직접 수령하며, 매장 카운터나 셀프 서비스 키오스크(<strong>Clover, Toast, OKPOS, Force</strong> 등)에서 스캔하는 즉시 실시간으로 검증 및 사용 처리됩니다.</li>
+                        <li><strong>오프라인 매출 기여도 분석:</strong> 오프라인 매장에서 발생한 영수증 데이터를 고객에게 도달한 특정 디지털 메시지나 캠페인 버전과 자동으로 매칭하여, 정확한 마케팅 성과를 추적합니다.</li>
+                        <li><strong>구매 후 자동화 트리거:</strong> POS 단말기나 키오스크에서 결제가 승인되는 순간, 즉시 카카오톡이나 WhatsApp을 통해 전자 영수증, 만족도 설문조사, 또는 재방문 유도 할인 쿠폰을 자동 발송합니다.</li>
+                    </ul>
+                </div>
+
+                <div class="glass-box">
+                    <h4><span>🤖</span> 2. AI 기반 카피라이팅 & 대화형 RAG 검색</h4>
+                    <p>빌트인 LLM 어시스턴트를 통해 고객 참여와 실제 구매 전환을 극대화합니다.</p>
+                    <ul class="highlight-list">
+                        <li><strong>카피라이팅 코파일럿:</strong> 채널별 사양과 브랜드의 아이덴티티에 최적화된 다변량 메시지 문구, 헤드라인, 행동유도버튼(CTA)을 생성합니다.</li>
+                        <li><strong>디렉토리 및 카탈로그 추천 검색:</strong> 고객이 자연스러운 구어체 대화(예: <em>"가까운 탕후루 가게 찾아줘"</em> 또는 <em>"근처에 자장면 파는 한식당 어디야?"</em>)로 근처 매장과 상품을 쉽게 검색하도록 지원하며, 벡터 데이터베이스(pgvector/Qdrant)와 지리 좌표 필터링을 통해 정확한 추천 결과를 제공합니다.</li>
+                        <li><strong>대체 매장 및 정보 제안:</strong> 일치하는 매장이나 제품이 없는 경우, AI가 자동으로 인근 지역의 최적 대안을 도출해 대화를 이어가며 이탈을 막습니다.</li>
+                    </ul>
+                </div>
+
+                <div class="glass-box">
+                    <h4><span>🔄</span> 3. 옴니채널 메시징 & 안정적인 폴백(Fallback) 라우팅</h4>
+                    <p>전송 장애로 인해 잠재 고객을 놓치는 일이 없습니다. 카카오톡, WhatsApp, 텔레그램, LINE, Viber, Zalo, WeChat, SMS, RCS 등 글로벌 및 국가별 주요 메시징 채널을 모두 지원합니다.</p>
+                    <ul class="highlight-list">
+                        <li><strong>자동 폴백 설정:</strong> <em>"WhatsApp으로 우선 전송을 시도하되, 15분 내로 전달되지 않으면 SMS로 자동 전환하여 재발송"</em>과 같은 유연한 비즈니스 룰을 구성할 수 있습니다.</li>
+                        <li><strong>중앙 집중식 동의 여부 동기화:</strong> 고가용성 인메모리 저장소(Redis)를 사용해 실시간으로 수신 거부(예: "STOP" 키워드) 요청을 즉각 동기화하고 발송 직전 사전 검사를 수행해 스팸 방지법을 엄격히 준수합니다.</li>
+                    </ul>
+                </div>
+
+                <div class="glass-box">
+                    <h4><span>⚡</span> 4. 엔터프라이즈급 고가용성 및 모니터링</h4>
+                    <p>고가용성 엔터프라이즈 환경을 고려하여 처음부터 정밀하게 설계되었습니다. 우리의 모던 클라우드 네이티브 스택은 저지연 안정성으로 대규모 메시징 부하를 효율적으로 소화합니다.</p>
+                    <ul class="highlight-list">
+                        <li><strong>비동기 수신 (Asynchronous Ingestion):</strong> <strong>NestJS</strong> 및 분산 메시지 큐(<strong>Kafka / RabbitMQ</strong>)를 사용하여 시스템 지연 없이 갑작스럽게 유입되는 웹훅 트래픽 급증을 흡수합니다.</li>
+                        <li><strong>실시간 시스템 알림 (Real-Time System Alerts):</strong> 웹훅 상태를 지속적으로 모니터링하여, 외부 서비스 콜백이 타임아웃되는 경우 텔레그램 알림톡과 엔지니어링 관리 도구로 진단 원격 분석 데이터를 즉시 전송합니다.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- TARGET AUDIENCE -->
+        <section class="section-block reveal" id="audience-sec">
+            <h3>대상 고객 프로필 (Target Customer Profiles)</h3>
+            <div class="grid-3">
+                <div class="glass-box" style="padding: 2.5rem; margin-bottom: 0;">
+                    <h4 style="color: var(--cyan); font-size: 1.25rem; margin-bottom: 1rem;">프랜차이즈 및 리테일 매장 브랜드</h4>
+                    <p style="font-size: 1rem; margin-bottom: 0; line-height: 1.6;">지역별 쿠폰 배포 캠페인이 실제로 유도한 고객 방문수와 실구매액 데이터를 실시간 모니터링합니다. 카카오톡/SMS를 통해 발송된 할인 쿠폰이 유도한 오프라인 방문율 및 실매출 상승 효과를 실시간 모니터링합니다.</p>
+                </div>
+                <div class="glass-box" style="padding: 2.5rem; margin-bottom: 0;">
+                    <h4 style="color: var(--cyan); font-size: 1.25rem; margin-bottom: 1rem;">디지털 마케팅 대행사</h4>
+                    <p style="font-size: 1rem; margin-bottom: 0; line-height: 1.6;">온라인 마케팅 예산이 오프라인 단말기 결제로 직접 어떻게 연결되는지 광고주에게 확실한 성과 지표로 입증합니다. 광고주에게 온라인 마케팅 예산이 오프라인 결제 단말기 매출로 직접 연계되는 성과 데이터를 입증합니다.</p>
+                </div>
+                <div class="glass-box" style="padding: 2.5rem; margin-bottom: 0;">
+                    <h4 style="color: var(--cyan); font-size: 1.25rem; margin-bottom: 1rem;">중소기업 (SMBs) 및 소상공인</h4>
+                    <p style="font-size: 1rem; margin-bottom: 0; line-height: 1.6;">사내에 IT 개발 조직이 없어도 고객 온보딩 자동화, 대화형 FAQ 구동, 단골 재방문 혜택 유도를 손쉽게 관리합니다. 개발 인력 없이도 단골 고객 관리, 자동 알림톡 발송, AI를 통한 기본 FAQ 자동화를 누릴 수 있습니다.</p>
+                </div>
+            </div>
+        </section>
+
+
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-logo logo" style="justify-content: center; margin-bottom: 2rem;">Omni<span>N</span>Stack</div>
+            <div class="footer-nav" style="display: flex; justify-content: center; gap: 2rem; margin-bottom: 2rem; flex-wrap: wrap;">
+                <a href="../index.html" style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">Home</a>
+                <a href="../whitepaper.html" style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">Whitepaper</a>
+                <a href="imamapp_ko.html" style="color: var(--cyan); text-decoration: none; font-size: 0.85rem; font-weight: bold;">IMAMAPP 플랫폼</a>
+            </div>
+            <p class="footer-copy">&copy; 2026 OmniNStack. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple Scroll Reveal
+        const reveals = document.querySelectorAll('.reveal');
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+        reveals.forEach(el => observer.observe(el));
+    </script>
+</body>
+
+</html>
