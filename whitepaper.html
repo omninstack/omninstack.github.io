@@ -16,6 +16,27 @@
             padding: 4rem 2rem;
         }
 
+        .footer-nav {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: var(--ease);
+            font-weight: 600;
+        }
+
+        .footer-nav a:hover {
+            color: var(--cyan);
+            text-shadow: 0 0 10px rgba(0, 229, 255, 0.6);
+        }
+
         .wp-header {
             text-align: center;
             margin-bottom: 6rem;
@@ -195,7 +216,7 @@
             <div class="architecture-grid">
                 <div class="layer-box">
                     <h4>01. Presentation Layer</h4>
-                    <p>Unified Command Center featuring Open WebUI and native IDE Plugins for seamless human-AI collaboration.</p>
+                    <p>Unified Command Center featuring Open WebUI, IMAMAPP Chat Interfaces, and native IDE Plugins for seamless human-AI collaboration.</p>
                 </div>
                 <div class="layer-box">
                     <h4>02. Governance Layer</h4>
@@ -203,7 +224,7 @@
                 </div>
                 <div class="layer-box">
                     <h4>03. Orchestration Layer</h4>
-                    <p>Cognitive Nervous System managing task decomposition and Multi-Agent coordination via LangGraph.</p>
+                    <p>Cognitive Nervous System managing task decomposition, Multi-Agent coordination, and IMAMAPP omnichannel routing.</p>
                 </div>
                 <div class="layer-box">
                     <h4>04. Data Layer</h4>
@@ -242,6 +263,11 @@
     <footer>
         <div class="container">
             <div class="footer-logo logo" style="justify-content: center; margin-bottom: 2rem;">Omni<span>N</span>Stack</div>
+            <div class="footer-nav">
+                <a href="index.html">Home</a>
+                <a href="whitepaper.html">Whitepaper</a>
+                <a href="marketing/imamapp.html">IMAMAPP Platform</a>
+            </div>
             <p class="footer-copy">&copy; 2026 OmniNStack. All Rights Reserved.</p>
         </div>
     </footer>
