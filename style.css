@@ -429,6 +429,7 @@ footer {
 }
 
 .footer-logo { margin-bottom: 2rem; }
+.footer-address { color: var(--text-secondary); font-size: 0.85rem; line-height: 1.6; margin-bottom: 1.5rem; }
 .footer-copy { color: var(--text-muted); font-size: 0.85rem; letter-spacing: 0.05em; }
 
 /* ─── Animations ─────────────────────────────────── */
