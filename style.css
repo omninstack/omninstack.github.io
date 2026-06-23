@@ -362,6 +362,31 @@ nav {
     line-height: 1.8;
 }
 
+.capability-band {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1px;
+    background: var(--glass-border);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.capability-item {
+    background: var(--glass-bg);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+}
+
+.capability-item p.mono {
+    margin-top: 0.5rem;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+}
+
 .hero p.hero-lead {
     font-size: 1.9rem;
     color: var(--text-primary);
