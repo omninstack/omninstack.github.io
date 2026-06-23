@@ -362,6 +362,15 @@ nav {
     line-height: 1.8;
 }
 
+.hero p.hero-lead {
+    font-size: 1.9rem;
+    color: var(--text-primary);
+    font-weight: 600;
+    line-height: 1.5;
+    margin-bottom: 1.75rem;
+    max-width: 720px;
+}
+
 .stat-pill {
     background: rgba(0, 229, 255, 0.1);
     border: 1px solid var(--glass-border);
