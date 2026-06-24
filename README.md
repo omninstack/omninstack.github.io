@@ -49,7 +49,27 @@ graph TD
 - **Data Layer** — Sovereign, air-gapped RAG with secure vector stores and zero data leakage.
 - **Infrastructure Layer** — Self-hosted, hardware-agnostic foundation optimized for edge and air-gapped nodes.
 
-See the [Technical Whitepaper](https://omninstack.com/whitepaper.html) for the full architecture.
+See the [Technical Whitepaper](https://www.omninstack.com/whitepaper.html) for the full architecture.
+
+## 💻 Repository
+
+This repository hosts the OmniNStack marketing site, served via GitHub Pages at [www.omninstack.com](https://www.omninstack.com). It is a static site with no build step.
+
+```
+index.html        # Homepage
+whitepaper.html   # Technical whitepaper
+marketing/        # IMAMAPP product pages (EN/KO)
+assets/           # Images and icons
+style.css         # Shared styles
+script.js         # Scroll reveal and interactions
+```
+
+Preview it locally from the repository root:
+
+```bash
+python -m http.server 8000
+# then open http://localhost:8000
+```
 
 ## 🌐 Contact
 
@@ -59,9 +79,9 @@ Ready to deploy your AI workforce? Contact us to schedule a demo or learn more a
 
 ## 🔗 Links
 
-- [Website](https://omninstack.com)
-- [Technical Whitepaper](https://omninstack.com/whitepaper.html)
-- [IMAMAPP Platform](https://omninstack.com/marketing/imamapp.html)
+- [Website](https://www.omninstack.com)
+- [Technical Whitepaper](https://www.omninstack.com/whitepaper.html)
+- [IMAMAPP Platform](https://www.omninstack.com/marketing/imamapp.html)
 - [LinkedIn](https://www.linkedin.com/in/omninstack/)
 
 ---
