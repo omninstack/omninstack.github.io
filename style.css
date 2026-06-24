@@ -85,6 +85,7 @@ h1, h2, h3, h4 {
     font-weight: 900;
     letter-spacing: -0.05em;
     line-height: 1.05;
+    text-wrap: balance;
 }
 
 h1 { font-size: clamp(3.5rem, 10vw, 6.5rem); margin-bottom: 2rem; }
@@ -328,12 +329,20 @@ nav {
 
 .hero .container {
     display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: 4rem;
+    grid-template-columns: 1.35fr 1fr;
+    gap: 3rem;
     align-items: center;
 }
 
 .hero-content { max-width: 900px; }
+
+.hero h2 {
+    font-size: clamp(2.75rem, 5vw, 3.85rem);
+}
+
+.hero h2 .gradient-text {
+    display: inline;
+}
 
 .hero-visual {
     position: relative;
@@ -361,7 +370,7 @@ nav {
 .hero p {
     font-size: 1.5rem;
     color: var(--text-secondary);
-    margin-bottom: 4.5rem;
+    margin-bottom: 3rem;
     max-width: 700px;
     line-height: 1.8;
 }
@@ -382,13 +391,18 @@ nav {
     -webkit-backdrop-filter: blur(25px);
     padding: 2.5rem 1.5rem;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .capability-item p.mono {
-    margin-top: 0.5rem;
-    font-size: 0.75rem;
+    margin-top: 0.6rem;
+    font-size: 0.72rem;
     text-transform: uppercase;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.1em;
+    line-height: 1.5;
+    text-wrap: balance;
 }
 
 .hero p.hero-lead {
