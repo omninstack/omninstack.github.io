@@ -5,7 +5,18 @@
       "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://127.0.0.1:8765/index.html)",
       "Skill(browse)",
       "Skill(browse:*)",
-      "Bash('C:\\\\Users\\\\June/.claude/skills/gstack/browse/dist/browse' stop *)"
+      "Bash('C:\\\\Users\\\\June/.claude/skills/gstack/browse/dist/browse' stop *)",
+      "Bash('C:\\\\Users\\\\June/.claude/skills/gstack/browse/dist/browse' goto *)",
+      "Bash('C:\\\\Users\\\\June/.claude/skills/gstack/browse/dist/browse' console *)",
+      "Bash('C:\\\\Users\\\\June/.claude/skills/gstack/browse/dist/browse' js *)",
+      "Bash('C:\\\\Users\\\\June/.claude/skills/gstack/browse/dist/browse' screenshot *)",
+      "Bash(git checkout *)",
+      "Bash(git add *)",
+      "Bash(git commit -m '@ *)",
+      "Bash(git commit --amend -m 'feat: reposition homepage as AI workforce product platform' -m 'Align homepage with the product-company narrative \\(AI Operations Platform / AI workforce\\) over a services framing: *)",
+      "Bash(git commit -m 'feat: mirror AI workforce positioning into whitepaper' -m '- Add '\\\\''The Platform at a Glance'\\\\'' \\(four product capabilities\\) *)",
+      "Bash('C:\\\\Users\\\\June/.claude/skills/gstack/browse/dist/browse' viewport *)",
+      "Bash(git remote *)"
     ]
   }
 }
