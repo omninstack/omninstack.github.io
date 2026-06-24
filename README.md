@@ -1,8 +1,8 @@
 # OmniNStack
 
-**OmniNStack is building the AI Operations Platform that helps companies deploy AI employees, automate workflows, and scale operations.**
+**OmniNStack is the AI Operations Platform for enterprise automation.** It lets companies replace repetitive work with AI-powered teams — deploying autonomous AI agents that run real workflows end-to-end, entirely on infrastructure the organization owns.
 
-We are a product company. OmniNStack replaces repetitive work with AI-powered teams — autonomous agents that run real enterprise workflows end-to-end, entirely on infrastructure the organization owns. Built for high-trust enterprises where data can't leave the building, the platform is on-premise, sovereign, and network-air-gapped by design.
+Built for high-trust enterprises where data can't leave the building, OmniNStack is on-premise, sovereign, and network-air-gapped by design.
 
 ## 🌟 Vision
 
@@ -19,7 +19,7 @@ OmniNStack puts AI-powered teams to work through four tightly integrated capabil
 
 ## 🔬 Proprietary Innovation
 
-Our defensibility comes from technology we engineer ourselves to solve problems off-the-shelf AI cannot:
+OmniNStack is a product company. Our defensibility comes from technology we engineer ourselves to solve problems off-the-shelf AI cannot:
 
 - **Agent Coordination Engine** — A multi-agent orchestration framework where agents plan, delegate, and self-correct reliably across long-running workflows.
 - **Sovereign Memory & Retrieval** — Original AI memory architecture and air-gapped retrieval that deliver citation-backed knowledge fully on-premise.
