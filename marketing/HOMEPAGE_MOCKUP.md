@@ -1,4 +1,4 @@
-# IMAMAPP Homepage
+# Convergo Homepage
 
 * 🇺🇸 **English:** [HOMEPAGE_MOCKUP.md](./HOMEPAGE_MOCKUP.md) (this file)
 * 🇰🇷 **Korean:** [HOMEPAGE_MOCKUP_ko.md](./HOMEPAGE_MOCKUP_ko.md)
@@ -21,11 +21,11 @@ Turn instant messaging into your highest-converting, completely measurable offli
 
 ### 📈 1. True Offline Attribution & POS Integration
 
-**Stop guessing your digital marketing ROI.** IMAMAPP directly bridges the gap between your digital chat sequences and physical store sales.
+**Stop guessing your digital marketing ROI.** Convergo directly bridges the gap between your digital chat sequences and physical store sales.
 
 * **Instant Coupon Redemption:** Customers receive unique barcode or QR coupons right inside their favorite messenger apps. Cashiers scan them at the counter using major POS platforms like **Clover, Toast, OKPOS, or Force**.
 * **Closed-Loop Analytics:** Automatically link offline transaction receipts back to the exact campaign message variant that drove the foot traffic.
-* **Post-Purchase Automation:** The second a transaction settles, IMAMAPP triggers follow-up digital receipts, surveys, or return-discount tokens via WhatsApp or KakaoTalk.
+* **Post-Purchase Automation:** The second a transaction settles, Convergo triggers follow-up digital receipts, surveys, or return-discount tokens via WhatsApp or KakaoTalk.
 
 ---
 

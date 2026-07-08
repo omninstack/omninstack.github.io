@@ -1,4 +1,4 @@
-# IMAMAPP 제품 카탈로그 & 상세 소개서
+# Convergo 제품 카탈로그 & 상세 소개서
 
 * 🇺🇸 **English:** [PRODUCT_CATALOG.md](./PRODUCT_CATALOG.md)
 * 🇰🇷 **Korean:** [PRODUCT_CATALOG_ko.md](./PRODUCT_CATALOG_ko.md) (본 파일)
@@ -18,7 +18,7 @@
 
 ## ── 엔터프라이즈급 아키텍처 (Enterprise-Grade Architecture) ──
 
-IMAMAPP은 고가용성 엔터프라이즈 환경을 고려하여 처음부터 정밀하게 설계되었습니다. 우리의 모던 클라우드 네이티브 스택은 저지연 안정성으로 대규모 메시징 부하를 효율적으로 소화합니다.
+Convergo는 고가용성 엔터프라이즈 환경을 고려하여 처음부터 정밀하게 설계되었습니다. 우리의 모던 클라우드 네이티브 스택은 저지연 안정성으로 대규모 메시징 부하를 효율적으로 소화합니다.
 
 * **비동기 수신 (Asynchronous Ingestion):** **NestJS** 및 분산 메시지 큐(**Kafka / RabbitMQ**)를 사용하여 시스템 지연 없이 갑작스럽게 유입되는 웹훅 트래픽 급증을 흡수합니다.
 * **벡터 기반 검색 (Vector-Driven Search):** **pgvector / Qdrant** 벡터 데이터베이스를 사용해 의미론적 위치 인식 카탈로그 필터링을 내장(native) 처리합니다.

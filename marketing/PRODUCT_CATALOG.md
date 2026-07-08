@@ -1,4 +1,4 @@
-# IMAMAPP Product Catalog & Feature Sheets
+# Convergo Product Catalog & Feature Sheets
 
 * 🇺🇸 **English:** [PRODUCT_CATALOG.md](./PRODUCT_CATALOG.md) (this file)
 * 🇰🇷 **Korean:** [PRODUCT_CATALOG_ko.md](./PRODUCT_CATALOG_ko.md)
@@ -18,7 +18,7 @@
 
 ## ── Enterprise-Grade Architecture ──
 
-IMAMAPP is engineered from the ground up for high-availability enterprise environments. Our modern, cloud-native stack handles complex messaging workloads with low-latency stability.
+Convergo is engineered from the ground up for high-availability enterprise environments. Our modern, cloud-native stack handles complex messaging workloads with low-latency stability.
 
 * **Asynchronous Ingestion:** Built using **NestJS** and distributed message queues (**Kafka / RabbitMQ**) to absorb sudden spikes in incoming webhook traffic without system slowdowns.
 * **Vector-Driven Search:** Uses **pgvector / Qdrant** vector databases to handle semantic, location-aware catalog filtering natively.
@@ -36,4 +36,4 @@ IMAMAPP is engineered from the ground up for high-availability enterprise enviro
 
 **Are you ready to transform your instant messaging channels into measurable sales pipelines?**
 
-Contact the IMAMAPP sales team today to set up a live operational demo or request sandbox access keypairs.
+Contact the Convergo sales team today to set up a live operational demo or request sandbox access keypairs.

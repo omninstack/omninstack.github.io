@@ -1,4 +1,4 @@
-# IMAMAPP: AI-Powered Omnichannel Messaging & Offline POS Attribution Platform
+# Convergo: AI-Powered Omnichannel Messaging & Offline POS Attribution Platform
 
 * 🇺🇸 **English:** [MARKETING_MATERIAL.md](./MARKETING_MATERIAL.md) (this file)
 * 🇰🇷 **Korean:** [MARKETING_MATERIAL_ko.md](./MARKETING_MATERIAL_ko.md)
@@ -9,14 +9,14 @@
 
 In today’s mobile-first world, customers expect businesses to meet them where they already hang out—on instant messaging apps. However, managing campaigns across WhatsApp, KakaoTalk, Telegram, and SMS is fragmented, and proving that a digital message actually drove a physical in-store sale is nearly impossible.
 
-**IMAMAPP** (Instant Message Advertising Marketing AI-Powered Platform) solves this by unifying conversational messaging with AI-driven content generation, resilient failover systems, and real-time offline POS/Kiosk coupon attribution.
+**Convergo**, our AI Customer Engagement Platform, solves this by unifying conversational messaging with AI-driven content generation, resilient failover systems, and real-time offline POS/Kiosk coupon attribution.
 
 ---
 
 ## 🚀 Key Value Propositions
 
 ### 1. **True Offline Attribution & POS Integration**
-Stop guessing your digital marketing ROI. IMAMAPP connects digital conversations to physical retail terminals.
+Stop guessing your digital marketing ROI. Convergo connects digital conversations to physical retail terminals.
 * **Instant Coupon Redemption:** Customers receive custom barcode/QR coupons directly in their messaging apps, which can be scanned and validated in real time at the counter or self-service kiosks (**Clover, Toast, OKPOS, Force**, etc.).
 * **ROI Attribution:** Automatically link physical in-store sales back to the specific digital message or campaign variant that drove the customer to the store.
 * **Post-Purchase Automation:** Automatically trigger follow-up surveys, digital receipts, or return-discount coupons via WhatsApp or KakaoTalk the second a transaction is registered at the POS.
@@ -28,7 +28,7 @@ Boost engagement and conversions using built-in LLM assistants.
 * **Alternative Suggestion Engine:** If an exact item or location is unavailable, the AI automatically proposes the best nearby alternatives and asks clarifying questions to maintain engagement.
 
 ### 3. **Omnichannel Delivery & Resilient Fallback Routing**
-Never lose a lead due to delivery issues. IMAMAPP supports global and regional platforms (WhatsApp, KakaoTalk, Telegram, LINE, Viber, Zalo, WeChat, SMS, RCS).
+Never lose a lead due to delivery issues. Convergo supports global and regional platforms (WhatsApp, KakaoTalk, Telegram, LINE, Viber, Zalo, WeChat, SMS, RCS).
 * **Automated Fallback:** Configure rules like: *"Attempt delivery via WhatsApp first; if the message is not delivered in 15 minutes, automatically send it via SMS."*
 * **Consent & Compliance Sync:** Centralized, highly-available opt-out datastore (Redis) updates unsubscribe requests in real time across all channels, performing pre-flight consent checks to guarantee spam compliance.
 
