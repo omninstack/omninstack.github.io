@@ -48,13 +48,44 @@
             <a href="#" class="logo">Omni<span>N</span>Stack</a>
 
             <div class="nav-links">
-                <a href="#products">Products</a>
-                <a href="#platform">Platform</a>
-                <a href="#how-it-works">How It Works</a>
-                <a href="#architecture">Architecture</a>
-                <a href="#innovation">Innovation</a>
-                <a href="#solutions">Solutions</a>
-                <a href="#team">Team</a>
+                <a href="index.html">Home</a>
+                <div class="nav-item">
+                    <a href="#platform">Platform <span class="caret">&#9662;</span></a>
+                    <div class="dropdown-menu">
+                        <a href="#platform">Platform Overview</a>
+                        <a href="#how-it-works">How It Works</a>
+                        <a href="#architecture">Architecture</a>
+                        <a href="#innovation">Innovation</a>
+                    </div>
+                </div>
+                <div class="nav-item">
+                    <a href="#products">Products <span class="caret">&#9662;</span></a>
+                    <div class="dropdown-menu">
+                        <a href="marketing/convergo.html">Convergo &mdash; Customer Engagement</a>
+                        <a href="marketing/contexa.html">Contexa &mdash; Trust &amp; Safety</a>
+                    </div>
+                </div>
+                <div class="nav-item">
+                    <a href="#industries">Solutions <span class="caret">&#9662;</span></a>
+                    <div class="dropdown-menu">
+                        <a href="#industry-retail">Retail &amp; Franchise</a>
+                        <a href="#industry-commerce">Digital Commerce</a>
+                        <a href="#industry-gaming">Gaming</a>
+                        <a href="#industry-government">Government</a>
+                        <a href="#industry-financial">Financial Services</a>
+                        <a href="#industry-healthcare">Healthcare</a>
+                    </div>
+                </div>
+                <a href="developers.html">Developers</a>
+                <div class="nav-item">
+                    <a href="whitepaper.html">Resources <span class="caret">&#9662;</span></a>
+                    <div class="dropdown-menu">
+                        <a href="whitepaper.html">Whitepaper</a>
+                        <a href="blog.html">Blog</a>
+                        <a href="documentation.html">Documentation</a>
+                    </div>
+                </div>
+                <a href="company.html">Company</a>
                 <a href="mailto:info@omninstack.com" class="btn btn-outline"
                     style="padding: 0.7rem 1.8rem; font-size: 0.75rem; border-radius: 12px;">Contact Us</a>
             </div>
@@ -167,6 +198,52 @@
                             policy violation detection with real-time risk scoring and an explainable, fully-logged
                             audit trail for every moderation decision.</p>
                         <a href="marketing/contexa.html" class="accent-text" style="text-decoration: none; font-weight: bold; display: inline-flex; align-items: center; gap: 0.25rem; transition: var(--ease);">Explore Contexa &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- INDUSTRIES -->
+        <section id="industries">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: 5rem;">
+                    <h4 class="accent-text mono" style="margin-bottom: 1rem;">Industries We Serve</h4>
+                    <h2>Built for <span class="accent-text">High-Trust Enterprises</span></h2>
+                    <p style="color: var(--text-secondary); max-width: 680px; margin: 1.5rem auto 0; font-size: 1.05rem;">
+                        Convergo and Contexa are already deployed against real customer engagement and
+                        Trust &amp; Safety problems across these verticals.</p>
+                </div>
+
+                <div class="features-grid">
+                    <div class="glass-card reveal" id="industry-retail">
+                        <h3 style="margin-bottom: 1rem;">Retail &amp; Franchise</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem;">Customer engagement, coupon
+                            marketing, and POS integration that ties every campaign to in-store revenue.</p>
+                    </div>
+                    <div class="glass-card reveal" id="industry-commerce">
+                        <h3 style="margin-bottom: 1rem;">Digital Commerce</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem;">Marketing automation, omnichannel
+                            messaging, and CRM workflows that keep customer conversations in one system.</p>
+                    </div>
+                    <div class="glass-card reveal" id="industry-gaming">
+                        <h3 style="margin-bottom: 1rem;">Gaming</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem;">Trust &amp; Safety for in-game
+                            and open chat &mdash; real-time moderation and community protection at scale.</p>
+                    </div>
+                    <div class="glass-card reveal" id="industry-government">
+                        <h3 style="margin-bottom: 1rem;">Government</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem;">Citizen engagement, content
+                            moderation, and compliance workflows built for public-sector accountability.</p>
+                    </div>
+                    <div class="glass-card reveal" id="industry-financial">
+                        <h3 style="margin-bottom: 1rem;">Financial Services</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem;">AI assistants, risk monitoring,
+                            and compliant customer communication for regulated institutions.</p>
+                    </div>
+                    <div class="glass-card reveal" id="industry-healthcare">
+                        <h3 style="margin-bottom: 1rem;">Healthcare</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem;">Patient engagement, appointment
+                            reminders, and knowledge assistants &mdash; without PHI ever leaving your network.</p>
                     </div>
                 </div>
             </div>
@@ -380,15 +457,27 @@
             </div>
         </section>
 
-        <!-- SOLUTIONS -->
-        <section id="solutions" style="background: rgba(0, 31, 63, 0.2);">
+        <!-- FUTURE VISION / ROADMAP -->
+        <section id="roadmap" style="background: rgba(0, 31, 63, 0.2);">
             <div class="container">
-                <div style="text-align: center; margin-bottom: 5rem;">
+                <div style="text-align: center; margin-bottom: 3.5rem;">
                     <h4 class="accent-text mono" style="margin-bottom: 1rem;">What's Next on the Platform</h4>
-                    <h2>Future Vertical <span class="accent-text">AI Products</span></h2>
+                    <h2>Building the Enterprise AI Platform <span class="accent-text">for the Next Decade</span></h2>
                     <p style="color: var(--text-secondary); max-width: 660px; margin: 1.5rem auto 0; font-size: 1.05rem;">
-                        The same shared AI infrastructure behind Convergo and Contexa extends naturally into these
-                        high-trust verticals — our roadmap for future products built on one platform.</p>
+                        Today, one shared AI platform powers two products: <strong class="accent-text">Convergo</strong>
+                        and <strong class="accent-text">Contexa</strong>. Tomorrow, the same infrastructure extends
+                        into these high-trust verticals — a product roadmap, not two disconnected applications.</p>
+                </div>
+
+                <div class="capability-band reveal" style="margin-bottom: 4rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+                    <div class="capability-item">
+                        <div class="accent-text mono" style="font-size: 0.75rem; margin-bottom: 0.5rem;">Today</div>
+                        <p style="color: var(--text-primary); font-weight: 700;">Convergo &middot; Contexa</p>
+                    </div>
+                    <div class="capability-item">
+                        <div class="accent-text mono" style="font-size: 0.75rem; margin-bottom: 0.5rem;">Tomorrow</div>
+                        <p style="color: var(--text-primary); font-weight: 700;">Compliance &middot; Healthcare &middot; Manufacturing &middot; Security &middot; Government</p>
+                    </div>
                 </div>
 
                 <div class="features-grid">
@@ -417,6 +506,15 @@
                         <h3 style="margin-bottom: 1rem;">Physical AI & Industrial</h3>
                         <p style="color: var(--text-secondary); font-size: 0.95rem;">Agents that drive physical
                             assets, edge robotics, and real-time analytics across industrial and resource sectors.</p>
+                    </div>
+
+                    <div class="glass-card reveal">
+                        <div class="card-icon">
+                            <img src="assets/network_isolated.png" alt="AI Compliance Icon" class="card-icon-img">
+                        </div>
+                        <h3 style="margin-bottom: 1rem;">AI Compliance</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem;">Agents that monitor regulated
+                            communications and workflows against policy, with a fully-logged, defensible audit trail.</p>
                     </div>
                 </div>
             </div>
@@ -464,6 +562,23 @@
             </div>
         </section>
 
+        <!-- FUNDING / ORIGIN -->
+        <section id="canada">
+            <div class="container">
+                <div class="glass-card reveal origin-card" style="max-width: 900px; margin: 0 auto;">
+                    <div class="origin-flag">🍁</div>
+                    <div>
+                        <h4 class="accent-text mono" style="margin-bottom: 1rem;">Built in Canada</h4>
+                        <h2 style="font-size: 2.2rem; margin-bottom: 1.25rem;">Designed for Global Enterprises</h2>
+                        <p style="color: var(--text-secondary); font-size: 1.05rem;">OmniNStack is developing
+                            enterprise AI infrastructure from British Columbia, Canada, helping organizations
+                            deploy secure, scalable, and explainable AI platforms for customer engagement and
+                            digital trust.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- PROMISE / CTA -->
         <section style="text-align: center;">
             <div class="container">
@@ -484,11 +599,19 @@
         <div class="container">
             <div class="footer-logo logo" style="justify-content: center; margin-bottom: 2rem;">Omni<span>N</span>Stack
             </div>
+            <div class="footer-tagline">
+                <span class="accent-text">Enterprise AI Platform Company</span>
+                <p>Building AI infrastructure for Customer Engagement, Trust &amp; Safety, and Enterprise Intelligence.</p>
+            </div>
             <div class="footer-nav">
                 <a href="index.html">Home</a>
-                <a href="whitepaper.html">Whitepaper</a>
                 <a href="marketing/convergo.html">Convergo Platform</a>
                 <a href="marketing/contexa.html">Contexa Platform</a>
+                <a href="developers.html">Developers</a>
+                <a href="whitepaper.html">Whitepaper</a>
+                <a href="blog.html">Blog</a>
+                <a href="documentation.html">Documentation</a>
+                <a href="company.html">Company</a>
             </div>
             <p class="footer-address">
                 OMNINSTACK AI SOLUTIONS INC.<br>

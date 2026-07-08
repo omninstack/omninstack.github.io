@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developers | OmniNStack Enterprise AI Platform</title>
+    <meta name="description"
+        content="Build on OmniNStack's shared AI infrastructure — the LLM gateway, agent orchestration, and messaging APIs behind Convergo and Contexa.">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <style>
+        .page-content { max-width: 1000px; margin: 0 auto; padding: 4rem 2rem; }
+        .page-header { text-align: center; margin-bottom: 4rem; }
+        .section-block { margin-bottom: 5rem; }
+        .section-block h3 { font-size: 2.2rem; margin-bottom: 2rem; color: var(--cyan); border-bottom: 1px solid var(--glass-border); padding-bottom: 0.8rem; }
+        .section-block p { font-size: 1.15rem; color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.8; }
+        .glass-box { background: var(--glass-bg); border: 1px solid var(--glass-border); padding: 3rem; border-radius: 28px; margin-bottom: 2rem; transition: var(--ease); }
+        .glass-box:hover { border-color: var(--cyan); transform: translateY(-5px); background: rgba(0, 229, 255, 0.02); box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5); }
+        .glass-box h4 { font-size: 1.4rem; color: var(--text-primary); margin-bottom: 1.2rem; }
+        .highlight-list { list-style: none; padding-left: 0; }
+        .highlight-list li { position: relative; padding-left: 1.75rem; margin-bottom: 1rem; color: var(--text-secondary); font-size: 1.05rem; }
+        .highlight-list li::before { content: '→'; position: absolute; left: 0; color: var(--cyan); font-weight: bold; }
+        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+        @media (max-width: 1024px) { .grid-3 { grid-template-columns: 1fr; } }
+        .btn-group { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem; }
+    </style>
+</head>
+
+<body>
+
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+
+    <nav>
+        <div class="container nav-content">
+            <a href="index.html" class="logo">Omni<span>N</span>Stack</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="index.html#platform">Platform</a>
+                <a href="index.html#products">Products</a>
+                <a href="developers.html" class="active">Developers</a>
+                <a href="whitepaper.html">Resources</a>
+                <a href="company.html">Company</a>
+                <a href="mailto:info@omninstack.com" class="btn btn-outline"
+                    style="padding: 0.7rem 1.8rem; font-size: 0.75rem; border-radius: 12px;">Contact Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="page-content">
+        <header class="page-header reveal">
+            <h4 class="accent-text mono">For Developers</h4>
+            <h2>Build on the <span class="gradient-text">OmniNStack Platform</span></h2>
+            <p style="font-size: 1.35rem; color: var(--silver); margin-top: 1rem; max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.6;">
+                The same shared AI infrastructure and enterprise messaging APIs that power Convergo and Contexa,
+                available to integrate into your own systems.
+            </p>
+        </header>
+
+        <section class="section-block reveal">
+            <div class="glass-box" style="border-color: var(--cyan); background: linear-gradient(135deg, rgba(0, 31, 63, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%); padding: 3.5rem; text-align: center;">
+                <h4 style="font-size: 1.6rem; color: #fff; margin-bottom: 1.5rem; line-height: 1.4;">
+                    Enterprise Messaging &amp; AI APIs, built for production traffic.
+                </h4>
+                <p style="font-size: 1.15rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 0;">
+                    OmniNStack is API-first: every capability inside Convergo and Contexa &mdash; omnichannel
+                    delivery, AI copywriting, risk scoring, evidence logging &mdash; is available as a service your
+                    engineering team can call directly. API access is provisioned per enterprise engagement.
+                </p>
+                <div class="btn-group">
+                    <a href="mailto:info@omninstack.com" class="btn btn-primary" style="padding: 1rem 2.5rem; font-size: 0.8rem; border-radius: 12px;">Request API Access</a>
+                    <a href="whitepaper.html" class="btn btn-outline" style="padding: 1rem 2.5rem; font-size: 0.8rem; border-radius: 12px;">Read the Technical Whitepaper</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-block reveal">
+            <h3>What You Can Build</h3>
+            <div class="grid-3">
+                <div class="glass-box" style="padding: 2.5rem; margin-bottom: 0;">
+                    <h4 style="color: var(--cyan); font-size: 1.25rem;">Enterprise Messaging APIs</h4>
+                    <p style="font-size: 1rem; margin-bottom: 0; line-height: 1.6; color: var(--text-secondary);">Send and receive across WhatsApp, KakaoTalk, Telegram, SMS, and RCS through one Convergo API, with automated cross-channel failover.</p>
+                </div>
+                <div class="glass-box" style="padding: 2.5rem; margin-bottom: 0;">
+                    <h4 style="color: var(--cyan); font-size: 1.25rem;">Moderation &amp; Risk Scoring</h4>
+                    <p style="font-size: 1rem; margin-bottom: 0; line-height: 1.6; color: var(--text-secondary);">Call Contexa's context-aware classifier to score user-generated content in real time and route decisions into your own review tools.</p>
+                </div>
+                <div class="glass-box" style="padding: 2.5rem; margin-bottom: 0;">
+                    <h4 style="color: var(--cyan); font-size: 1.25rem;">Multi-Model AI Gateway</h4>
+                    <p style="font-size: 1rem; margin-bottom: 0; line-height: 1.6; color: var(--text-secondary);">Route inference across public and private LLMs through the same gateway that powers our platform, with zero vendor lock-in.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-block reveal">
+            <h3>Getting Started</h3>
+            <div class="glass-box">
+                <ul class="highlight-list">
+                    <li><strong>Request access:</strong> Tell us what you're building and which APIs you need &mdash; messaging, moderation, or gateway access.</li>
+                    <li><strong>Scoped sandbox:</strong> We provision a sandbox environment scoped to your use case for integration testing.</li>
+                    <li><strong>Production rollout:</strong> Our solutions architects work with your team through go-live, including rate limits, failover, and monitoring setup.</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-logo logo" style="justify-content: center; margin-bottom: 2rem;">Omni<span>N</span>Stack</div>
+            <div class="footer-tagline">
+                <span class="accent-text">Enterprise AI Platform Company</span>
+                <p>Building AI infrastructure for Customer Engagement, Trust &amp; Safety, and Enterprise Intelligence.</p>
+            </div>
+            <div class="footer-nav">
+                <a href="index.html">Home</a>
+                <a href="marketing/convergo.html">Convergo Platform</a>
+                <a href="marketing/contexa.html">Contexa Platform</a>
+                <a href="developers.html">Developers</a>
+                <a href="whitepaper.html">Whitepaper</a>
+                <a href="blog.html">Blog</a>
+                <a href="documentation.html">Documentation</a>
+                <a href="company.html">Company</a>
+            </div>
+            <p class="footer-address">
+                OMNINSTACK AI SOLUTIONS INC.<br>
+                Suite 1028 20055 Willowbrook Drive Unit #200 Langley, BC V2Y 2T5 Canada
+            </p>
+            <p class="footer-copy">Proudly designed &amp; engineered in British Columbia, Canada.</p>
+            <p class="footer-copy">&copy; 2026 OmniNStack. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

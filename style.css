@@ -319,12 +319,74 @@ nav {
     box-shadow: 0 0 10px var(--cyan);
 }
 
-.nav-links a:hover { 
-    color: #fff; 
+.nav-links a:hover {
+    color: #fff;
 }
 
 .nav-links a:hover::after {
     width: 100%;
+}
+
+/* Nav Dropdowns */
+.nav-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.nav-item > a .caret {
+    display: inline-block;
+    margin-left: 0.3em;
+    font-size: 0.65em;
+    transition: var(--ease);
+    transform: translateY(-1px);
+}
+
+.nav-item:hover > a .caret {
+    transform: translateY(1px) rotate(180deg);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(8px);
+    min-width: 220px;
+    padding: 0.6rem;
+    background: rgba(2, 4, 8, 0.96);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), 0 0 30px rgba(0, 229, 255, 0.08);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: var(--ease);
+    z-index: 1001;
+}
+
+.nav-item:hover .dropdown-menu,
+.nav-item:focus-within .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 0.65rem 1rem;
+    border-radius: 10px;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+}
+
+.dropdown-menu a::after { display: none; }
+
+.dropdown-menu a:hover {
+    background: rgba(0, 229, 255, 0.08);
+    color: var(--cyan);
 }
 
 .hero .container {
@@ -476,7 +538,7 @@ nav {
 }
 
 /* Sections Backgrounds */
-#platform, #solutions {
+#platform, #roadmap {
     background: linear-gradient(to bottom, rgba(0, 31, 63, 0.3), transparent);
 }
 
@@ -489,8 +551,29 @@ footer {
 }
 
 .footer-logo { margin-bottom: 2rem; }
+.footer-tagline { max-width: 620px; margin: 0 auto 2.5rem; }
+.footer-tagline .accent-text { display: block; font-size: 0.95rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.6rem; }
+.footer-tagline p { color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6; }
 .footer-address { color: var(--text-secondary); font-size: 0.85rem; line-height: 1.6; margin-bottom: 1.5rem; }
 .footer-copy { color: var(--text-muted); font-size: 0.85rem; letter-spacing: 0.05em; }
+
+/* Funding / Origin Section */
+.origin-card {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 2.5rem;
+    align-items: center;
+    padding: 3.5rem;
+}
+
+.origin-flag {
+    font-size: 3rem;
+    line-height: 1;
+}
+
+@media (max-width: 640px) {
+    .origin-card { grid-template-columns: 1fr; text-align: center; }
+}
 
 /* ─── Animations ─────────────────────────────────── */
 .reveal {
@@ -525,6 +608,7 @@ footer {
 /* Below ~960px the full link row no longer fits; keep logo + Contact button */
 @media (max-width: 959px) {
     .nav-links a:not(.btn) { display: none; }
+    .nav-links .nav-item { display: none; }
 }
 
 @media (max-width: 768px) {
