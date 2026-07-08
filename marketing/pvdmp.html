@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PVDMP Policy Violation Detection & Moderation Platform | OmniNStack Solutions</title>
+    <meta name="description" content="PVDMP: AI-Powered Policy Violation Detection & Moderation Platform. Score, log, and act on policy-violating content in real time, while cutting false positives on quotes, satire, and counter-speech that keyword filters get wrong.">
+
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" type="image/png" href="../assets/favicon.png">
+    <style>
+        .page-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-block {
+            margin-bottom: 5rem;
+            animation: fadeIn 1s ease-out forwards;
+            opacity: 0;
+        }
+
+        .section-block.reveal.active {
+            opacity: 1;
+        }
+
+        .section-block h3 {
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+            color: var(--cyan);
+            border-bottom: 1px solid var(--glass-border);
+            padding-bottom: 0.8rem;
+        }
+
+        .section-block p {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .glass-box {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            padding: 3rem;
+            border-radius: 28px;
+            margin-bottom: 2rem;
+            transition: var(--ease);
+        }
+
+        .glass-box:hover {
+            border-color: var(--cyan);
+            transform: translateY(-5px);
+            background: rgba(0, 229, 255, 0.02);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .glass-box h4 {
+            font-size: 1.4rem;
+            color: var(--text-primary);
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .highlight-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .highlight-list li {
+            position: relative;
+            padding-left: 1.75rem;
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+        }
+
+        .highlight-list li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--cyan);
+            font-weight: bold;
+        }
+
+        /* Table Design */
+        .table-responsive {
+            overflow-x: auto;
+            margin-bottom: 3rem;
+            border-radius: 20px;
+            border: 1px solid var(--glass-border);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--glass-bg);
+            text-align: left;
+        }
+
+        th, td {
+            padding: 1.25rem 1.5rem;
+        }
+
+        th {
+            background-color: rgba(0, 229, 255, 0.08);
+            color: var(--cyan);
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 0.05em;
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        td {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        @media (max-width: 1024px) {
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+
+    <nav>
+        <div class="container nav-content">
+            <a href="../index.html" class="logo">Omni<span>N</span>Stack</a>
+            <div class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="../index.html#architecture">Architecture</a>
+                <a href="pvdmp.html" class="active">PVDMP Platform</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="page-content">
+        <header class="page-header reveal">
+            <h4 class="accent-text mono">Trust & Safety</h4>
+            <h2>PVDMP <span class="gradient-text">Overview</span></h2>
+            <p style="font-size: 1.35rem; color: var(--silver); margin-top: 1rem; max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.6;">
+                Score, Log, and Act on Policy-Violating Content — Without Drowning Legitimate Speech in False Positives
+            </p>
+        </header>
+
+        <!-- HERO INTRODUCTION -->
+        <section class="section-block reveal" id="overview-sec">
+            <div class="glass-box" style="border-color: var(--cyan); background: linear-gradient(135deg, rgba(0, 31, 63, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%); padding: 3.5rem;">
+                <h4 style="font-size: 1.6rem; color: #fff; margin-bottom: 1.5rem; line-height: 1.4;">
+                    Turn moderation from a manual, inconsistent chore into an auditable, real-time pipeline.
+                </h4>
+                <p style="font-size: 1.15rem; color: var(--text-secondary); line-height: 1.8;">
+                    Hate speech, harassment, and coded slang keep mutating faster than keyword filters can keep up, while manual review teams can't keep pace with volume — and every blocking decision needs a defensible paper trail. Off-the-shelf classifiers make it worse in one specific way: they flag the token, not the context, so quotes, satire, counter-speech, and reclaimed language get blocked right alongside the violations they were quoting.
+                </p>
+                <p style="font-size: 1.15rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 2.5rem;">
+                    <strong>PVDMP</strong> (Policy Violation Detection & Moderation Platform) analyzes posts, comments, chat, nicknames, and profile text across your community surfaces, scores policy-violation risk in real time, and routes each decision — allow, monitor, review, or block — into a fully logged evidence trail your moderators and legal team can actually stand behind.
+                </p>
+                <div class="btn-group">
+                    <a href="mailto:info@omninstack.com" class="btn btn-primary" style="padding: 1rem 2.5rem; font-size: 0.8rem; border-radius: 12px;">Book a Live Demo</a>
+                    <a href="#" class="btn btn-outline" style="padding: 1rem 2.5rem; font-size: 0.8rem; border-radius: 12px;">Explore API Sandbox</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CAPABILITIES MATRIX -->
+        <section class="section-block reveal" id="matrix-sec">
+            <h3>Capability Matrix</h3>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Product Capabilities</th>
+                            <th>Core Functions</th>
+                            <th>Business Impact</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="color: #fff; font-weight: 700;">Context-Aware Classifier</td>
+                            <td>Rule engine + AI classifier + LLM context analyzer for quotes, satire, and counter-speech.</td>
+                            <td>Fewer false positives, less over-blocking of legitimate speech.</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #fff; font-weight: 700;">Multi-Category Risk Scoring</td>
+                            <td>Eight policy categories scored 0–100, from hate speech to self-harm risk.</td>
+                            <td>Consistent, explainable thresholds instead of per-moderator judgment calls.</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #fff; font-weight: 700;">Automated Decision Routing</td>
+                            <td>Allow / monitor / review-queue / auto-block based on risk tier.</td>
+                            <td>Cuts manual review load and speeds up response time.</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #fff; font-weight: 700;">Evidence & Trust Score Ledger</td>
+                            <td>Full detection history, moderator actions, and per-user trust scores.</td>
+                            <td>Defensible audit trail for disputes and compliance review.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- CORE VALUE PILLARS -->
+        <section class="section-block reveal" id="pillars-sec">
+            <h3>Key Value Propositions</h3>
+            <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+
+                <div class="glass-box">
+                    <h4><span>🎯</span> 1. Context Over Keywords</h4>
+                    <p>Keyword filters and off-the-shelf classifiers score tokens, not meaning — so quotes, satire, counter-speech, and reclaimed language get blocked alongside real violations.</p>
+                    <ul class="highlight-list">
+                        <li><strong>Layered Detection:</strong> A rule engine for known terms and evasion patterns (character-splitting, initialisms, lookalike substitution) feeds a KoBERT-class classifier, refined by an LLM context analyzer for the cases that need judgment.</li>
+                        <li><strong>Multi-Category Scoring:</strong> Every piece of content is scored across eight policy categories — hate speech, harassment, extremist content, misinformation, toxic behavior, sexual content, self-harm risk, and community-specific rulesets — with per-category confidence, not a single pass/fail flag.</li>
+                        <li><strong>Dynamic Rulesets:</strong> Moderators register new slang, evasions, and community-specific terms as they emerge, without waiting on a model retrain.</li>
+                    </ul>
+                </div>
+
+                <div class="glass-box">
+                    <h4><span>⚖️</span> 2. Real-Time Risk Scoring & Automated Action</h4>
+                    <p>Every piece of content resolves to a single 0–100 risk score, blending content risk with the author's violation history — and routes straight to the right action.</p>
+                    <ul class="highlight-list">
+                        <li><strong>Four-Tier Decisioning:</strong> Low risk is allowed, medium is monitored, high goes to a moderator review queue, and critical is auto-blocked — with the same thresholds applied consistently, every time.</li>
+                        <li><strong>User Trust Scoring:</strong> Accounts carry a trust score that degrades on violations and recovers over time, so repeat offenders get stricter scrutiny without penalizing a single bad day.</li>
+                        <li><strong>Sub-Second Targets:</strong> Built for a real-time posting experience — sub-second scoring latency so moderation doesn't become the bottleneck in your comment or chat flow.</li>
+                    </ul>
+                </div>
+
+                <div class="glass-box">
+                    <h4><span>🗂️</span> 3. Evidence Logging & Defensible Moderation</h4>
+                    <p>Every detection and every moderator action is written to an evidence log — because when a user disputes a block, "the AI flagged it" isn't a defense.</p>
+                    <ul class="highlight-list">
+                        <li><strong>Full Audit Trail:</strong> Original text, detection timestamp, matched rules, per-category AI scores, final risk score, and the resulting decision are all retained and searchable.</li>
+                        <li><strong>Feedback Loop:</strong> Moderator overrides and false-positive reports feed directly back into training data, so the classifier improves on your community's actual edge cases over time.</li>
+                    </ul>
+                </div>
+
+                <div class="glass-box">
+                    <h4><span>📊</span> 4. Operator Dashboard & RBAC</h4>
+                    <p>Give admins, moderators, and read-only stakeholders exactly the access they need, backed by a live view of what's happening across your platform.</p>
+                    <ul class="highlight-list">
+                        <li><strong>Live Detection Feed & Review Queue:</strong> Real-time violation stream, risk distribution, repeat-offender rankings, and an approve / remove / block / permanently-block queue for anything routed to human review.</li>
+                        <li><strong>Role-Based Access:</strong> Admins manage policy and retraining triggers, moderators work the queue, and viewers get read-only analytics — with every admin action captured in an audit log.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- TARGET AUDIENCE -->
+        <section class="section-block reveal" id="audience-sec">
+            <h3>Target Customer Profiles</h3>
+            <div class="grid-3">
+                <div class="glass-box" style="padding: 2.5rem; margin-bottom: 0;">
+                    <h4 style="color: var(--cyan); font-size: 1.25rem; margin-bottom: 1rem;">Community & Social Platforms</h4>
+                    <p style="font-size: 1rem; margin-bottom: 0; line-height: 1.6;">Boards, comment sections, and open chat rooms that need real-time moderation at volume without a manual review team reading every post.</p>
+                </div>
+                <div class="glass-box" style="padding: 2.5rem; margin-bottom: 0;">
+                    <h4 style="color: var(--cyan); font-size: 1.25rem; margin-bottom: 1rem;">Game & Live Chat Operators</h4>
+                    <p style="font-size: 1rem; margin-bottom: 0; line-height: 1.6;">In-game chat and open-chat services where harassment and toxic behavior spike fast and slang evolves faster than static filters can track.</p>
+                </div>
+                <div class="glass-box" style="padding: 2.5rem; margin-bottom: 0;">
+                    <h4 style="color: var(--cyan); font-size: 1.25rem; margin-bottom: 1rem;">Trust & Safety Teams</h4>
+                    <p style="font-size: 1rem; margin-bottom: 0; line-height: 1.6;">Teams that need an auditable, explainable decision trail for every block — not just a flag — to stand behind moderation decisions when they're challenged.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-logo logo" style="justify-content: center; margin-bottom: 2rem;">Omni<span>N</span>Stack</div>
+            <div class="footer-nav" style="display: flex; justify-content: center; gap: 2rem; margin-bottom: 2rem; flex-wrap: wrap;">
+                <a href="../index.html" style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">Home</a>
+                <a href="../whitepaper.html" style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">Whitepaper</a>
+                <a href="../marketing/imamapp.html" style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">IMAMAPP Platform</a>
+                <a href="pvdmp.html" style="color: var(--cyan); text-decoration: none; font-size: 0.85rem; font-weight: bold;">PVDMP Platform</a>
+            </div>
+            <p class="footer-address">
+                OMNINSTACK AI SOLUTIONS INC.<br>
+                Suite 1028 20055 Willowbrook Drive Unit #200 Langley, BC V2Y 2T5 Canada
+            </p>
+            <p class="footer-copy">&copy; 2026 OmniNStack. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple Scroll Reveal
+        const reveals = document.querySelectorAll('.reveal');
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+        reveals.forEach(el => observer.observe(el));
+    </script>
+</body>
+
+</html>
