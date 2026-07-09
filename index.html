@@ -47,7 +47,7 @@
         <div class="container nav-content">
             <a href="#" class="logo">Omni<span>N</span>Stack</a>
 
-            <div class="nav-links">
+            <div class="nav-links" id="nav-links">
                 <a href="index.html">Home</a>
                 <div class="nav-item">
                     <a href="#platform">Platform <span class="caret">&#9662;</span></a>
@@ -78,17 +78,20 @@
                 </div>
                 <a href="developers.html">Developers</a>
                 <div class="nav-item">
-                    <a href="whitepaper.html">Resources <span class="caret">&#9662;</span></a>
+                    <a href="#" class="nav-parent">Resources <span class="caret">&#9662;</span></a>
                     <div class="dropdown-menu">
                         <a href="whitepaper.html">Whitepaper</a>
-                        <a href="blog.html">Blog</a>
-                        <a href="documentation.html">Documentation</a>
+                        <a href="blog.html">Blog <span class="soon-badge">Soon</span></a>
+                        <a href="documentation.html">Documentation <span class="soon-badge">Soon</span></a>
                     </div>
                 </div>
                 <a href="company.html">Company</a>
                 <a href="mailto:info@omninstack.com" class="btn btn-outline"
                     style="padding: 0.7rem 1.8rem; font-size: 0.75rem; border-radius: 12px;">Contact Us</a>
             </div>
+            <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
+                <span></span><span></span><span></span>
+            </button>
         </div>
     </nav>
 
@@ -216,31 +219,60 @@
 
                 <div class="features-grid">
                     <div class="glass-card reveal" id="industry-retail">
+                        <div class="card-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M3 9l1.5-5h15L21 9M3 9v10a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V9M3 9h18M8 20v-6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v6" />
+                            </svg>
+                        </div>
                         <h3 style="margin-bottom: 1rem;">Retail &amp; Franchise</h3>
                         <p style="color: var(--text-secondary); font-size: 0.95rem;">Customer engagement, coupon
                             marketing, and POS integration that ties every campaign to in-store revenue.</p>
                     </div>
                     <div class="glass-card reveal" id="industry-commerce">
+                        <div class="card-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="9" cy="20" r="1" />
+                                <circle cx="18" cy="20" r="1" />
+                                <path d="M3 4h2l2.4 12.2a2 2 0 0 0 2 1.8h8.2a2 2 0 0 0 2-1.8L21 8H6" />
+                            </svg>
+                        </div>
                         <h3 style="margin-bottom: 1rem;">Digital Commerce</h3>
                         <p style="color: var(--text-secondary); font-size: 0.95rem;">Marketing automation, omnichannel
                             messaging, and CRM workflows that keep customer conversations in one system.</p>
                     </div>
                     <div class="glass-card reveal" id="industry-gaming">
+                        <div class="card-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="8" width="20" height="10" rx="5" />
+                                <path d="M7 11v4M5 13h4M15.5 12.5h.01M18 14.5h.01" />
+                            </svg>
+                        </div>
                         <h3 style="margin-bottom: 1rem;">Gaming</h3>
                         <p style="color: var(--text-secondary); font-size: 0.95rem;">Trust &amp; Safety for in-game
                             and open chat &mdash; real-time moderation and community protection at scale.</p>
                     </div>
                     <div class="glass-card reveal" id="industry-government">
+                        <div class="card-icon">
+                            <img src="assets/gov_public.png" alt="Government Icon" class="card-icon-img">
+                        </div>
                         <h3 style="margin-bottom: 1rem;">Government</h3>
                         <p style="color: var(--text-secondary); font-size: 0.95rem;">Citizen engagement, content
                             moderation, and compliance workflows built for public-sector accountability.</p>
                     </div>
                     <div class="glass-card reveal" id="industry-financial">
+                        <div class="card-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M3 21h18M4 21V10M20 21V10M2 10l10-6 10 6M6 10v6M10 10v6M14 10v6M18 10v6" />
+                            </svg>
+                        </div>
                         <h3 style="margin-bottom: 1rem;">Financial Services</h3>
                         <p style="color: var(--text-secondary); font-size: 0.95rem;">AI assistants, risk monitoring,
                             and compliant customer communication for regulated institutions.</p>
                     </div>
                     <div class="glass-card reveal" id="industry-healthcare">
+                        <div class="card-icon">
+                            <img src="assets/healthcare.png" alt="Healthcare Icon" class="card-icon-img">
+                        </div>
                         <h3 style="margin-bottom: 1rem;">Healthcare</h3>
                         <p style="color: var(--text-secondary); font-size: 0.95rem;">Patient engagement, appointment
                             reminders, and knowledge assistants &mdash; without PHI ever leaving your network.</p>
@@ -566,7 +598,11 @@
         <section id="canada">
             <div class="container">
                 <div class="glass-card reveal origin-card" style="max-width: 900px; margin: 0 auto;">
-                    <div class="origin-flag">🍁</div>
+                    <div class="origin-flag">
+                        <svg width="52" height="52" viewBox="0 0 100 100" fill="var(--cyan)" style="filter: drop-shadow(0 0 10px rgba(0, 229, 255, 0.4));">
+                            <path d="M50 4 L58 26 L74 14 L69 34 L92 32 L76 46 L92 58 L70 58 L74 78 L58 66 L54 90 L50 74 L46 90 L42 66 L26 78 L30 58 L8 58 L24 46 L8 32 L31 34 L26 14 L42 26 Z" />
+                        </svg>
+                    </div>
                     <div>
                         <h4 class="accent-text mono" style="margin-bottom: 1rem;">Built in Canada</h4>
                         <h2 style="font-size: 2.2rem; margin-bottom: 1.25rem;">Designed for Global Enterprises</h2>
@@ -601,7 +637,7 @@
             </div>
             <div class="footer-tagline">
                 <span class="accent-text">Enterprise AI Platform Company</span>
-                <p>Building AI infrastructure for Customer Engagement, Trust &amp; Safety, and Enterprise Intelligence.</p>
+                <p>One shared AI platform. Two enterprise products. Built in Canada.</p>
             </div>
             <div class="footer-nav">
                 <a href="index.html">Home</a>

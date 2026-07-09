@@ -160,6 +160,44 @@
             margin-bottom: 6rem;
         }
 
+        .table-responsive {
+            overflow-x: auto;
+            margin-bottom: 2.5rem;
+            border-radius: 20px;
+            border: 1px solid var(--glass-border);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--glass-bg);
+            text-align: left;
+        }
+
+        th, td {
+            padding: 1.1rem 1.4rem;
+        }
+
+        th {
+            background-color: rgba(0, 229, 255, 0.08);
+            color: var(--cyan);
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 0.05em;
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        td {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 0.92rem;
+            color: var(--text-secondary);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
@@ -175,7 +213,7 @@
     <nav>
         <div class="container nav-content">
             <a href="index.html" class="logo">Omni<span>N</span>Stack</a>
-            <div class="nav-links">
+            <div class="nav-links" id="nav-links">
                 <a href="index.html">Home</a>
                 <a href="index.html#platform">Platform</a>
                 <a href="index.html#products">Products</a>
@@ -185,6 +223,9 @@
                 <a href="mailto:info@omninstack.com" class="btn btn-outline"
                     style="padding: 0.7rem 1.8rem; font-size: 0.75rem; border-radius: 12px;">Contact Us</a>
             </div>
+            <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
+                <span></span><span></span><span></span>
+            </button>
         </div>
     </nav>
 
@@ -253,14 +294,90 @@
             </div>
         </section>
 
+        <section class="wp-section reveal" id="key-technologies">
+            <h3>III. Key Technologies: Dataset Creation &amp; RAG</h3>
+            <p>The platform's core technical foundation is a curated dataset pipeline feeding Retrieval-Augmented Generation (RAG) &mdash; grounding every AI response in enterprise-owned data, without that data ever leaving the network.</p>
+
+            <h4 style="color: var(--text-primary); margin-bottom: 1rem; font-size: 1.1rem;">Data Sources</h4>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Source</th>
+                            <th>What It Feeds</th>
+                            <th>Consuming Stage</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="color: #fff; font-weight: 700;">SNS (Social Media)</td>
+                            <td>Posts, comments, mentions, DMs &mdash; brand sentiment, trending topics, and user-generated content signals.</td>
+                            <td>Data Ingestion &amp; Chunking</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #fff; font-weight: 700;">User Inputs</td>
+                            <td>Chat messages, support tickets, form submissions, feedback &mdash; first-party conversational data.</td>
+                            <td>Data Ingestion &amp; Chunking</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #fff; font-weight: 700;">Sales Catalogs</td>
+                            <td>Product listings, pricing, inventory, promotions &mdash; structured commerce data.</td>
+                            <td>Data Ingestion &amp; Chunking</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4 style="color: var(--text-primary); margin-bottom: 1rem; font-size: 1.1rem;">RAG Pipeline</h4>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Stage</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="color: #fff; font-weight: 700;">Data Ingestion &amp; Chunking</td>
+                            <td>Normalize source data and split it into semantically coherent chunks.</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #fff; font-weight: 700;">Embedding Generation</td>
+                            <td>Convert chunks into vector embeddings using on-prem or air-gapped embedding models.</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #fff; font-weight: 700;">Vector Database</td>
+                            <td>Store and index embeddings (e.g., pgvector, Qdrant) for fast semantic search.</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #fff; font-weight: 700;">Retrieval</td>
+                            <td>Fetch the most relevant chunks for a given query via similarity search.</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #fff; font-weight: 700;">Augmentation &amp; Generation</td>
+                            <td>Inject retrieved context into the LLM prompt and generate a grounded, citation-backed response.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4 style="color: var(--text-primary); margin-bottom: 1rem; font-size: 1.1rem;">Products Built on This Foundation</h4>
+            <p>Both platforms are built on the shared dataset + RAG foundation above:</p>
+            <ul class="wp-list">
+                <li><strong>Convergo</strong> &mdash; Customer Engagement platform. Uses SNS and user-input data for sentiment-aware messaging, and sales-catalog data for natural-language product/catalog search and AI-assisted copy generation.</li>
+                <li><strong>Contexa</strong> &mdash; Trust &amp; Safety platform. Uses SNS and user-input data (posts, chats, reports) as the primary moderation surface, with RAG for context-aware policy retrieval and explainable moderation decisions.</li>
+            </ul>
+        </section>
+
         <section class="wp-section reveal" id="aiot">
-            <h3>III. Industrial AIoT & Edge Intelligence</h3>
+            <h3>IV. Industrial AIoT & Edge Intelligence</h3>
             <p>Unlike traditional AI platforms, OmniNStack bridges the gap between software and the physical world. By integrating with industrial protocols and edge robotics, OmniNStack transforms physical assets into cognitive actors.</p>
             <p>This "Physical AI" approach enables real-time autonomous decision-making in manufacturing, energy, and transportation sectors where millisecond latency and absolute uptime are non-negotiable.</p>
         </section>
 
         <section class="wp-section reveal" id="security">
-            <h3>IV. Security & Governance</h3>
+            <h3>V. Security & Governance</h3>
             <p>Security is not a feature in OmniNStack; it is the substrate. The platform supports native air-gap deployment, ensuring that no request ever leaves the local network.</p>
             <ul class="wp-list">
                 <li><strong>Model Agnosticity:</strong> Toggle between 100+ local models (Llama 3, Mistral) and public APIs via a secure gateway.</li>
@@ -270,7 +387,7 @@
         </section>
 
         <section class="wp-section reveal" id="research">
-            <h3>V. Proprietary Research &amp; Development</h3>
+            <h3>VI. Proprietary Research &amp; Development</h3>
             <p>OmniNStack is a product company. Our defensibility comes from technology we engineer ourselves to solve problems off-the-shelf AI cannot — the foundation of an autonomous platform that runs inside air-gapped enterprises.</p>
             <ul class="wp-list">
                 <li><strong>Agent Coordination Engine:</strong> A multi-agent orchestration framework where autonomous agents plan, delegate, and self-correct reliably across long-running workflows.</li>
@@ -291,7 +408,7 @@
             <div class="footer-logo logo" style="justify-content: center; margin-bottom: 2rem;">Omni<span>N</span>Stack</div>
             <div class="footer-tagline">
                 <span class="accent-text">Enterprise AI Platform Company</span>
-                <p>Building AI infrastructure for Customer Engagement, Trust &amp; Safety, and Enterprise Intelligence.</p>
+                <p>One shared AI platform. Two enterprise products. Built in Canada.</p>
             </div>
             <div class="footer-nav">
                 <a href="index.html">Home</a>

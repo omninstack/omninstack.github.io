@@ -30,7 +30,7 @@
     <nav>
         <div class="container nav-content">
             <a href="index.html" class="logo">Omni<span>N</span>Stack</a>
-            <div class="nav-links">
+            <div class="nav-links" id="nav-links">
                 <a href="index.html">Home</a>
                 <a href="index.html#platform">Platform</a>
                 <a href="index.html#products">Products</a>
@@ -40,6 +40,9 @@
                 <a href="mailto:info@omninstack.com" class="btn btn-outline"
                     style="padding: 0.7rem 1.8rem; font-size: 0.75rem; border-radius: 12px;">Contact Us</a>
             </div>
+            <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
+                <span></span><span></span><span></span>
+            </button>
         </div>
     </nav>
 
@@ -68,7 +71,11 @@
 
         <section class="section-block reveal" style="text-align: center;">
             <div class="glass-box origin-card" style="max-width: 800px; margin: 0 auto; text-align: left;">
-                <div class="origin-flag">🍁</div>
+                <div class="origin-flag">
+                    <svg width="52" height="52" viewBox="0 0 100 100" fill="var(--cyan)" style="filter: drop-shadow(0 0 10px rgba(0, 229, 255, 0.4));">
+                        <path d="M50 4 L58 26 L74 14 L69 34 L92 32 L76 46 L92 58 L70 58 L74 78 L58 66 L54 90 L50 74 L46 90 L42 66 L26 78 L30 58 L8 58 L24 46 L8 32 L31 34 L26 14 L42 26 Z" />
+                    </svg>
+                </div>
                 <div>
                     <h4 class="accent-text mono" style="margin-bottom: 1rem;">Built in Canada</h4>
                     <h3 style="border: none; padding: 0; font-size: 1.8rem; margin-bottom: 1rem;">Designed for Global Enterprises</h3>
@@ -94,7 +101,7 @@
             <div class="footer-logo logo" style="justify-content: center; margin-bottom: 2rem;">Omni<span>N</span>Stack</div>
             <div class="footer-tagline">
                 <span class="accent-text">Enterprise AI Platform Company</span>
-                <p>Building AI infrastructure for Customer Engagement, Trust &amp; Safety, and Enterprise Intelligence.</p>
+                <p>One shared AI platform. Two enterprise products. Built in Canada.</p>
             </div>
             <div class="footer-nav">
                 <a href="index.html">Home</a>

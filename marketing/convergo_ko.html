@@ -230,7 +230,7 @@
     <nav>
         <div class="container nav-content">
             <a href="../index.html" class="logo">Omni<span>N</span>Stack</a>
-            <div class="nav-links">
+            <div class="nav-links" id="nav-links">
                 <a href="../index.html">Home</a>
                 <a href="../index.html#platform">Platform</a>
                 <div class="nav-item">
@@ -246,6 +246,9 @@
                 <a href="mailto:info@omninstack.com" class="btn btn-outline"
                     style="padding: 0.7rem 1.8rem; font-size: 0.75rem; border-radius: 12px;">Contact Us</a>
             </div>
+            <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
+                <span></span><span></span><span></span>
+            </button>
         </div>
     </nav>
 
@@ -396,7 +399,7 @@
             <div class="footer-logo logo" style="justify-content: center; margin-bottom: 2rem;">Omni<span>N</span>Stack</div>
             <div class="footer-tagline">
                 <span class="accent-text">Enterprise AI Platform Company</span>
-                <p>Building AI infrastructure for Customer Engagement, Trust &amp; Safety, and Enterprise Intelligence.</p>
+                <p>One shared AI platform. Two enterprise products. Built in Canada.</p>
             </div>
             <div class="footer-nav" style="display: flex; justify-content: center; gap: 2rem; margin-bottom: 2rem; flex-wrap: wrap;">
                 <a href="../index.html" style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">Home</a>
@@ -414,19 +417,7 @@
         </div>
     </footer>
 
-    <script>
-        // Simple Scroll Reveal
-        const reveals = document.querySelectorAll('.reveal');
-        const observerOptions = { threshold: 0.1 };
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                }
-            });
-        }, observerOptions);
-        reveals.forEach(el => observer.observe(el));
-    </script>
+    <script src="../script.js"></script>
 </body>
 
 </html>
