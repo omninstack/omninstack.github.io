@@ -49,3 +49,42 @@ Design debt tracked from `/plan-design-review` (2026-07-08), reviewing commit `e
 **Cons:** No urgency — the code path is a straightforward conditional, not new architecture; low risk of being wrong.
 **Context:** Surfaced in Test Review (Pass 3) of `/plan-eng-review`. If test infrastructure (Playwright) is ever introduced for this site, add a `hasTouch: true` context test for this branch instead of manual verification.
 **Depends on:** Access to a real touchscreen laptop or tablet in the 960-1024px logical-pixel range, or Playwright touch emulation if test infra gets built (see item 5).
+
+---
+
+# Fundraising / GTM (from `/office-hours` + `/plan-ceo-review`, 2026-07-08)
+
+Tracked separately from the website engineering items above — see the full design doc at `~/.gstack/projects/omninstack-omninstack.github.io/June-main-design-20260708-204348.md` for the plan these items support.
+
+## 7. SR&ED claim scope tension
+**What:** June is assigned to write SR&ED technical narratives in the same week the plan describes the Convergo wedge as "days of engineering, not new engineering" reusing existing POS integrations. CRA's SR&ED test excludes routine engineering absent technological uncertainty.
+**Why:** A claim resting on this sprint's wedge specifically risks rejection or wasted drafting time; the genuinely novel R&D (AI/RAG systems, agent coordination) is a separate, stronger basis for the claim.
+**Pros:** Avoids drafting a weak claim; focuses SR&ED documentation effort on the work that actually qualifies.
+**Cons:** Requires someone to actually separate "what's novel" from "what's routine integration" across the codebase — real analysis work.
+**Context:** Surfaced by outside-voice review during `/plan-ceo-review`. Resolve before June actually drafts the SR&ED submission, not before the design-partner sprint.
+**Depends on:** Nothing blocking — informs claim drafting whenever that happens.
+
+## 8. Joseph needs call-prep before the first design-partner call
+**What:** Joseph Yu (hardware engineer, no stated sales background) is tasked with running warm intros AND the binary convert-or-walk close, with no script, talking points, or coaching anywhere in the plan.
+**Why:** The highest-stakes conversation in the whole sprint currently has zero preparation material behind it, despite the plan explicitly naming "no sales/customer-development function yet" as a team constraint.
+**Pros:** A 15-minute prep pass (talking points, what questions to ask, how to frame the binary ask) meaningfully de-risks the one conversation everything else depends on.
+**Cons:** Small time cost the week of an already-tight sprint.
+**Context:** Surfaced by outside-voice review during `/plan-ceo-review`. Do this before the first booked call, not before the network-check gate.
+**Depends on:** The gate clearing and a call actually getting booked.
+
+## 9. Cross-border data residency if design partner is a Korean entity
+**What:** "Korea-North America relationships" implies candidates may include Korean retail chains. The generic mutual-NDA fix (design doc, Open Questions) doesn't address cross-border data-residency questions (Korea PIPA vs. Canada PIPEDA) if a Korean entity's POS/revenue data crosses into OmniNStack's hands.
+**Why:** Real legal exposure if unaddressed — data protection regimes differ meaningfully between jurisdictions.
+**Pros:** Cheap to check with real legal input once a specific partner is identified.
+**Cons:** Premature to resolve in the abstract before knowing which specific entity (Korean or North American) actually becomes the design partner.
+**Context:** Surfaced by outside-voice review during `/plan-ceo-review`. Only becomes urgent if the actual design partner is a Korean entity.
+**Depends on:** Knowing the design partner's jurisdiction, which isn't known yet.
+
+## 10. Network-check gate has no middle tier
+**What:** The gate is pass/fail (≥3 contacts). A result of exactly 1-2 strong contacts triggers a full pivot to Contexa (a vertical with zero contacts either) rather than a scaled-down parallel probe with the contacts that do exist.
+**Why:** The design doc's own Open Questions raised this exact tension ("could a parallel, lower-effort Contexa exploration run without diluting focus") and then built a binary gate anyway — worth resolving with real information once the actual gate-check result is known, rather than guessing now.
+**Pros:** A middle-tier response (scaled probe vs. full pivot) could preserve partial signal instead of discarding it.
+**Cons:** Adding a middle tier now, before knowing what "2 contacts" looks like in practice, risks over-engineering a decision that's easier to make with real information in hand.
+**Context:** Surfaced by outside-voice review during `/plan-ceo-review`. Revisit at the actual gate-check moment (2026-07-09) if the result lands in the ambiguous middle.
+**Depends on:** The actual gate-check result tomorrow.
+
