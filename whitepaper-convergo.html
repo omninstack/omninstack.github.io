@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convergo Technical Whitepaper | OmniNStack</title>
+    <meta name="description" content="Convergo Technical Whitepaper: the architecture behind AI-powered omnichannel messaging and offline POS attribution — closing the gap between digital campaigns and in-store revenue.">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <style>
+        .whitepaper-content { max-width: 900px; margin: 0 auto; padding: 4rem 2rem; }
+        .wp-header { text-align: center; margin-bottom: 6rem; }
+        .wp-section { margin-bottom: 5rem; animation: fadeIn 1s ease-out forwards; opacity: 0; }
+        .wp-section.reveal.active { opacity: 1; }
+        .wp-section h3 { font-size: 2.2rem; margin-bottom: 2rem; color: var(--cyan); border-bottom: 1px solid var(--glass-border); padding-bottom: 1rem; }
+        .wp-section p { font-size: 1.15rem; color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.8; }
+        .wp-list { list-style: none; margin-bottom: 2rem; }
+        .wp-list li { position: relative; padding-left: 2rem; margin-bottom: 1.2rem; font-size: 1.1rem; color: var(--text-primary); }
+        .wp-list li::before { content: '→'; position: absolute; left: 0; color: var(--cyan); font-weight: bold; }
+        .architecture-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 3rem; }
+        .layer-box { background: var(--glass-bg); border: 1px solid var(--glass-border); padding: 2rem; border-radius: 20px; transition: var(--ease); }
+        .layer-box:hover { border-color: var(--cyan); transform: translateY(-5px); background: rgba(0, 229, 255, 0.05); }
+        .layer-box h4 { color: var(--text-primary); margin-bottom: 1rem; font-size: 1.2rem; }
+        .layer-box p { font-size: 0.95rem; margin-bottom: 0; }
+        .executive-summary { background: linear-gradient(135deg, rgba(0, 229, 255, 0.05) 0%, transparent 100%); border: 1px solid var(--glass-border); padding: 3rem; border-radius: 32px; margin-bottom: 6rem; }
+        .table-responsive { overflow-x: auto; margin-bottom: 2.5rem; border-radius: 20px; border: 1px solid var(--glass-border); }
+        table { width: 100%; border-collapse: collapse; background: var(--glass-bg); text-align: left; }
+        th, td { padding: 1.1rem 1.4rem; }
+        th { background-color: rgba(0, 229, 255, 0.08); color: var(--cyan); font-weight: 700; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.05em; border-bottom: 1px solid var(--glass-border); }
+        td { border-bottom: 1px solid rgba(255, 255, 255, 0.05); font-size: 0.92rem; color: var(--text-secondary); }
+        tr:last-child td { border-bottom: none; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+
+<body>
+
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+
+    <nav>
+        <div class="container nav-content">
+            <a href="index.html" class="logo">Omni<span>N</span>Stack</a>
+            <div class="nav-links" id="nav-links">
+                <a href="index.html">Home</a>
+                <a href="index.html#platform">Platform</a>
+                <div class="nav-item">
+                    <a href="index.html#products">Products <span class="caret">&#9662;</span></a>
+                    <div class="dropdown-menu">
+                        <a href="marketing/convergo.html">Convergo &mdash; Customer Engagement</a>
+                        <a href="marketing/contexa.html">Contexa &mdash; Trust &amp; Safety</a>
+                    </div>
+                </div>
+                <a href="developers.html">Developers</a>
+                <div class="nav-item">
+                    <a href="#" class="nav-parent" onclick="return false;">Resources <span class="caret">&#9662;</span></a>
+                    <div class="dropdown-menu">
+                        <a href="whitepaper.html">Platform Whitepaper</a>
+                        <a href="whitepaper-convergo.html" class="active">Convergo Whitepaper</a>
+                        <a href="whitepaper-contexa.html">Contexa Whitepaper</a>
+                        <a href="blog.html">Blog</a>
+                        <a href="documentation.html">Documentation</a>
+                    </div>
+                </div>
+                <a href="company.html">Company</a>
+                <a href="mailto:info@omninstack.com" class="btn btn-outline"
+                    style="padding: 0.7rem 1.8rem; font-size: 0.75rem; border-radius: 12px;">Contact Us</a>
+            </div>
+            <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="whitepaper-content">
+        <header class="wp-header reveal">
+            <h4 class="accent-text mono">Technical Whitepaper</h4>
+            <h2><span class="gradient-text">Convergo</span></h2>
+            <p style="font-size: 1.4rem; color: var(--silver);">Closing the Gap Between Digital Messaging and Offline Revenue</p>
+            <div style="margin-top: 2rem; color: var(--text-muted); font-size: 0.9rem;" class="mono">
+                JULY 2026 | VERSION 1.0 | OMNINSTACK CORE TEAM
+            </div>
+        </header>
+
+        <section class="executive-summary reveal" id="summary">
+            <h3 style="border: none; font-size: 1.8rem;">Executive Summary</h3>
+            <p>Businesses have moved their marketing into instant messaging — WhatsApp, KakaoTalk, Telegram, SMS — because that's where customers already are. But managing campaigns across those channels is fragmented, and proving that a digital message actually drove a physical, in-store purchase has historically been close to impossible.</p>
+            <p><strong>Convergo</strong> is OmniNStack's AI Customer Engagement Platform: an omnichannel messaging system with AI-generated content, resilient cross-channel failover, and real-time offline POS/coupon attribution built in from the ground up. This document describes the architecture that makes that attribution possible, and the AI and reliability engineering underneath it.</p>
+        </section>
+
+        <section class="wp-section reveal" id="platform">
+            <h3>The Platform at a Glance</h3>
+            <p>Convergo unifies four capabilities that are normally handled by separate, disconnected tools:</p>
+            <ul class="wp-list">
+                <li><strong>Omnichannel Delivery &amp; Failover:</strong> One API surface across WhatsApp, KakaoTalk, Telegram, LINE, Viber, Zalo, WeChat, SMS, and RCS, with automated cross-channel fallback when a message doesn't land.</li>
+                <li><strong>AI Copywriting &amp; Conversational RAG:</strong> LLM-generated message variants and a retrieval-augmented search layer that lets customers find stores and products in natural language.</li>
+                <li><strong>Offline POS Attribution:</strong> Coupon codes and QR redemptions matched back to the specific message or campaign that drove the visit, closing the loop from digital send to physical sale.</li>
+                <li><strong>Enterprise-Grade Reliability:</strong> An asynchronous, queue-backed ingestion pipeline built for high-volume webhook traffic without dropped messages.</li>
+            </ul>
+        </section>
+
+        <section class="wp-section reveal" id="challenge">
+            <h3>I. The Challenge: The Offline Attribution Gap</h3>
+            <p>Mobile-first customers expect brands to reach them on the messaging apps they already use. But two structural problems get in the way of doing that well:</p>
+            <ul class="wp-list">
+                <li><strong>Channel Fragmentation:</strong> Running campaigns across WhatsApp, KakaoTalk, Telegram, and SMS independently means separate tools, separate delivery guarantees, and no unified failover when one channel fails to deliver.</li>
+                <li><strong>The Attribution Black Box:</strong> Once a coupon or message goes out, most platforms have no way to connect it to what happened at the register. Marketing teams can measure open rates and redemption counts, but not which specific campaign variant, sent through which channel, drove a specific in-store sale.</li>
+            </ul>
+            <p>Off-the-shelf messaging tools solve delivery. They don't solve attribution — and attribution is the difference between a marketing spend you can defend and one you're guessing about.</p>
+        </section>
+
+        <section class="wp-section reveal" id="architecture">
+            <h3>II. Architecture: The Omnichannel Attribution Pipeline</h3>
+            <p>Convergo is built as a five-stage pipeline, from inbound webhook to closed-loop attribution ledger.</p>
+
+            <div class="architecture-grid">
+                <div class="layer-box">
+                    <h4>01. Channel Gateway</h4>
+                    <p>Unified send/receive API across nine messaging channels, normalizing provider-specific webhook formats into one internal event schema.</p>
+                </div>
+                <div class="layer-box">
+                    <h4>02. AI Copy &amp; RAG Layer</h4>
+                    <p>Generates multi-variant message copy and answers natural-language product/directory queries via vector search over the catalog.</p>
+                </div>
+                <div class="layer-box">
+                    <h4>03. Failover Routing</h4>
+                    <p>Rule-based cross-channel fallback — e.g. WhatsApp first, SMS after 15 minutes without delivery confirmation.</p>
+                </div>
+                <div class="layer-box">
+                    <h4>04. POS Attribution Layer</h4>
+                    <p>Matches coupon/QR redemptions at Clover, Toast, OKPOS, and Force terminals back to the originating message and campaign variant.</p>
+                </div>
+                <div class="layer-box">
+                    <h4>05. Analytics &amp; Alerting</h4>
+                    <p>Real-time campaign-to-revenue reporting, plus system health telemetry routed to engineering on provider callback failures.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="wp-section reveal" id="ai-engagement">
+            <h3>III. AI-Powered Engagement</h3>
+            <p>Two AI capabilities sit directly in the customer-facing path, not bolted on as an afterthought:</p>
+            <ul class="wp-list">
+                <li><strong>Copywriting Copilot:</strong> Generates multi-variant message copy, headlines, and calls-to-action tuned per channel and brand voice, so campaigns don't rely on a single hand-written template.</li>
+                <li><strong>Conversational Directory Search:</strong> Customers ask in natural language — "find a Korean restaurant near me serving Jjajangmyeon" — and get an answer grounded in vector search (pgvector/Qdrant) over the catalog, filtered by geography.</li>
+                <li><strong>Alternative Suggestion Engine:</strong> When an exact match isn't available, the same retrieval layer proposes the nearest relevant alternative rather than returning an empty result.</li>
+            </ul>
+        </section>
+
+        <section class="wp-section reveal" id="reliability">
+            <h3>IV. Reliability at Scale</h3>
+            <p>Messaging infrastructure that drops webhooks under load isn't just an inconvenience — it's a missed sale and a broken attribution record. Convergo's ingestion layer is built for enterprise traffic volumes:</p>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr><th>Component</th><th>Role</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td style="color: #fff; font-weight: 700;">Asynchronous Ingestion</td><td>NestJS services backed by Kafka/RabbitMQ absorb sudden webhook spikes without slowing the send path.</td></tr>
+                        <tr><td style="color: #fff; font-weight: 700;">Consent &amp; Compliance Store</td><td>A highly-available Redis-backed opt-out ledger performs pre-flight consent checks before every send.</td></tr>
+                        <tr><td style="color: #fff; font-weight: 700;">Real-Time Alerting</td><td>Provider callback timeouts route diagnostic telemetry directly to engineering, not just a dashboard nobody's watching.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="wp-section reveal" id="impact">
+            <h3>V. Business Impact</h3>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr><th>Capability</th><th>Business Impact</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td style="color: #fff; font-weight: 700;">POS Gateway Attribution</td><td>Verifiable, closed-loop marketing ROI instead of redemption-rate guesswork.</td></tr>
+                        <tr><td style="color: #fff; font-weight: 700;">AI Copywriter &amp; RAG</td><td>Higher open/response rates and fewer customer drop-offs from generic messaging.</td></tr>
+                        <tr><td style="color: #fff; font-weight: 700;">Failover Routing</td><td>Guaranteed delivery of time-sensitive offers even when a primary channel is degraded.</td></tr>
+                        <tr><td style="color: #fff; font-weight: 700;">High-Volume Ingestion</td><td>99.9% uptime target and zero dropped message logs at enterprise send volumes.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="wp-section reveal" id="conclusion" style="text-align: center; margin-top: 8rem;">
+            <h2 class="gradient-text">Every Message, Traceable to Revenue.</h2>
+            <p style="max-width: 700px; margin: 2rem auto;">Convergo turns messaging apps into a measurable, closed-loop sales channel &mdash; connecting every digital send to what actually happened at the register.</p>
+            <a href="mailto:info@omninstack.com" class="btn btn-primary">Request a Technical Briefing</a>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-logo logo" style="justify-content: center; margin-bottom: 2rem;">Omni<span>N</span>Stack</div>
+            <div class="footer-tagline">
+                <span class="accent-text">Enterprise AI Platform Company</span>
+                <p>One shared AI platform. A growing portfolio. Built in Canada.</p>
+            </div>
+            <div class="footer-nav">
+                <a href="index.html">Home</a>
+                <a href="marketing/convergo.html">Convergo Platform</a>
+                <a href="marketing/contexa.html">Contexa Platform</a>
+                <a href="developers.html">Developers</a>
+                <a href="whitepaper.html">Platform Whitepaper</a>
+                <a href="whitepaper-convergo.html">Convergo Whitepaper</a>
+                <a href="whitepaper-contexa.html">Contexa Whitepaper</a>
+                <a href="blog.html">Blog</a>
+                <a href="documentation.html">Documentation</a>
+                <a href="company.html">Company</a>
+            </div>
+            <p class="footer-address">
+                OMNINSTACK AI SOLUTIONS INC.<br>
+                Suite 1028 20055 Willowbrook Drive Unit #200 Langley, BC V2Y 2T5 Canada
+            </p>
+            <p class="footer-copy">Proudly designed &amp; engineered in British Columbia, Canada.</p>
+            <p class="footer-copy">&copy; 2026 OmniNStack. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        const wpReveals = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
+        }, { threshold: 0.1 });
+        wpReveals.forEach(el => observer.observe(el));
+    </script>
+</body>
+
+</html>
