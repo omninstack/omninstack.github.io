@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contexa AI Trust & Safety Platform | OmniNStack Solutions</title>
-    <meta name="description" content="Contexa: AI-Powered Trust & Safety Platform. Score, log, and act on policy-violating content in real time, while cutting false positives on quotes, satire, and counter-speech that keyword filters get wrong.">
+    <meta name="description" content="Contexa: AI-Powered Trust & Safety Platform built to catch cyberbullying, harassment, and hate speech in real time, while cutting false positives on quotes, satire, and counter-speech that keyword filters get wrong.">
 
     <link rel="stylesheet" href="../style.css">
     <link rel="icon" type="image/png" href="../assets/favicon.png">
@@ -193,7 +193,7 @@
             <h4 class="accent-text mono">Trust & Safety</h4>
             <h2>Contexa <span class="gradient-text">Overview</span></h2>
             <p style="font-size: 1.35rem; color: var(--silver); margin-top: 1rem; max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.6;">
-                Score, Log, and Act on Policy-Violating Content — Without Drowning Legitimate Speech in False Positives
+                Built to Catch Cyberbullying, Harassment, and Hate Speech — Without Drowning Legitimate Speech in False Positives
             </p>
         </header>
 
@@ -204,15 +204,48 @@
                     Turn moderation from a manual, inconsistent chore into an auditable, real-time pipeline.
                 </h4>
                 <p style="font-size: 1.15rem; color: var(--text-secondary); line-height: 1.8;">
-                    Hate speech, harassment, and coded slang keep mutating faster than keyword filters can keep up, while manual review teams can't keep pace with volume — and every blocking decision needs a defensible paper trail. Off-the-shelf classifiers make it worse in one specific way: they flag the token, not the context, so quotes, satire, counter-speech, and reclaimed language get blocked right alongside the violations they were quoting.
+                    Cyberbullying doesn't look like a single bad word a keyword filter can catch — it's a pattern of
+                    targeted harassment, pile-ons, coded slang, and repeated intimidation that mutates faster than
+                    static filters can keep up, while manual review teams can't keep pace with volume. Every blocking
+                    decision also needs a defensible paper trail. Off-the-shelf classifiers make it worse in one
+                    specific way: they flag the token, not the context, so quotes, satire, counter-speech, and
+                    reclaimed language get blocked right alongside the bullying they were quoting or calling out.
                 </p>
                 <p style="font-size: 1.15rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 2.5rem;">
-                    <strong>Contexa</strong>, our AI Trust & Safety Platform, analyzes posts, comments, chat, nicknames, and profile text across your community surfaces, scores policy-violation risk in real time, and routes each decision — allow, monitor, review, or block — into a fully logged evidence trail your moderators and legal team can actually stand behind.
+                    <strong>Contexa</strong>, our AI Trust &amp; Safety Platform, was built to catch cyberbullying and
+                    harassment as they happen — analyzing posts, comments, chat, nicknames, and profile text across
+                    your community surfaces, scoring policy-violation risk in real time, and routing each decision
+                    &mdash; allow, monitor, review, or block &mdash; into a fully logged evidence trail your
+                    moderators, parents, and legal team can actually stand behind.
                 </p>
                 <div class="btn-group">
                     <a href="mailto:info@omninstack.com" class="btn btn-primary" style="padding: 1rem 2.5rem; font-size: 0.8rem; border-radius: 12px;">Book a Live Demo</a>
                     <a href="#" class="btn btn-outline" style="padding: 1rem 2.5rem; font-size: 0.8rem; border-radius: 12px;">Explore API Sandbox</a>
                 </div>
+            </div>
+        </section>
+
+        <!-- CYBERBULLYING FOCUS -->
+        <section class="section-block reveal" id="cyberbullying-sec">
+            <h3>Purpose-Built for Cyberbullying Detection</h3>
+            <div class="glass-box">
+                <h4><span>🛡️</span> Why Cyberbullying Beats a Keyword Filter</h4>
+                <p>Cyberbullying is rarely one flagged word — it's a pattern aimed at one person, and patterns are exactly what static filters miss.</p>
+                <ul class="highlight-list">
+                    <li><strong>Pattern, not just profanity:</strong> Contexa tracks repeated targeting of the same
+                        user across posts, comments, and chat — ten individually-mild messages piling onto one
+                        target is the actual bullying pattern a one-shot keyword filter never sees.</li>
+                    <li><strong>Pile-on detection:</strong> When multiple accounts target one person in a short
+                        window, real-time volume spikes plus per-user trust scoring flag the coordinated behavior,
+                        not just isolated messages.</li>
+                    <li><strong>Coded &amp; evolving slang:</strong> Bullying language shifts fast &mdash;
+                        deliberate misspellings, abbreviations, in-group slang meant to dodge filters. Moderators
+                        register new terms the moment they see them, without waiting on a model retrain.</li>
+                    <li><strong>Protects victims, not just flags them:</strong> When a target quotes the bullying
+                        to report it or calls it out, the context-aware classifier tells that apart from the
+                        original harassment &mdash; so victims speaking up don't get blocked alongside their
+                        harassers.</li>
+                </ul>
             </div>
         </section>
 
@@ -236,7 +269,7 @@
                         </tr>
                         <tr>
                             <td style="color: #fff; font-weight: 700;">Multi-Category Risk Scoring</td>
-                            <td>Eight policy categories scored 0–100, from hate speech to self-harm risk.</td>
+                            <td>Eight policy categories scored 0–100, led by cyberbullying and harassment, through hate speech to self-harm risk.</td>
                             <td>Consistent, explainable thresholds instead of per-moderator judgment calls.</td>
                         </tr>
                         <tr>
@@ -264,7 +297,7 @@
                     <p>Keyword filters and off-the-shelf classifiers score tokens, not meaning — so quotes, satire, counter-speech, and reclaimed language get blocked alongside real violations.</p>
                     <ul class="highlight-list">
                         <li><strong>Layered Detection:</strong> A rule engine for known terms and evasion patterns (character-splitting, initialisms, lookalike substitution) feeds a KoBERT-class classifier, refined by an LLM context analyzer for the cases that need judgment.</li>
-                        <li><strong>Multi-Category Scoring:</strong> Every piece of content is scored across eight policy categories — hate speech, harassment, extremist content, misinformation, toxic behavior, sexual content, self-harm risk, and community-specific rulesets — with per-category confidence, not a single pass/fail flag.</li>
+                        <li><strong>Multi-Category Scoring:</strong> Every piece of content is scored across eight policy categories — cyberbullying, harassment, hate speech, extremist content, misinformation, toxic behavior, sexual content, and self-harm risk — with per-category confidence, not a single pass/fail flag.</li>
                         <li><strong>Dynamic Rulesets:</strong> Moderators register new slang, evasions, and community-specific terms as they emerge, without waiting on a model retrain.</li>
                     </ul>
                 </div>
@@ -305,12 +338,12 @@
             <h3>Target Customer Profiles</h3>
             <div class="grid-3">
                 <div class="glass-box" style="padding: 2.5rem; margin-bottom: 0;">
-                    <h4 style="color: var(--cyan); font-size: 1.25rem; margin-bottom: 1rem;">Community & Social Platforms</h4>
-                    <p style="font-size: 1rem; margin-bottom: 0; line-height: 1.6;">Boards, comment sections, and open chat rooms that need real-time moderation at volume without a manual review team reading every post.</p>
+                    <h4 style="color: var(--cyan); font-size: 1.25rem; margin-bottom: 1rem;">Youth &amp; Community Platforms</h4>
+                    <p style="font-size: 1rem; margin-bottom: 0; line-height: 1.6;">Boards, comment sections, and community apps where cyberbullying and pile-ons need real-time detection at volume &mdash; without a manual review team reading every post.</p>
                 </div>
                 <div class="glass-box" style="padding: 2.5rem; margin-bottom: 0;">
-                    <h4 style="color: var(--cyan); font-size: 1.25rem; margin-bottom: 1rem;">Game & Live Chat Operators</h4>
-                    <p style="font-size: 1rem; margin-bottom: 0; line-height: 1.6;">In-game chat and open-chat services where harassment and toxic behavior spike fast and slang evolves faster than static filters can track.</p>
+                    <h4 style="color: var(--cyan); font-size: 1.25rem; margin-bottom: 1rem;">Game &amp; Live Chat Operators</h4>
+                    <p style="font-size: 1rem; margin-bottom: 0; line-height: 1.6;">In-game chat and open-chat services where cyberbullying, harassment, and toxic behavior spike fast and slang evolves faster than static filters can track.</p>
                 </div>
                 <div class="glass-box" style="padding: 2.5rem; margin-bottom: 0;">
                     <h4 style="color: var(--cyan); font-size: 1.25rem; margin-bottom: 1rem;">Trust & Safety Teams</h4>
