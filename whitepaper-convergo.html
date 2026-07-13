@@ -118,11 +118,11 @@
             <div class="architecture-grid">
                 <div class="layer-box">
                     <h4>01. Channel Gateway</h4>
-                    <p>Unified send/receive API across nine messaging channels, normalizing provider-specific webhook formats into one internal event schema.</p>
+                    <p>A FastAPI request-routing layer handling inbound webhooks across nine messaging channels &mdash; including KakaoTalk callback verification and secret-token validation &mdash; normalized into one internal event schema.</p>
                 </div>
                 <div class="layer-box">
                     <h4>02. AI Copy &amp; RAG Layer</h4>
-                    <p>Generates multi-variant message copy and answers natural-language product/directory queries via vector search over the catalog.</p>
+                    <p>Generates multi-variant message copy and answers natural-language product/directory queries via vector search over the catalog, with every candidate re-verified against PostgreSQL before it reaches a customer &mdash; see Section III.</p>
                 </div>
                 <div class="layer-box">
                     <h4>03. Failover Routing</h4>
@@ -147,6 +147,45 @@
                 <li><strong>Conversational Directory Search:</strong> Customers ask in natural language — "find a Korean restaurant near me serving Jjajangmyeon" — and get an answer grounded in vector search (pgvector/Qdrant) over the catalog, filtered by geography.</li>
                 <li><strong>Alternative Suggestion Engine:</strong> When an exact match isn't available, the same retrieval layer proposes the nearest relevant alternative rather than returning an empty result.</li>
             </ul>
+
+            <p style="margin-top: 3rem;"><strong>Why generic LLM chatbots fail at this, and what Convergo does differently:</strong> an LLM answering from its own generation alone is fluent but ungrounded — it can describe a product that's out of stock, quote a price that changed yesterday, or confidently invent a store location that doesn't exist. Convergo treats the language model as a <em>recall</em> layer, never the final word.</p>
+
+            <div class="architecture-grid" style="margin-top: 2rem;">
+                <div class="layer-box">
+                    <h4>1. Natural-Language Query</h4>
+                    <p>"Is there a caf&eacute; latte at the Hongdae store?" &mdash; parsed for intent and any explicit store, product, price, or category conditions.</p>
+                </div>
+                <div class="layer-box">
+                    <h4>2. RAG Candidate Recall</h4>
+                    <p>Vector search returns semantically relevant candidates (store/product IDs) &mdash; a shortlist, not an answer.</p>
+                </div>
+                <div class="layer-box">
+                    <h4>3. PostgreSQL Re-Verification</h4>
+                    <p>Every candidate is re-checked against the live database for current price, stock, and sale status before it's allowed into a response.</p>
+                </div>
+                <div class="layer-box">
+                    <h4>4. Grounded Response</h4>
+                    <p>The customer gets an answer that matches what's actually true in the system of record at that moment &mdash; not what sounded plausible.</p>
+                </div>
+            </div>
+            <p style="margin-top: 1.5rem;"><strong>The operating principle: Vector DB is a recall layer; PostgreSQL is the truth layer.</strong> Semantic search is good at finding what's <em>probably</em> relevant; it is the wrong tool for confirming what's <em>currently</em> true. Convergo never lets the former substitute for the latter.</p>
+
+            <p style="margin-top: 3rem;"><strong>Context that knows when not to reuse itself:</strong> a follow-up like "is that still available?" or "what's the price?" correctly reuses the previously resolved product context. But a query that introduces a new explicit condition — a different store, product, price ceiling, or category — is never answered from stale context; it triggers a fresh lookup instead. Getting this distinction wrong is a common failure mode in conversational systems: either every turn re-searches from scratch (slow, and loses conversational continuity), or context is over-applied and customers get answers about the wrong store or an outdated price.</p>
+
+            <div class="table-responsive" style="margin-top: 2rem;">
+                <table>
+                    <thead>
+                        <tr><th>Generic Chatbot</th><th>Convergo's Data-Driven Agent</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>FAQ-scripted responses; quality collapses outside the anticipated question set</td><td>Handles open-ended, natural-language queries grounded in live catalog data</td></tr>
+                        <tr><td>No connection to real product/price/inventory data</td><td>Every response re-verified against PostgreSQL as the source of truth</td></tr>
+                        <tr><td>LLM-only answers risk confident hallucination</td><td>Vector search proposes candidates; the database confirms them</td></tr>
+                        <tr><td>Context is either always reused or never reused</td><td>Explicit new conditions (store/product/price/category) trigger a fresh lookup; genuine follow-ups reuse resolved context</td></tr>
+                        <tr><td>No real operational hardening</td><td>Async job/worker processing, retry/backoff, health checks, and externalized secrets/config</td></tr>
+                    </tbody>
+                </table>
+            </div>
         </section>
 
         <section class="wp-section reveal" id="reliability">

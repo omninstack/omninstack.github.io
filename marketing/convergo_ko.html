@@ -320,6 +320,11 @@
                             <td>메시지 오픈율 상승 및 고객 이탈률 감소</td>
                         </tr>
                         <tr>
+                            <td style="color: #fff; font-weight: 700;">데이터 검증 기반 응답</td>
+                            <td>Vector Search가 후보를 찾고, PostgreSQL이 실시간 가격·재고·판매 상태를 재확인</td>
+                            <td>환각(hallucination) 없는, 실제 데이터와 일치하는 응답</td>
+                        </tr>
+                        <tr>
                             <td style="color: #fff; font-weight: 700;">페일오버 라우팅 서비스</td>
                             <td>교차 채널 폴백 실행 (예: WhatsApp &rarr; SMS)</td>
                             <td>중요 오프라인 혜택 및 알림 전송 확실성 보장</td>
@@ -351,10 +356,12 @@
 
                 <div class="glass-box">
                     <h4><span>🤖</span> 2. AI 기반 카피라이팅 & 대화형 RAG 검색</h4>
-                    <p>빌트인 LLM 어시스턴트를 통해 고객 참여와 실제 구매 전환을 극대화합니다.</p>
+                    <p>빌트인 LLM 어시스턴트를 통해 고객 참여와 실제 구매 전환을 극대화합니다 &mdash; 근거 없는 챗봇의 환각 위험 없이.</p>
                     <ul class="highlight-list">
                         <li><strong>카피라이팅 코파일럿:</strong> 채널별 사양과 브랜드의 아이덴티티에 최적화된 다변량 메시지 문구, 헤드라인, 행동유도버튼(CTA)을 생성합니다.</li>
                         <li><strong>디렉토리 및 카탈로그 추천 검색:</strong> 고객이 자연스러운 구어체 대화(예: <em>"가까운 탕후루 가게 찾아줘"</em> 또는 <em>"근처에 자장면 파는 한식당 어디야?"</em>)로 근처 매장과 상품을 쉽게 검색하도록 지원하며, 벡터 데이터베이스(pgvector/Qdrant)와 지리 좌표 필터링을 통해 정확한 추천 결과를 제공합니다.</li>
+                        <li><strong>실시간 데이터로 검증된 응답:</strong> Vector Search는 후보 매장/상품을 찾는 recall 레이어이고, 최종 응답 전 PostgreSQL에서 가격·재고·판매 상태를 재확인하는 truth 레이어를 반드시 거칩니다 &mdash; AI가 방금 확인하지 않은 가격이나 재고 정보를 말하는 일은 없습니다.</li>
+                        <li><strong>맥락을 이해하는 후속 질문 처리:</strong> "그거 아직 있어요?"와 같은 질문은 이전에 확인된 매장/상품 맥락을 그대로 활용합니다. 반면 새로운 매장, 상품, 가격 조건, 카테고리가 명시되면 이전 결과를 재사용하지 않고 즉시 새로 조회합니다.</li>
                         <li><strong>대체 매장 및 정보 제안:</strong> 일치하는 매장이나 제품이 없는 경우, AI가 자동으로 인근 지역의 최적 대안을 도출해 대화를 이어가며 이탈을 막습니다.</li>
                     </ul>
                 </div>
@@ -373,7 +380,9 @@
                     <p>고가용성 엔터프라이즈 환경을 고려하여 처음부터 정밀하게 설계되었습니다. 우리의 모던 클라우드 네이티브 스택은 저지연 안정성으로 대규모 메시징 부하를 효율적으로 소화합니다.</p>
                     <ul class="highlight-list">
                         <li><strong>비동기 수신 (Asynchronous Ingestion):</strong> <strong>NestJS</strong> 및 분산 메시지 큐(<strong>Kafka / RabbitMQ</strong>)를 사용하여 시스템 지연 없이 갑작스럽게 유입되는 웹훅 트래픽 급증을 흡수합니다.</li>
+                        <li><strong>안정적인 Job 처리:</strong> 비동기 worker/callback 처리에 retry·backoff를 적용해 일시적 장애를 복구하고, stale/dead job을 감지해 고객 메시지가 소리 없이 유실되지 않도록 합니다.</li>
                         <li><strong>실시간 시스템 알림 (Real-Time System Alerts):</strong> 웹훅 상태를 지속적으로 모니터링하여, 외부 서비스 콜백이 타임아웃되는 경우 텔레그램 알림톡과 엔지니어링 관리 도구로 진단 원격 분석 데이터를 즉시 전송합니다.</li>
+                        <li><strong>Secret/Config 외부화:</strong> 토큰과 인증 정보, 환경 설정을 코드에 하드코딩하지 않습니다 &mdash; 카카오 채널의 콜백 secret token 검증을 포함해 모든 채널 연동에 동일한 보안 원칙을 적용합니다.</li>
                     </ul>
                 </div>
 

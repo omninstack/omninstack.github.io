@@ -320,6 +320,11 @@
                             <td>Higher text open rates and lower customer drop-offs.</td>
                         </tr>
                         <tr>
+                            <td style="color: #fff; font-weight: 700;">Database-Verified Responses</td>
+                            <td>Vector search recalls candidates; PostgreSQL confirms live price/stock/sale status before every response.</td>
+                            <td>No hallucinated prices, stock, or store details &mdash; answers match the system of record.</td>
+                        </tr>
+                        <tr>
                             <td style="color: #fff; font-weight: 700;">Failover Routing Service</td>
                             <td>Cross-channel fallback execution (e.g., WhatsApp &rarr; SMS).</td>
                             <td>Guaranteed delivery of critical store offers.</td>
@@ -351,10 +356,12 @@
 
                 <div class="glass-box">
                     <h4><span>🤖</span> 2. AI-Powered Copywriting & Conversational RAG Search</h4>
-                    <p>Boost engagement and conversions using built-in LLM assistants.</p>
+                    <p>Boost engagement and conversions using built-in LLM assistants &mdash; without the hallucination risk of an ungrounded chatbot.</p>
                     <ul class="highlight-list">
                         <li><strong>Copywriting Copilot:</strong> Instantly generate multi-variant message copies, headlines, and call-to-actions (CTAs) optimized for different channels and brand voices.</li>
                         <li><strong>Directory & Catalog Recommendation Search:</strong> Allow customers to discover nearby physical stores or products via natural, conversational queries (e.g., <em>"Find a Korean restaurant near me serving Jjajangmyeon"</em>), powered by vector database searches (pgvector/Qdrant) and geographical coordinate filtering.</li>
+                        <li><strong>Database-Verified, Not Just Plausible:</strong> Vector search finds candidate stores/products; every candidate is re-checked against PostgreSQL for live price, stock, and sale status before it reaches the customer &mdash; the AI never states a price or availability it hasn't just confirmed.</li>
+                        <li><strong>Context-Aware Follow-Ups:</strong> "Is that still available?" correctly reuses the store/product already resolved in conversation. A new store, product, price limit, or category mentioned mid-conversation triggers a fresh lookup instead of a stale answer.</li>
                         <li><strong>Alternative Suggestion Engine:</strong> If an exact item or location is unavailable, the AI automatically proposes the best nearby alternatives and asks clarifying questions to maintain engagement.</li>
                     </ul>
                 </div>
@@ -373,7 +380,9 @@
                     <p>Engineered from the ground up for high-availability enterprise environments. Our modern, cloud-native stack handles complex messaging workloads with low-latency stability.</p>
                     <ul class="highlight-list">
                         <li><strong>Asynchronous Ingestion:</strong> Built using NestJS and distributed message queues (Kafka / RabbitMQ) to absorb sudden spikes in incoming webhook traffic without system slowdowns.</li>
+                        <li><strong>Resilient Job Processing:</strong> Async worker/callback delivery with retry and backoff for transient failures, plus stale/dead-job detection so no customer message silently disappears.</li>
                         <li><strong>Real-Time System Alerts:</strong> Monitors system webhooks continuously; if an external provider callback times out, the system routes diagnostic telemetry and Telegram alerts to internal engineering admin tools.</li>
+                        <li><strong>Externalized Secrets & Config:</strong> Tokens, credentials, and environment configuration are never hardcoded &mdash; a standard security practice extended across every channel integration, including Kakao's callback secret-token verification.</li>
                     </ul>
                 </div>
 
