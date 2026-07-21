@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Story | OmniNStack — One Platform, Proven Twice</title>
+    <meta name="description"
+        content="How OmniNStack built one sovereign AI platform and proved it twice — through Convergo, our Customer Engagement platform, and Contexa, our Trust & Safety platform. An investor narrative.">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <style>
+        .story-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .footer-nav {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: var(--ease);
+            font-weight: 600;
+        }
+
+        .footer-nav a:hover {
+            color: var(--cyan);
+            text-shadow: 0 0 10px rgba(0, 229, 255, 0.6);
+        }
+
+        .story-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .story-header .dateline {
+            margin-top: 2rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .story-section {
+            margin-bottom: 5.5rem;
+            animation: fadeIn 1s ease-out forwards;
+            opacity: 0;
+        }
+
+        .story-section.reveal.active { opacity: 1; }
+
+        .chapter-tag {
+            display: flex;
+            align-items: baseline;
+            gap: 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .chapter-tag .num {
+            font-size: 2.4rem;
+            font-weight: 900;
+            color: var(--accent-chapter, var(--cyan));
+            opacity: 0.85;
+            line-height: 1;
+        }
+
+        .story-section h3 {
+            font-size: 2rem;
+            margin: 0 0 0.3rem;
+            color: #fff;
+        }
+
+        .story-section p {
+            font-size: 1.12rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.85;
+        }
+
+        .duo-split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1px;
+            background: var(--glass-border);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            overflow: hidden;
+            margin-top: 2.5rem;
+        }
+
+        .duo-split > div {
+            background: rgba(2, 4, 8, 0.7);
+            padding: 2rem 1.75rem;
+        }
+
+        .duo-split .tag {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+        }
+
+        .duo-split .c1 .tag { color: var(--cyan); }
+        .duo-split .c2 .tag { color: var(--ember, #FFB454); }
+
+        .duo-split .name {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #fff;
+            margin: 0.4rem 0 0.5rem;
+        }
+
+        .duo-split p {
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        .stat-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1px;
+            background: var(--glass-border);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            overflow: hidden;
+            margin-top: 2rem;
+        }
+
+        .stat-row > div {
+            background: rgba(2, 4, 8, 0.6);
+            padding: 1.5rem 1.25rem;
+        }
+
+        .stat-num {
+            display: block;
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--accent-chapter, var(--cyan));
+            font-variant-numeric: tabular-nums;
+            margin-bottom: 0.2rem;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+
+        .channel-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .chip {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 0.72rem;
+            color: var(--text-secondary);
+            border: 1px solid var(--glass-border);
+            padding: 0.3rem 0.75rem;
+            border-radius: 999px;
+        }
+
+        blockquote {
+            font-size: 1.2rem;
+            font-style: italic;
+            color: #fff;
+            border-left: 3px solid var(--accent-chapter, var(--cyan));
+            padding-left: 1.25rem;
+            margin: 2rem 0 0;
+        }
+
+        .story-log {
+            margin-top: 2rem;
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            background: var(--glass-bg);
+            padding: 0.5rem 1.5rem;
+        }
+
+        .story-log .line {
+            display: flex;
+            gap: 1rem;
+            padding: 1rem 0;
+            border-bottom: 1px dashed var(--glass-border);
+            font-size: 0.92rem;
+        }
+
+        .story-log .line:last-child { border-bottom: none; }
+
+        .story-log .tag {
+            font-family: 'Roboto Mono', monospace;
+            color: var(--cyan);
+            flex-shrink: 0;
+            white-space: nowrap;
+            font-size: 0.78rem;
+            letter-spacing: 0.04em;
+        }
+
+        .story-log p {
+            margin: 0;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 640px) {
+            .duo-split { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+
+    <nav>
+        <div class="container nav-content">
+            <a href="index.html" class="logo">Omni<span>N</span>Stack</a>
+            <div class="nav-links" id="nav-links">
+                <a href="index.html">Home</a>
+                <a href="index.html#platform">Platform</a>
+                <a href="index.html#products">Products</a>
+                <a href="developers.html">Developers</a>
+                <div class="nav-item">
+                    <a href="#" class="nav-parent" onclick="return false;">Resources <span class="caret">&#9662;</span></a>
+                    <div class="dropdown-menu">
+                        <a href="whitepaper.html">Platform Whitepaper</a>
+                        <a href="story.html" class="active">Our Story</a>
+                        <a href="whitepaper-convergo.html">Convergo Whitepaper</a>
+                        <a href="whitepaper-contexa.html">Contexa Whitepaper</a>
+                        <a href="blog.html">Blog</a>
+                        <a href="documentation.html">Documentation</a>
+                    </div>
+                </div>
+                <a href="company.html">Company</a>
+                <a href="mailto:info@omninstack.com" class="btn btn-outline"
+                    style="padding: 0.7rem 1.8rem; font-size: 0.75rem; border-radius: 12px;">Contact Us</a>
+            </div>
+            <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="story-content">
+        <header class="story-header reveal">
+            <h4 class="accent-text mono">Our Story</h4>
+            <h2>One <span class="gradient-text">Nervous System</span>.<br>Proven Twice.</h2>
+            <p style="font-size: 1.3rem; color: var(--silver); max-width: 680px; margin: 1.5rem auto 0;">
+                A letter to our earliest backers, on why we built one sovereign AI platform before we
+                ever built a product.
+            </p>
+            <div class="dateline mono">A GROWING PORTFOLIO, STARTING WITH THESE TWO — OMNINSTACK CORE TEAM</div>
+        </header>
+
+        <section class="story-section reveal" id="prologue">
+            <p class="eyebrow-label" style="font-family:'Roboto Mono',monospace; font-size:0.75rem; letter-spacing:0.2em; text-transform:uppercase; color: var(--cyan); margin-bottom: 1rem;">Prologue — Why Now</p>
+            <p>Every enterprise we've talked to has the same quiet fear: the AI vendor they onboard today
+                becomes the AI vendor they can't leave tomorrow — and the customer data, chat logs, and
+                moderation history that made the model useful never really belonged to them in the first
+                place.</p>
+            <p>That fear is rational. So we built OmniNStack backwards from it: <strong>on-premise by
+                default, air-gapped where it matters, and owned outright by whoever runs it.</strong> The bet
+                only pays off if the underlying stack is good enough to run more than one kind of product.
+                This is the story of the two we built to find out — the first two in what we intend to be a
+                much longer list.</p>
+
+            <div class="duo-split">
+                <div class="c1">
+                    <div class="tag">Proof I — Outbound</div>
+                    <div class="name">Convergo</div>
+                    <p>Gets the right message to the right customer, on whatever app they already use — and
+                        proves it drove a sale.</p>
+                </div>
+                <div class="c2">
+                    <div class="tag">Proof II — Inbound</div>
+                    <div class="name">Contexa</div>
+                    <p>Keeps the wrong content from ever reaching them — and refuses to claim victory on a
+                        benchmark it hasn't earned.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="story-section reveal" id="chapter-1" style="--accent-chapter: var(--cyan);">
+            <div class="chapter-tag"><span class="num">I</span>
+                <div>
+                    <p class="eyebrow-label" style="font-family:'Roboto Mono',monospace; font-size:0.72rem; letter-spacing:0.18em; text-transform:uppercase; color: var(--cyan); margin: 0 0 0.3rem;">Convergo — AI Customer Engagement Platform</p>
+                    <h3>Reaching a customer is a harder problem than it looks.</h3>
+                </div>
+            </div>
+            <p>Every regional messaging app has its own API, its own failure modes, and its own reasons to
+                silently drop your message. Convergo treats that chaos as the actual product problem:
+                campaigns are composed once, then delivered across <strong>WhatsApp, KakaoTalk, SMS,
+                Telegram, Viber, Zalo, LINE, WeChat, and RCS</strong>, with automatic fallback the moment one
+                channel times out.</p>
+            <p>An AI copywriting copilot drafts the multi-variant messages and CTAs; a conversational
+                directory layer answers a customer's plain-language question — "any Korean restaurants near
+                me that deliver after 10pm?" — with a multi-turn, clarifying search instead of a keyword
+                match.</p>
+            <p>The part that's actually hard to copy: Convergo closes the loop into the physical world.
+                Coupons issued inside a chat thread redeem in real time at the register — <strong>Clover,
+                Toast, OKPOS, Force, and custom kiosks</strong> — so a store visit converts a digital send
+                into an attributed offline sale instead of a metric nobody trusts.</p>
+
+            <div class="channel-row">
+                <span class="chip">WhatsApp</span><span class="chip">KakaoTalk</span><span class="chip">SMS</span>
+                <span class="chip">Telegram</span><span class="chip">Viber</span><span class="chip">Zalo</span>
+                <span class="chip">LINE</span><span class="chip">WeChat</span><span class="chip">RCS</span>
+            </div>
+
+            <div class="stat-row">
+                <div><span class="stat-num">9</span><span class="stat-label">messaging networks under one campaign engine</span></div>
+                <div><span class="stat-num">4</span><span class="stat-label">POS/kiosk integrations wired to real redemption</span></div>
+                <div><span class="stat-num">1</span><span class="stat-label">fallback path — no channel outage is a customer's problem</span></div>
+            </div>
+
+            <blockquote>"If WhatsApp fails or times out, re-route via SMS automatically." — the unglamorous
+                line in the spec that actually keeps merchants' revenue flowing.</blockquote>
+        </section>
+
+        <section class="story-section reveal" id="chapter-2" style="--accent-chapter: var(--ember, #FFB454);">
+            <div class="chapter-tag"><span class="num" style="color:#FFB454;">II</span>
+                <div>
+                    <p class="eyebrow-label" style="font-family:'Roboto Mono',monospace; font-size:0.72rem; letter-spacing:0.18em; text-transform:uppercase; color:#FFB454; margin: 0 0 0.3rem;">Contexa — AI Trust &amp; Safety Platform</p>
+                    <h3>The false positive nobody's accuracy metric can see.</h3>
+                </div>
+            </div>
+            <p>Moderation has a dirty secret: keyword filters and off-the-shelf classifiers look at tokens,
+                not context. A slur inside a news quote, a reclaimed word, satire, counter-speech — a naive
+                system flags all of it as a violation, and because these cases are statistically rare,
+                aggregate accuracy numbers bury the failure completely.</p>
+            <p>Rather than build the whole platform first and hope the hard part works, we built
+                <strong>KO-CTX</strong> — a hand-authored Korean "context-trap" benchmark, written item by
+                item by a single author, with zero crawled or template-expanded data, covering six distinct
+                context-trap categories plus hard negatives.</p>
+            <p>Five scoring approaches are compared side by side — keyword matching, a KcELECTRA classifier,
+                zero-shot LLM judging, a structured-output ablation, and a full LLM context-reasoner — using
+                <strong>paired McNemar tests, paired bootstrap, and Wilson confidence intervals</strong>, not
+                a single accuracy headline.</p>
+            <p>We pre-registered the pass/fail gate before running a single score. At this sample size, the
+                most likely honest outcome is <strong>"inconclusive"</strong> — and we say so up front,
+                because a trust &amp; safety company that can't be trusted with its own benchmark has no
+                business selling one.</p>
+
+            <div class="stat-row">
+                <div><span class="stat-num" style="color:#FFB454;">6</span><span class="stat-label">context-trap categories, hand-written, zero templates</span></div>
+                <div><span class="stat-num" style="color:#FFB454;">5</span><span class="stat-label">scoring arms compared under one paired statistical harness</span></div>
+                <div><span class="stat-num" style="color:#FFB454;">8</span><span class="stat-label">policy-violation categories mapped for the full platform (PV001–PV008)</span></div>
+            </div>
+
+            <blockquote style="border-left-color:#FFB454;">"The validation gate is pre-registered — and
+                'inconclusive' at N≈100 is reported as an honest result, not hidden." — from our own build
+                log, before we knew the answer.</blockquote>
+        </section>
+
+        <section class="story-section reveal" id="chapter-3">
+            <div class="chapter-tag"><span class="num">III</span>
+                <div>
+                    <p class="eyebrow-label" style="font-family:'Roboto Mono',monospace; font-size:0.72rem; letter-spacing:0.18em; text-transform:uppercase; color: var(--cyan); margin: 0 0 0.3rem;">The Throughline</p>
+                    <h3>Same nervous system. Opposite ends of the pipe.</h3>
+                </div>
+            </div>
+            <p>Convergo pushes the right content <em>out</em>; Contexa stops the wrong content from coming
+                <em>in</em>. Different customers, different teams, different regulatory pressure — but
+                underneath both sits the same five-layer sovereign stack, engineered once and reused twice.</p>
+
+            <div class="features-grid" style="margin-top: 2.5rem;">
+                <div class="glass-card reveal" style="padding: 2rem;">
+                    <h4 style="font-size:1.1rem; margin-bottom:0.75rem; color:#fff;">01. Presentation</h4>
+                    <p style="font-size:0.92rem; margin:0;">Chat UI, dashboards, and native IDE plugins for
+                        human-AI collaboration.</p>
+                </div>
+                <div class="glass-card reveal" style="padding: 2rem;">
+                    <h4 style="font-size:1.1rem; margin-bottom:0.75rem; color:#fff;">02. Governance</h4>
+                    <p style="font-size:0.92rem; margin:0;">Policy-as-code (OPA) and an immutable,
+                        identity-aware audit trail on every request.</p>
+                </div>
+                <div class="glass-card reveal" style="padding: 2rem;">
+                    <h4 style="font-size:1.1rem; margin-bottom:0.75rem; color:#fff;">03. Orchestration</h4>
+                    <p style="font-size:0.92rem; margin:0;">Agentic reasoning that routes both omnichannel
+                        campaigns and moderation decisions.</p>
+                </div>
+                <div class="glass-card reveal" style="padding: 2rem;">
+                    <h4 style="font-size:1.1rem; margin-bottom:0.75rem; color:#fff;">04. Data</h4>
+                    <p style="font-size:0.92rem; margin:0;">Sovereign, air-gapped RAG with secure vector
+                        stores — zero data leakage.</p>
+                </div>
+                <div class="glass-card reveal" style="padding: 2rem;">
+                    <h4 style="font-size:1.1rem; margin-bottom:0.75rem; color:#fff;">05. Infrastructure</h4>
+                    <p style="font-size:0.92rem; margin:0;">Self-hosted and hardware-agnostic, from edge
+                        nodes to air-gapped server racks.</p>
+                </div>
+            </div>
+
+            <p style="margin-top: 2.5rem;">The reusable core is intentionally narrow and hard to fake: an
+                <strong>agent coordination engine</strong> that plans, delegates, and self-corrects across
+                long-running workflows; a <strong>sovereign memory &amp; retrieval</strong> layer that answers
+                with citations and never lets data leave the building; and <strong>edge inference
+                optimization</strong> tuned for NVIDIA TensorRT and Apple MLX, so the same reasoning runs on
+                hardware an enterprise already owns.</p>
+        </section>
+
+        <section class="story-section reveal" id="discipline" style="text-align:center;">
+            <p class="eyebrow-label" style="font-family:'Roboto Mono',monospace; font-size:0.75rem; letter-spacing:0.2em; text-transform:uppercase; color: var(--cyan); margin-bottom: 1rem;">Evidence of Discipline</p>
+            <h3 style="max-width: 640px; margin: 0 auto 0.75rem;">We'd rather show you the build log than the projection.</h3>
+            <p style="max-width: 580px; margin: 0 auto;">A pre-seed pitch is usually a forecast. Ours is a
+                commit history — because the way a team handles the boring failure modes is the best
+                predictor of how it'll handle the ones you haven't thought of yet.</p>
+
+            <div class="story-log" style="text-align:left;">
+                <div class="line"><span class="tag">[reliability]</span><p>Full BullMQ retry loop covered
+                    end-to-end for message delivery when the upstream AI provider goes down — not just the
+                    happy path.</p></div>
+                <div class="line"><span class="tag">[integrity]</span><p>KO-CTX's pass/fail threshold was
+                    pre-registered before scoring began, closing off the option to move the goalposts after
+                    seeing results.</p></div>
+                <div class="line"><span class="tag">[ownership]</span><p>The hardest intellectual
+                    contribution in Contexa — writing genuine context-trap examples — is deliberately kept
+                    single-author, not outsourced to bulk generation.</p></div>
+                <div class="line"><span class="tag">[operations]</span><p>System health alerts route to
+                    internal channels in real time on callback timeout or failed API posts — built to be
+                    operated, not just demoed.</p></div>
+            </div>
+        </section>
+
+        <section class="story-section reveal" id="ask" style="text-align:center;">
+            <p class="eyebrow-label" style="font-family:'Roboto Mono',monospace; font-size:0.75rem; letter-spacing:0.2em; text-transform:uppercase; color: var(--cyan); margin-bottom: 1rem;">The Ask</p>
+            <h3 style="max-width: 640px; margin: 0 auto 1rem;">We're capital-efficient about proving demand — before we ask you to fund the projection.</h3>
+            <p style="max-width: 620px; margin: 0 auto;">OmniNStack is a pre-seed, Canadian-incorporated
+                company running structured design-partner validation on Convergo right now, with Contexa's
+                benchmark discipline as the proof our infrastructure generalizes. We're not asking you to
+                believe a roadmap slide — we're asking you to back a team that ships the unglamorous
+                infrastructure first: production POS integrations, agentic RAG that runs air-gapped, and a
+                moderation benchmark willing to admit when it doesn't have an answer yet.</p>
+            <p style="max-width: 620px; margin: 1.25rem auto 0;">If that's the kind of pre-seed story you
+                back, we'd like to talk.</p>
+            <div class="btn-group" style="display:flex; gap:1.5rem; justify-content:center; flex-wrap:wrap; margin-top: 2.5rem;">
+                <a href="mailto:info@omninstack.com?subject=Investor%20Inquiry%20%E2%80%94%20Our%20Story"
+                    class="btn btn-primary" style="padding: 1rem 2.5rem; font-size: 0.8rem; border-radius: 12px;">Talk to Us About Investing</a>
+                <a href="company.html" class="btn btn-outline" style="padding: 1rem 2.5rem; font-size: 0.8rem; border-radius: 12px;">Read the Company Profile</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-logo logo" style="justify-content: center; margin-bottom: 2rem;">Omni<span>N</span>Stack</div>
+            <div class="footer-tagline">
+                <span class="accent-text">Enterprise AI Platform Company</span>
+                <p>One shared AI platform. A growing portfolio. Built in Canada.</p>
+            </div>
+            <div class="footer-nav">
+                <a href="index.html">Home</a>
+                <a href="marketing/convergo.html">Convergo Platform</a>
+                <a href="marketing/contexa.html">Contexa Platform</a>
+                <a href="developers.html">Developers</a>
+                <a href="whitepaper.html">Platform Whitepaper</a>
+                <a href="story.html">Our Story</a>
+                <a href="whitepaper-convergo.html">Convergo Whitepaper</a>
+                <a href="whitepaper-contexa.html">Contexa Whitepaper</a>
+                <a href="blog.html">Blog</a>
+                <a href="documentation.html">Documentation</a>
+                <a href="company.html">Company</a>
+            </div>
+            <p class="footer-address">
+                OMNINSTACK AI SOLUTIONS INC.<br>
+                Suite 1028 20055 Willowbrook Drive Unit #200 Langley, BC V2Y 2T5 Canada
+            </p>
+            <p class="footer-copy">Proudly designed &amp; engineered in British Columbia, Canada.</p>
+            <p class="footer-copy">&copy; 2026 OmniNStack. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        const storyReveals = document.querySelectorAll('.reveal');
+        const storyObserverOptions = { threshold: 0.1 };
+        const storyObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, storyObserverOptions);
+        storyReveals.forEach(el => storyObserver.observe(el));
+    </script>
+</body>
+
+</html>
