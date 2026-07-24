@@ -10,84 +10,6 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <style>
-        .whitepaper-content {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 4rem 2rem;
-        }
-
-        .footer-nav {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-bottom: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .footer-nav a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-size: 0.85rem;
-            transition: var(--ease);
-            font-weight: 600;
-        }
-
-        .footer-nav a:hover {
-            color: var(--cyan);
-            text-shadow: 0 0 10px rgba(0, 229, 255, 0.6);
-        }
-
-        .wp-header {
-            text-align: center;
-            margin-bottom: 6rem;
-        }
-
-        .wp-section {
-            margin-bottom: 5rem;
-            animation: fadeIn 1s ease-out forwards;
-            opacity: 0;
-        }
-
-        .wp-section.reveal.active {
-            opacity: 1;
-        }
-
-        .wp-section h3 {
-            font-size: 2.2rem;
-            margin-bottom: 2rem;
-            color: var(--cyan);
-            border-bottom: 1px solid var(--glass-border);
-            padding-bottom: 1rem;
-        }
-
-        .wp-section p {
-            font-size: 1.15rem;
-            color: var(--text-secondary);
-            margin-bottom: 1.5rem;
-            line-height: 1.8;
-        }
-
-        .wp-list {
-            list-style: none;
-            margin-bottom: 2rem;
-        }
-
-        .wp-list li {
-            position: relative;
-            padding-left: 2rem;
-            margin-bottom: 1.2rem;
-            font-size: 1.1rem;
-            color: var(--text-primary);
-        }
-
-        .wp-list li::before {
-            content: '→';
-            position: absolute;
-            left: 0;
-            color: var(--cyan);
-            font-weight: bold;
-        }
-
         .sidebar-nav {
             position: fixed;
             left: 2rem;
@@ -119,89 +41,6 @@
             border-left: 2px solid var(--cyan);
             padding-left: 1rem;
         }
-
-        .architecture-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .layer-box {
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
-            padding: 2rem;
-            border-radius: 20px;
-            transition: var(--ease);
-        }
-
-        .layer-box:hover {
-            border-color: var(--cyan);
-            transform: translateY(-5px);
-            background: rgba(0, 229, 255, 0.05);
-        }
-
-        .layer-box h4 {
-            color: var(--text-primary);
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
-        }
-
-        .layer-box p {
-            font-size: 0.95rem;
-            margin-bottom: 0;
-        }
-
-        .executive-summary {
-            background: linear-gradient(135deg, rgba(0, 229, 255, 0.05) 0%, transparent 100%);
-            border: 1px solid var(--glass-border);
-            padding: 3rem;
-            border-radius: 32px;
-            margin-bottom: 6rem;
-        }
-
-        .table-responsive {
-            overflow-x: auto;
-            margin-bottom: 2.5rem;
-            border-radius: 20px;
-            border: 1px solid var(--glass-border);
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background: var(--glass-bg);
-            text-align: left;
-        }
-
-        th, td {
-            padding: 1.1rem 1.4rem;
-        }
-
-        th {
-            background-color: rgba(0, 229, 255, 0.08);
-            color: var(--cyan);
-            font-weight: 700;
-            text-transform: uppercase;
-            font-size: 0.75rem;
-            letter-spacing: 0.05em;
-            border-bottom: 1px solid var(--glass-border);
-        }
-
-        td {
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            font-size: 0.92rem;
-            color: var(--text-secondary);
-        }
-
-        tr:last-child td {
-            border-bottom: none;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
     </style>
 </head>
 
@@ -210,35 +49,8 @@
     <div class="blob blob-1"></div>
     <div class="blob blob-2"></div>
 
-    <nav>
-        <div class="container nav-content">
-            <a href="index.html" class="logo">Omni<span>N</span>Stack</a>
-            <div class="nav-links" id="nav-links">
-                <a href="index.html">Home</a>
-                <a href="index.html#platform">Platform</a>
-                <a href="index.html#products">Products</a>
-                <a href="developers.html">Developers</a>
-                <div class="nav-item">
-                    <a href="#" class="nav-parent" onclick="return false;">Resources <span class="caret">&#9662;</span></a>
-                    <div class="dropdown-menu">
-                        <a href="whitepaper.html" class="active">Platform Whitepaper</a>
-                        <a href="story.html">Our Story</a>
-                        <a href="whitepaper-convergo.html">Convergo Whitepaper</a>
-                        <a href="whitepaper-contexa.html">Contexa Whitepaper</a>
-                        <a href="blog.html">Blog</a>
-                        <a href="documentation.html">Documentation</a>
-                    </div>
-                </div>
-                <a href="company.html">Company</a>
-                <a href="documents/OmniNStack_Sovereign_AI_v2.pdf">Company Profile</a>
-                <a href="mailto:info@omninstack.com" class="btn btn-outline"
-                    style="padding: 0.7rem 1.8rem; font-size: 0.75rem; border-radius: 12px;">Contact Us</a>
-            </div>
-            <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
-                <span></span><span></span><span></span>
-            </button>
-        </div>
-    </nav>
+    <div id="site-nav"></div>
+    <script src="nav-footer.js" data-id="whitepaper"></script>
 
     <main class="whitepaper-content">
         <header class="wp-header reveal">
@@ -414,34 +226,8 @@
         </section>
     </main>
 
-    <footer>
-        <div class="container">
-            <div class="footer-logo logo" style="justify-content: center; margin-bottom: 2rem;">Omni<span>N</span>Stack</div>
-            <div class="footer-tagline">
-                <span class="accent-text">Enterprise AI Platform Company</span>
-                <p>One shared AI platform. A growing portfolio. Built in Canada.</p>
-            </div>
-            <div class="footer-nav">
-                <a href="index.html">Home</a>
-                <a href="marketing/convergo.html">Convergo Platform</a>
-                <a href="marketing/contexa.html">Contexa Platform</a>
-                <a href="developers.html">Developers</a>
-                <a href="whitepaper.html">Platform Whitepaper</a>
-                <a href="story.html">Our Story</a>
-                <a href="whitepaper-convergo.html">Convergo Whitepaper</a>
-                <a href="whitepaper-contexa.html">Contexa Whitepaper</a>
-                <a href="blog.html">Blog</a>
-                <a href="documentation.html">Documentation</a>
-                <a href="company.html">Company</a>
-            </div>
-            <p class="footer-address">
-                OMNINSTACK AI SOLUTIONS INC.<br>
-                Suite 1028 20055 Willowbrook Drive Unit #200 Langley, BC V2Y 2T5 Canada
-            </p>
-            <p class="footer-copy">Proudly designed &amp; engineered in British Columbia, Canada.</p>
-            <p class="footer-copy">&copy; 2026 OmniNStack. All Rights Reserved.</p>
-        </div>
-    </footer>
+    <div id="site-footer"></div>
+    <script src="nav-footer.js" data-id="whitepaper"></script>
 
     <script src="script.js"></script>
     <script>

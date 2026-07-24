@@ -327,6 +327,16 @@ nav {
     width: 100%;
 }
 
+/* Current-page indicator — was previously unstyled sitewide (class="active" had no rule) */
+.nav-links > a.active,
+.dropdown-menu a.active {
+    color: var(--cyan);
+}
+
+.nav-links > a.active::after {
+    width: 100%;
+}
+
 /* Nav Dropdowns */
 .nav-item {
     position: relative;
@@ -574,6 +584,11 @@ footer {
 .footer-tagline p { color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6; }
 .footer-address { color: var(--text-secondary); font-size: 0.85rem; line-height: 1.6; margin-bottom: 1.5rem; }
 .footer-copy { color: var(--text-muted); font-size: 0.85rem; letter-spacing: 0.05em; }
+
+.footer-nav { display: flex; justify-content: center; gap: 2rem; margin-bottom: 2rem; flex-wrap: wrap; }
+.footer-nav a { color: var(--text-secondary); text-decoration: none; font-size: 0.85rem; font-weight: 600; transition: var(--ease); }
+.footer-nav a:hover { color: var(--cyan); text-shadow: 0 0 10px rgba(0, 229, 255, 0.6); }
+.footer-nav a.active { color: var(--cyan); font-weight: 800; }
 
 /* Funding / Origin Section */
 .origin-card {
@@ -850,3 +865,64 @@ nav.mobile-open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rota
     .layer-item { padding: 1.2rem; }
     .layer-content { font-size: 0.9rem; }
 }
+
+/* ─── Shared Page Scaffold ───────────────────────────
+   Used by company.html, developers.html, documentation.html, blog.html,
+   story.html, and the marketing/ product pages. Consolidated here so each
+   page's own <style> block only needs to hold what's genuinely unique to it. */
+.page-content { max-width: 1000px; margin: 0 auto; padding: 4rem 2rem; }
+.page-header { text-align: center; margin-bottom: 4rem; }
+.section-block { margin-bottom: 5rem; }
+.section-block h3 { font-size: 2.2rem; margin-bottom: 2rem; color: var(--cyan); border-bottom: 1px solid var(--glass-border); padding-bottom: 0.8rem; }
+.section-block p { font-size: 1.15rem; color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.8; }
+
+.glass-box { background: var(--glass-bg); border: 1px solid var(--glass-border); padding: 3rem; border-radius: 28px; margin-bottom: 2rem; transition: var(--ease); }
+.glass-box:hover { border-color: var(--cyan); transform: translateY(-5px); background: rgba(0, 229, 255, 0.02); box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5); }
+.glass-box h4 { font-size: 1.4rem; color: var(--text-primary); margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.75rem; }
+
+.highlight-list { list-style: none; padding-left: 0; }
+.highlight-list li { position: relative; padding-left: 1.75rem; margin-bottom: 1rem; color: var(--text-secondary); font-size: 1.05rem; }
+.highlight-list li::before { content: '→'; position: absolute; left: 0; color: var(--cyan); font-weight: bold; }
+
+.btn-group { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem; }
+
+.coming-soon { text-align: center; padding: 5rem 2rem; }
+
+.grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+@media (max-width: 1024px) { .grid-3 { grid-template-columns: 1fr; } }
+
+.table-responsive { overflow-x: auto; margin-bottom: 2.5rem; border-radius: 20px; border: 1px solid var(--glass-border); }
+.table-responsive table { width: 100%; border-collapse: collapse; background: var(--glass-bg); text-align: left; }
+.table-responsive th, .table-responsive td { padding: 1.1rem 1.4rem; }
+.table-responsive th { background-color: rgba(0, 229, 255, 0.08); color: var(--cyan); font-weight: 700; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.05em; border-bottom: 1px solid var(--glass-border); }
+.table-responsive td { border-bottom: 1px solid rgba(255, 255, 255, 0.05); font-size: 0.92rem; color: var(--text-secondary); }
+.table-responsive tr:last-child td { border-bottom: none; }
+
+/* EN/KO language switcher pill (marketing/convergo.html + convergo_ko.html) */
+.lang-switcher { display: flex; justify-content: center; margin-bottom: 3rem; }
+.lang-pill { background: var(--glass-bg); border: 1px solid var(--glass-border); padding: 0.4rem; border-radius: 100px; display: inline-flex; gap: 0.5rem; }
+.lang-btn { padding: 0.5rem 1.5rem; border-radius: 100px; text-decoration: none; color: var(--text-secondary); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; transition: var(--ease); }
+.lang-btn:hover { color: var(--cyan); }
+.lang-btn.active { background: var(--grad-cyan); color: var(--navy); }
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+/* ─── Technical Whitepaper Layout ───────────────────
+   Shared by whitepaper.html, whitepaper-convergo.html, whitepaper-contexa.html —
+   these three pages use the load-triggered fadeIn animation identically. */
+.whitepaper-content { max-width: 900px; margin: 0 auto; padding: 4rem 2rem; }
+.wp-header { text-align: center; margin-bottom: 6rem; }
+.wp-section { margin-bottom: 5rem; animation: fadeIn 1s ease-out forwards; opacity: 0; }
+.wp-section.reveal.active { opacity: 1; }
+.wp-section h3 { font-size: 2.2rem; margin-bottom: 2rem; color: var(--cyan); border-bottom: 1px solid var(--glass-border); padding-bottom: 1rem; }
+.wp-section p { font-size: 1.15rem; color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.8; }
+.wp-list { list-style: none; margin-bottom: 2rem; }
+.wp-list li { position: relative; padding-left: 2rem; margin-bottom: 1.2rem; font-size: 1.1rem; color: var(--text-primary); }
+.wp-list li::before { content: '→'; position: absolute; left: 0; color: var(--cyan); font-weight: bold; }
+.architecture-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 3rem; }
+.layer-box { background: var(--glass-bg); border: 1px solid var(--glass-border); padding: 2rem; border-radius: 20px; transition: var(--ease); }
+.layer-box:hover { border-color: var(--cyan); transform: translateY(-5px); background: rgba(0, 229, 255, 0.05); }
+.layer-box h4 { color: var(--text-primary); margin-bottom: 1rem; font-size: 1.2rem; }
+.layer-box p { font-size: 0.95rem; margin-bottom: 0; }
+.executive-summary { background: linear-gradient(135deg, rgba(0, 229, 255, 0.05) 0%, transparent 100%); border: 1px solid var(--glass-border); padding: 3rem; border-radius: 32px; margin-bottom: 6rem; }

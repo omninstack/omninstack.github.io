@@ -10,22 +10,6 @@
 
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="assets/favicon.png">
-    <style>
-        .page-content { max-width: 1000px; margin: 0 auto; padding: 4rem 2rem; }
-        .page-header { text-align: center; margin-bottom: 4rem; }
-        .section-block { margin-bottom: 5rem; }
-        .section-block h3 { font-size: 2.2rem; margin-bottom: 2rem; color: var(--cyan); border-bottom: 1px solid var(--glass-border); padding-bottom: 0.8rem; }
-        .section-block p { font-size: 1.15rem; color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.8; }
-        .glass-box { background: var(--glass-bg); border: 1px solid var(--glass-border); padding: 3rem; border-radius: 28px; margin-bottom: 2rem; transition: var(--ease); }
-        .glass-box:hover { border-color: var(--cyan); transform: translateY(-5px); background: rgba(0, 229, 255, 0.02); box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5); }
-        .glass-box h4 { font-size: 1.4rem; color: var(--text-primary); margin-bottom: 1.2rem; }
-        .highlight-list { list-style: none; padding-left: 0; }
-        .highlight-list li { position: relative; padding-left: 1.75rem; margin-bottom: 1rem; color: var(--text-secondary); font-size: 1.05rem; }
-        .highlight-list li::before { content: '→'; position: absolute; left: 0; color: var(--cyan); font-weight: bold; }
-        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
-        @media (max-width: 1024px) { .grid-3 { grid-template-columns: 1fr; } }
-        .btn-group { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem; }
-    </style>
 </head>
 
 <body>
@@ -33,34 +17,8 @@
     <div class="blob blob-1"></div>
     <div class="blob blob-2"></div>
 
-    <nav>
-        <div class="container nav-content">
-            <a href="index.html" class="logo">Omni<span>N</span>Stack</a>
-            <div class="nav-links" id="nav-links">
-                <a href="index.html">Home</a>
-                <a href="index.html#platform">Platform</a>
-                <a href="index.html#products">Products</a>
-                <a href="developers.html" class="active">Developers</a>
-                <div class="nav-item">
-                    <a href="#" class="nav-parent" onclick="return false;">Resources <span class="caret">&#9662;</span></a>
-                    <div class="dropdown-menu">
-                        <a href="whitepaper.html">Platform Whitepaper</a>
-                        <a href="story.html">Our Story</a>
-                        <a href="whitepaper-convergo.html">Convergo Whitepaper</a>
-                        <a href="whitepaper-contexa.html">Contexa Whitepaper</a>
-                        <a href="blog.html">Blog</a>
-                        <a href="documentation.html">Documentation</a>
-                    </div>
-                </div>
-                <a href="company.html">Company</a>
-                <a href="mailto:info@omninstack.com" class="btn btn-outline"
-                    style="padding: 0.7rem 1.8rem; font-size: 0.75rem; border-radius: 12px;">Contact Us</a>
-            </div>
-            <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
-                <span></span><span></span><span></span>
-            </button>
-        </div>
-    </nav>
+    <div id="site-nav"></div>
+    <script src="nav-footer.js" data-id="developers"></script>
 
     <main class="page-content">
         <header class="page-header reveal">
@@ -119,34 +77,8 @@
         </section>
     </main>
 
-    <footer>
-        <div class="container">
-            <div class="footer-logo logo" style="justify-content: center; margin-bottom: 2rem;">Omni<span>N</span>Stack</div>
-            <div class="footer-tagline">
-                <span class="accent-text">Enterprise AI Platform Company</span>
-                <p>One shared AI platform. A growing portfolio. Built in Canada.</p>
-            </div>
-            <div class="footer-nav">
-                <a href="index.html">Home</a>
-                <a href="marketing/convergo.html">Convergo Platform</a>
-                <a href="marketing/contexa.html">Contexa Platform</a>
-                <a href="developers.html">Developers</a>
-                <a href="whitepaper.html">Platform Whitepaper</a>
-                <a href="story.html">Our Story</a>
-                <a href="whitepaper-convergo.html">Convergo Whitepaper</a>
-                <a href="whitepaper-contexa.html">Contexa Whitepaper</a>
-                <a href="blog.html">Blog</a>
-                <a href="documentation.html">Documentation</a>
-                <a href="company.html">Company</a>
-            </div>
-            <p class="footer-address">
-                OMNINSTACK AI SOLUTIONS INC.<br>
-                Suite 1028 20055 Willowbrook Drive Unit #200 Langley, BC V2Y 2T5 Canada
-            </p>
-            <p class="footer-copy">Proudly designed &amp; engineered in British Columbia, Canada.</p>
-            <p class="footer-copy">&copy; 2026 OmniNStack. All Rights Reserved.</p>
-        </div>
-    </footer>
+    <div id="site-footer"></div>
+    <script src="nav-footer.js" data-id="developers"></script>
 
     <script src="script.js"></script>
 </body>
