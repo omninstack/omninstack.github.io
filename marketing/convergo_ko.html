@@ -10,215 +10,10 @@
     <link rel="stylesheet" href="../style.css">
     <link rel="icon" type="image/png" href="../assets/favicon.png">
     <style>
-        .page-content {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 4rem 2rem;
-        }
-
-        .page-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .lang-switcher {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 3rem;
-        }
-
-        .lang-pill {
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
-            padding: 0.4rem;
-            border-radius: 100px;
-            display: inline-flex;
-            gap: 0.5rem;
-        }
-
-        .lang-btn {
-            padding: 0.5rem 1.5rem;
-            border-radius: 100px;
-            text-decoration: none;
-            color: var(--text-secondary);
-            font-size: 0.8rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            transition: var(--ease);
-        }
-
-        .lang-btn:hover {
-            color: var(--cyan);
-        }
-
-        .lang-btn.active {
-            background: var(--grad-cyan);
-            color: var(--navy);
-        }
-
-        .section-block {
-            margin-bottom: 5rem;
-            animation: fadeIn 1s ease-out forwards;
-            opacity: 0;
-        }
-
-        .section-block.reveal.active {
-            opacity: 1;
-        }
-
-        .section-block h3 {
-            font-size: 2.2rem;
-            margin-bottom: 2rem;
-            color: var(--cyan);
-            border-bottom: 1px solid var(--glass-border);
-            padding-bottom: 0.8rem;
-        }
-
-        .section-block p {
-            font-size: 1.15rem;
-            color: var(--text-secondary);
-            margin-bottom: 1.5rem;
-            line-height: 1.8;
-        }
-
-        .glass-box {
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
-            padding: 3rem;
-            border-radius: 28px;
-            margin-bottom: 2rem;
-            transition: var(--ease);
-        }
-
-        .glass-box:hover {
-            border-color: var(--cyan);
-            transform: translateY(-5px);
-            background: rgba(0, 229, 255, 0.02);
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
-        }
-
-        .glass-box h4 {
-            font-size: 1.4rem;
-            color: var(--text-primary);
-            margin-bottom: 1.2rem;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-
-        .highlight-list {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .highlight-list li {
-            position: relative;
-            padding-left: 1.75rem;
-            margin-bottom: 1rem;
-            color: var(--text-secondary);
-            font-size: 1.05rem;
-        }
-
-        .highlight-list li::before {
-            content: '→';
-            position: absolute;
-            left: 0;
-            color: var(--cyan);
-            font-weight: bold;
-        }
-
-        /* Table Design */
-        .table-responsive {
-            overflow-x: auto;
-            margin-bottom: 3rem;
-            border-radius: 20px;
-            border: 1px solid var(--glass-border);
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background: var(--glass-bg);
-            text-align: left;
-        }
-
-        th, td {
-            padding: 1.25rem 1.5rem;
-        }
-
-        th {
-            background-color: rgba(0, 229, 255, 0.08);
-            color: var(--cyan);
-            font-weight: 700;
-            text-transform: uppercase;
-            font-size: 0.8rem;
-            letter-spacing: 0.05em;
-            border-bottom: 1px solid var(--glass-border);
-        }
-
-        td {
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            font-size: 0.95rem;
-            color: var(--text-secondary);
-        }
-
-        tr:last-child td {
-            border-bottom: none;
-        }
-
-        .grid-2 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
-        .grid-3 {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-        }
-
-        @media (max-width: 1024px) {
-            .grid-3 {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .tech-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .tech-pill {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid var(--glass-border);
-            padding: 1rem 1.8rem;
-            border-radius: 16px;
-            font-size: 1rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .tech-pill strong {
-            color: var(--cyan);
-        }
-
-        .btn-group {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 2rem;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+        /* This page's sections fade in on load rather than waiting for scroll —
+           overrides the plain (no-animation) .section-block in the shared sheet. */
+        .section-block { animation: fadeIn 1s ease-out forwards; opacity: 0; }
+        .section-block.reveal.active { opacity: 1; }
     </style>
 </head>
 
@@ -227,40 +22,8 @@
     <div class="blob blob-1"></div>
     <div class="blob blob-2"></div>
 
-    <nav>
-        <div class="container nav-content">
-            <a href="../index.html" class="logo">Omni<span>N</span>Stack</a>
-            <div class="nav-links" id="nav-links">
-                <a href="../index.html">Home</a>
-                <a href="../index.html#platform">Platform</a>
-                <div class="nav-item">
-                    <a href="../index.html#products">Products <span class="caret">&#9662;</span></a>
-                    <div class="dropdown-menu">
-                        <a href="convergo_ko.html" class="active">Convergo &mdash; 고객 인게이지먼트</a>
-                        <a href="contexa.html">Contexa &mdash; Trust &amp; Safety</a>
-                    </div>
-                </div>
-                <a href="../developers.html">Developers</a>
-                <div class="nav-item">
-                    <a href="#" class="nav-parent" onclick="return false;">Resources <span class="caret">&#9662;</span></a>
-                    <div class="dropdown-menu">
-                        <a href="../whitepaper.html">Platform Whitepaper</a>
-                        <a href="../story.html">Our Story</a>
-                        <a href="../whitepaper-convergo.html" class="active">Convergo Whitepaper</a>
-                        <a href="../whitepaper-contexa.html">Contexa Whitepaper</a>
-                        <a href="../blog.html">Blog</a>
-                        <a href="../documentation.html">Documentation</a>
-                    </div>
-                </div>
-                <a href="../company.html">Company</a>
-                <a href="mailto:info@omninstack.com" class="btn btn-outline"
-                    style="padding: 0.7rem 1.8rem; font-size: 0.75rem; border-radius: 12px;">Contact Us</a>
-            </div>
-            <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
-                <span></span><span></span><span></span>
-            </button>
-        </div>
-    </nav>
+    <div id="site-nav"></div>
+    <script src="../nav-footer.js" data-id="convergo_ko"></script>
 
     <main class="page-content">
         <header class="page-header reveal">
@@ -294,6 +57,19 @@
                     <a href="mailto:info@omninstack.com" class="btn btn-primary" style="padding: 1rem 2.5rem; font-size: 0.8rem; border-radius: 12px;">실시간 데모 예약</a>
                     <a href="#" class="btn btn-outline" style="padding: 1rem 2.5rem; font-size: 0.8rem; border-radius: 12px;">API 샌드박스 탐색</a>
                 </div>
+            </div>
+        </section>
+
+        <!-- CHALLENGE & SOLUTION -->
+        <section class="section-block reveal" id="challenge-sec">
+            <h3>도전 과제 (The Challenge)</h3>
+            <div class="glass-box">
+                <p style="margin-bottom: 0;">대부분의 고객 인게이지먼트 도구는 사용자에게 전용 앱 설치를 강요하거나, 지역 맥락·매장 운영 시간·지역별 재고·실시간 이벤트 업데이트를 이해하지 못하는 정적 챗봇에 의존합니다.</p>
+            </div>
+            <div class="glass-box">
+                <h4>해결책: Convergo</h4>
+                <p>Convergo는 일상적으로 쓰는 메신저 앱과 실시간 지역 정보 사이의 간극을 메웁니다. WhatsApp, 카카오톡, Messenger처럼 이미 널리 쓰이는 채팅 채널에 직접 내장되어, 고객은 별도의 앱 설치 없이 가상 어시스턴트와 상호작용할 수 있습니다.</p>
+                <p style="margin-bottom: 0;">Convergo의 에이전틱 RAG와 옴니채널 라우팅을 기반으로, 지역 매장 데이터·지역별 재고·실시간 텔레메트리를 수집해 실시간으로 근거(citation)가 명확한 답변을 제공합니다.</p>
             </div>
         </section>
 
@@ -413,31 +189,8 @@
 
     </main>
 
-    <footer>
-        <div class="container">
-            <div class="footer-logo logo" style="justify-content: center; margin-bottom: 2rem;">Omni<span>N</span>Stack</div>
-            <div class="footer-tagline">
-                <span class="accent-text">Enterprise AI Platform Company</span>
-                <p>One shared AI platform. A growing portfolio. Built in Canada.</p>
-            </div>
-            <div class="footer-nav" style="display: flex; justify-content: center; gap: 2rem; margin-bottom: 2rem; flex-wrap: wrap;">
-                <a href="../index.html" style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">Home</a>
-                <a href="convergo_ko.html" style="color: var(--cyan); text-decoration: none; font-size: 0.85rem; font-weight: bold;">Convergo 플랫폼</a>
-                <a href="contexa.html" style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">Contexa Platform</a>
-                <a href="../developers.html" style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">Developers</a>
-                <a href="../whitepaper.html" style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">Platform Whitepaper</a>
-                <a href="../story.html" style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">Our Story</a>
-                <a href="../whitepaper-convergo.html" style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">Convergo Whitepaper</a>
-                <a href="../whitepaper-contexa.html" style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">Contexa Whitepaper</a>
-                <a href="../company.html" style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">Company</a>
-            </div>
-            <p class="footer-address">
-                OMNINSTACK AI SOLUTIONS INC.<br>
-                Suite 1028 20055 Willowbrook Drive Unit #200 Langley, BC V2Y 2T5 Canada
-            </p>
-            <p class="footer-copy">&copy; 2026 OmniNStack. All Rights Reserved.</p>
-        </div>
-    </footer>
+    <div id="site-footer"></div>
+    <script src="../nav-footer.js" data-id="convergo_ko"></script>
 
     <script src="../script.js"></script>
 </body>
