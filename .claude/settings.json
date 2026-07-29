@@ -16,7 +16,11 @@
       "Bash(git commit --amend -m 'feat: reposition homepage as AI workforce product platform' -m 'Align homepage with the product-company narrative \\(AI Operations Platform / AI workforce\\) over a services framing: *)",
       "Bash(git commit -m 'feat: mirror AI workforce positioning into whitepaper' -m '- Add '\\\\''The Platform at a Glance'\\\\'' \\(four product capabilities\\) *)",
       "Bash('C:\\\\Users\\\\June/.claude/skills/gstack/browse/dist/browse' viewport *)",
-      "Bash(git remote *)"
+      "Bash(git remote *)",
+      "Bash(curl -s -m 12 \"https://git.omninstack.com/api/v1/version\")",
+      "Bash(curl -s -m 12 -o /dev/null -w \"%{http_code}\\\\n\" \"https://git.omninstack.com/omninstack\")",
+      "Bash(git credential *)",
+      "Bash(echo \"PUSH_EXIT=$?\")"
     ]
   }
 }
