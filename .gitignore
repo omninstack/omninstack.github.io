@@ -1,5 +1,7 @@
 .DS_Store
 .gstack/
+Thumbs.db
+*.swp
 
 # Private internal docs (fundraising/strategy) — not for the public site
 documents/
