@@ -119,10 +119,11 @@
         <!-- CORE VALUE PILLARS -->
         <section class="section-block reveal" id="pillars-sec">
             <h3>핵심 가치 제안</h3>
+            <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">Convergo는 두 개의 전용 모듈로 운영됩니다: AI 기반 콘텐츠와 카피를 담당하는 <strong class="accent-text">Convergo Studio</strong>, 옴니채널 메시징·인챗 커머스·기여도 분석을 담당하는 <strong class="accent-text">Convergo Chat</strong>입니다.</p>
             <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-                
+
                 <div class="glass-box">
-                    <h4><span>📈</span> 1. 오프라인 매장 방문 기여도 분석 & POS 연동 (True Offline Attribution)</h4>
+                    <h4><span>📈</span> 1. 오프라인 매장 방문 기여도 분석 & POS 연동 (True Offline Attribution) <span class="mono accent-text" style="font-size: 0.75rem;">(Convergo Chat)</span></h4>
                     <p>디지털 마케팅의 실제 투자 대비 효과(ROI)를 더 이상 추측에 의존하지 마세요. Convergo는 디지털 대화와 오프라인 매장의 결제 단말기를 긴밀히 연결합니다.</p>
                     <ul class="highlight-list">
                         <li><strong>실시간 쿠폰 검증 및 사용:</strong> 고객은 메신저 앱으로 실시간 바코드/QR 쿠폰을 직접 수령하며, 매장 카운터나 셀프 서비스 키오스크(<strong>Clover, Toast, OKPOS, Force</strong> 등)에서 스캔하는 즉시 실시간으로 검증 및 사용 처리됩니다.</li>
@@ -132,10 +133,11 @@
                 </div>
 
                 <div class="glass-box">
-                    <h4><span>🤖</span> 2. AI 기반 카피라이팅 & 대화형 RAG 검색</h4>
+                    <h4><span>🤖</span> 2. AI 기반 카피라이팅 & 대화형 RAG 검색 <span class="mono accent-text" style="font-size: 0.75rem;">(Convergo Studio)</span></h4>
                     <p>빌트인 LLM 어시스턴트를 통해 고객 참여와 실제 구매 전환을 극대화합니다 &mdash; 근거 없는 챗봇의 환각 위험 없이.</p>
                     <ul class="highlight-list">
                         <li><strong>카피라이팅 코파일럿:</strong> 채널별 사양과 브랜드의 아이덴티티에 최적화된 다변량 메시지 문구, 헤드라인, 행동유도버튼(CTA)을 생성합니다.</li>
+                        <li><strong>소셜 콘텐츠 스튜디오:</strong> 텍스트, 그래픽, 지역 프로모션 등 멀티모달 소셜 게시물을 자동으로 생성하고 주요 SNS 채널에 예약 게시하여, 전담 마케팅 인력이 없는 사업자도 꾸준한 소셜 활동을 유지할 수 있게 합니다.</li>
                         <li><strong>디렉토리 및 카탈로그 추천 검색:</strong> 고객이 자연스러운 구어체 대화(예: <em>"가까운 탕후루 가게 찾아줘"</em> 또는 <em>"근처에 자장면 파는 한식당 어디야?"</em>)로 근처 매장과 상품을 쉽게 검색하도록 지원하며, 벡터 데이터베이스(pgvector/Qdrant)와 지리 좌표 필터링을 통해 정확한 추천 결과를 제공합니다.</li>
                         <li><strong>실시간 데이터로 검증된 응답:</strong> Vector Search는 후보 매장/상품을 찾는 recall 레이어이고, 최종 응답 전 PostgreSQL에서 가격·재고·판매 상태를 재확인하는 truth 레이어를 반드시 거칩니다 &mdash; AI가 방금 확인하지 않은 가격이나 재고 정보를 말하는 일은 없습니다.</li>
                         <li><strong>맥락을 이해하는 후속 질문 처리:</strong> "그거 아직 있어요?"와 같은 질문은 이전에 확인된 매장/상품 맥락을 그대로 활용합니다. 반면 새로운 매장, 상품, 가격 조건, 카테고리가 명시되면 이전 결과를 재사용하지 않고 즉시 새로 조회합니다.</li>
@@ -144,7 +146,7 @@
                 </div>
 
                 <div class="glass-box">
-                    <h4><span>🔄</span> 3. 옴니채널 메시징 & 안정적인 폴백(Fallback) 라우팅</h4>
+                    <h4><span>🔄</span> 3. 옴니채널 메시징 & 안정적인 폴백(Fallback) 라우팅 <span class="mono accent-text" style="font-size: 0.75rem;">(Convergo Chat)</span></h4>
                     <p>전송 장애로 인해 잠재 고객을 놓치는 일이 없습니다. 카카오톡, WhatsApp, 텔레그램, LINE, Viber, Zalo, WeChat, SMS, RCS 등 글로벌 및 국가별 주요 메시징 채널을 모두 지원합니다.</p>
                     <ul class="highlight-list">
                         <li><strong>자동 폴백 설정:</strong> <em>"WhatsApp으로 우선 전송을 시도하되, 15분 내로 전달되지 않으면 SMS로 자동 전환하여 재발송"</em>과 같은 유연한 비즈니스 룰을 구성할 수 있습니다.</li>
