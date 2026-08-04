@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Convergo Technical Whitepaper | OmniNStack</title>
-    <meta name="description" content="Convergo Technical Whitepaper: the architecture behind AI-powered omnichannel messaging and offline POS attribution — closing the gap between digital campaigns and in-store revenue.">
+    <title>Outward Technical Whitepaper | OmniNStack</title>
+    <meta name="description" content="Outward Technical Whitepaper: the architecture behind AI-powered omnichannel messaging and offline POS attribution — closing the gap between digital campaigns and in-store revenue.">
 
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="assets/favicon.png">
@@ -17,12 +17,12 @@
     <div class="blob blob-2"></div>
 
     <div id="site-nav"></div>
-    <script src="nav-footer.js" data-id="whitepaper-convergo"></script>
+    <script src="nav-footer.js" data-id="whitepaper-outward"></script>
 
     <main class="whitepaper-content">
         <header class="wp-header reveal">
             <h4 class="accent-text mono">Technical Whitepaper</h4>
-            <h2><span class="gradient-text">Convergo</span></h2>
+            <h2><span class="gradient-text">Outward</span></h2>
             <p style="font-size: 1.4rem; color: var(--silver);">Closing the Gap Between Digital Messaging and Offline Revenue</p>
             <div style="margin-top: 2rem; color: var(--text-muted); font-size: 0.9rem;" class="mono">
                 JULY 2026 | VERSION 1.0 | OMNINSTACK CORE TEAM
@@ -32,16 +32,16 @@
         <section class="executive-summary reveal" id="summary">
             <h3 style="border: none; font-size: 1.8rem;">Executive Summary</h3>
             <p>Businesses have moved their marketing into instant messaging — WhatsApp, KakaoTalk, Telegram, SMS — because that's where customers already are. But managing campaigns across those channels is fragmented, and proving that a digital message actually drove a physical, in-store purchase has historically been close to impossible.</p>
-            <p><strong>Convergo</strong> is OmniNStack's AI Customer Engagement Platform: an omnichannel messaging system with AI-generated content, resilient cross-channel failover, and real-time offline POS/coupon attribution built in from the ground up. This document describes the architecture that makes that attribution possible, and the AI and reliability engineering underneath it.</p>
+            <p><strong>Outward</strong> is OmniNStack's AI Customer Engagement Platform: an omnichannel messaging system with AI-generated content, resilient cross-channel failover, and real-time offline POS/coupon attribution built in from the ground up. This document describes the architecture that makes that attribution possible, and the AI and reliability engineering underneath it.</p>
         </section>
 
         <section class="wp-section reveal" id="platform">
             <h3>The Platform at a Glance</h3>
-            <p>Convergo unifies four capabilities that are normally handled by separate, disconnected tools, across two purpose-built modules — <strong>Convergo Studio</strong> for AI-driven content and copy, and <strong>Convergo Chat</strong> for omnichannel messaging, in-chat commerce, and attribution:</p>
+            <p>Outward unifies four capabilities that are normally handled by separate, disconnected tools, across two purpose-built modules — <strong>Outward Studio</strong> for AI-driven content and copy, and <strong>Outward Chat</strong> for omnichannel messaging, in-chat commerce, and attribution:</p>
             <ul class="wp-list">
-                <li><strong>Omnichannel Delivery &amp; Failover</strong> (Convergo Chat)<strong>:</strong> One API surface across WhatsApp, KakaoTalk, Telegram, LINE, Viber, Zalo, WeChat, SMS, and RCS, with automated cross-channel fallback when a message doesn't land.</li>
-                <li><strong>AI Copywriting, Social Content &amp; Conversational RAG</strong> (Convergo Studio)<strong>:</strong> LLM-generated message variants, automated social post generation and scheduling across SNS channels, and a retrieval-augmented search layer that lets customers find stores and products in natural language.</li>
-                <li><strong>Offline POS Attribution</strong> (Convergo Chat)<strong>:</strong> Coupon codes and QR redemptions matched back to the specific message or campaign that drove the visit, closing the loop from digital send to physical sale.</li>
+                <li><strong>Omnichannel Delivery &amp; Failover</strong> (Outward Chat)<strong>:</strong> One API surface across WhatsApp, KakaoTalk, Telegram, LINE, Viber, Zalo, WeChat, SMS, and RCS, with automated cross-channel fallback when a message doesn't land.</li>
+                <li><strong>AI Copywriting, Social Content &amp; Conversational RAG</strong> (Outward Studio)<strong>:</strong> LLM-generated message variants, automated social post generation and scheduling across SNS channels, and a retrieval-augmented search layer that lets customers find stores and products in natural language.</li>
+                <li><strong>Offline POS Attribution</strong> (Outward Chat)<strong>:</strong> Coupon codes and QR redemptions matched back to the specific message or campaign that drove the visit, closing the loop from digital send to physical sale.</li>
                 <li><strong>Enterprise-Grade Reliability:</strong> An asynchronous, queue-backed ingestion pipeline built for high-volume webhook traffic without dropped messages.</li>
             </ul>
         </section>
@@ -58,7 +58,7 @@
 
         <section class="wp-section reveal" id="architecture">
             <h3>II. Architecture: The Omnichannel Attribution Pipeline</h3>
-            <p>Convergo is built as a five-stage pipeline, from inbound webhook to closed-loop attribution ledger.</p>
+            <p>Outward is built as a five-stage pipeline, from inbound webhook to closed-loop attribution ledger.</p>
 
             <div class="architecture-grid">
                 <div class="layer-box">
@@ -85,7 +85,7 @@
         </section>
 
         <section class="wp-section reveal" id="ai-engagement">
-            <h3>III. AI-Powered Engagement (Convergo Studio)</h3>
+            <h3>III. AI-Powered Engagement (Outward Studio)</h3>
             <p>Three AI capabilities sit directly in the customer-facing path, not bolted on as an afterthought:</p>
             <ul class="wp-list">
                 <li><strong>Copywriting Copilot:</strong> Generates multi-variant message copy, headlines, and calls-to-action tuned per channel and brand voice, so campaigns don't rely on a single hand-written template.</li>
@@ -94,7 +94,7 @@
                 <li><strong>Alternative Suggestion Engine:</strong> When an exact match isn't available, the same retrieval layer proposes the nearest relevant alternative rather than returning an empty result.</li>
             </ul>
 
-            <p style="margin-top: 3rem;"><strong>Why generic LLM chatbots fail at this, and what Convergo does differently:</strong> an LLM answering from its own generation alone is fluent but ungrounded — it can describe a product that's out of stock, quote a price that changed yesterday, or confidently invent a store location that doesn't exist. Convergo treats the language model as a <em>recall</em> layer, never the final word.</p>
+            <p style="margin-top: 3rem;"><strong>Why generic LLM chatbots fail at this, and what Outward does differently:</strong> an LLM answering from its own generation alone is fluent but ungrounded — it can describe a product that's out of stock, quote a price that changed yesterday, or confidently invent a store location that doesn't exist. Outward treats the language model as a <em>recall</em> layer, never the final word.</p>
 
             <div class="architecture-grid" style="margin-top: 2rem;">
                 <div class="layer-box">
@@ -114,14 +114,14 @@
                     <p>The customer gets an answer that matches what's actually true in the system of record at that moment &mdash; not what sounded plausible.</p>
                 </div>
             </div>
-            <p style="margin-top: 1.5rem;"><strong>The operating principle: Vector DB is a recall layer; PostgreSQL is the truth layer.</strong> Semantic search is good at finding what's <em>probably</em> relevant; it is the wrong tool for confirming what's <em>currently</em> true. Convergo never lets the former substitute for the latter.</p>
+            <p style="margin-top: 1.5rem;"><strong>The operating principle: Vector DB is a recall layer; PostgreSQL is the truth layer.</strong> Semantic search is good at finding what's <em>probably</em> relevant; it is the wrong tool for confirming what's <em>currently</em> true. Outward never lets the former substitute for the latter.</p>
 
             <p style="margin-top: 3rem;"><strong>Context that knows when not to reuse itself:</strong> a follow-up like "is that still available?" or "what's the price?" correctly reuses the previously resolved product context. But a query that introduces a new explicit condition — a different store, product, price ceiling, or category — is never answered from stale context; it triggers a fresh lookup instead. Getting this distinction wrong is a common failure mode in conversational systems: either every turn re-searches from scratch (slow, and loses conversational continuity), or context is over-applied and customers get answers about the wrong store or an outdated price.</p>
 
             <div class="table-responsive" style="margin-top: 2rem;">
                 <table>
                     <thead>
-                        <tr><th>Generic Chatbot</th><th>Convergo's Data-Driven Agent</th></tr>
+                        <tr><th>Generic Chatbot</th><th>Outward's Data-Driven Agent</th></tr>
                     </thead>
                     <tbody>
                         <tr><td>FAQ-scripted responses; quality collapses outside the anticipated question set</td><td>Handles open-ended, natural-language queries grounded in live catalog data</td></tr>
@@ -136,7 +136,7 @@
 
         <section class="wp-section reveal" id="reliability">
             <h3>IV. Reliability at Scale</h3>
-            <p>Messaging infrastructure that drops webhooks under load isn't just an inconvenience — it's a missed sale and a broken attribution record. Convergo's ingestion layer is built for enterprise traffic volumes:</p>
+            <p>Messaging infrastructure that drops webhooks under load isn't just an inconvenience — it's a missed sale and a broken attribution record. Outward's ingestion layer is built for enterprise traffic volumes:</p>
             <div class="table-responsive">
                 <table>
                     <thead>
@@ -170,13 +170,13 @@
 
         <section class="wp-section reveal" id="conclusion" style="text-align: center; margin-top: 8rem;">
             <h2 class="gradient-text">Every Message, Traceable to Revenue.</h2>
-            <p style="max-width: 700px; margin: 2rem auto;">Convergo turns messaging apps into a measurable, closed-loop sales channel &mdash; connecting every digital send to what actually happened at the register.</p>
+            <p style="max-width: 700px; margin: 2rem auto;">Outward turns messaging apps into a measurable, closed-loop sales channel &mdash; connecting every digital send to what actually happened at the register.</p>
             <a href="mailto:info@omninstack.com" class="btn btn-primary">Request a Technical Briefing</a>
         </section>
     </main>
 
     <div id="site-footer"></div>
-    <script src="nav-footer.js" data-id="whitepaper-convergo"></script>
+    <script src="nav-footer.js" data-id="whitepaper-outward"></script>
 
     <script src="script.js"></script>
     <script>

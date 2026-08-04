@@ -16,18 +16,18 @@
         'blog': { variant: 'flat', depth: 0, resourcesActive: 'blog' },
         'whitepaper': { variant: 'flat', depth: 0, resourcesActive: 'whitepaper', extraProfileLink: true },
         'story': { variant: 'flat', depth: 0, resourcesActive: 'story' },
-        'whitepaper-convergo': { variant: 'whitepaper', depth: 0, resourcesActive: 'whitepaper-convergo' },
+        'whitepaper-outward': { variant: 'whitepaper', depth: 0, resourcesActive: 'whitepaper-outward' },
         'whitepaper-contexa': { variant: 'whitepaper', depth: 0, resourcesActive: 'whitepaper-contexa' },
-        'convergo': { variant: 'whitepaper', depth: 1, productsActive: 'convergo' },
+        'outward': { variant: 'whitepaper', depth: 1, productsActive: 'outward' },
         'contexa': { variant: 'whitepaper', depth: 1, productsActive: 'contexa' },
-        'convergo_ko': { variant: 'whitepaper', depth: 1, productsActive: 'convergo_ko', locale: 'ko' },
+        'outward_ko': { variant: 'whitepaper', depth: 1, productsActive: 'outward_ko', locale: 'ko' },
         'contexa_ko': { variant: 'whitepaper', depth: 1, productsActive: 'contexa_ko', locale: 'ko' }
     };
 
     var RESOURCE_ITEMS = [
         ['whitepaper', 'whitepaper.html', 'Platform Whitepaper'],
         ['story', 'story.html', 'Our Story'],
-        ['whitepaper-convergo', 'whitepaper-convergo.html', 'Convergo Whitepaper'],
+        ['whitepaper-outward', 'whitepaper-outward.html', 'Outward Whitepaper'],
         ['whitepaper-contexa', 'whitepaper-contexa.html', 'Contexa Whitepaper'],
         ['blog', 'blog.html', 'Blog'],
         ['documentation', 'documentation.html', 'Documentation']
@@ -35,12 +35,12 @@
 
     var FOOTER_ITEMS = [
         ['index', 'index.html', 'Home', 'root'],
-        ['convergo', null, 'Convergo Platform', 'mkt'],
+        ['outward', null, 'Outward Platform', 'mkt'],
         ['contexa', null, 'Contexa Platform', 'mkt'],
         ['developers', 'developers.html', 'Developers', 'root'],
         ['whitepaper', 'whitepaper.html', 'Platform Whitepaper', 'root'],
         ['story', 'story.html', 'Our Story', 'root'],
-        ['whitepaper-convergo', 'whitepaper-convergo.html', 'Convergo Whitepaper', 'root'],
+        ['whitepaper-outward', 'whitepaper-outward.html', 'Outward Whitepaper', 'root'],
         ['whitepaper-contexa', 'whitepaper-contexa.html', 'Contexa Whitepaper', 'root'],
         ['blog', 'blog.html', 'Blog', 'root'],
         ['documentation', 'documentation.html', 'Documentation', 'root'],
@@ -86,9 +86,9 @@
 
     function productsDropdown(cfg, rootPrefix, mktPrefix) {
         var isKo = cfg.locale === 'ko';
-        var convergoFile = isKo ? 'convergo_ko.html' : 'convergo.html';
-        var convergoLabel = isKo ? 'Convergo &mdash; 고객 인게이지먼트' : 'Convergo &mdash; Customer Engagement';
-        var convergoActive = (cfg.productsActive === 'convergo' || cfg.productsActive === 'convergo_ko') ? ' class="active"' : '';
+        var outwardFile = isKo ? 'outward_ko.html' : 'outward.html';
+        var outwardLabel = isKo ? '잇다(ITDA) &mdash; 고객 인게이지먼트' : 'Outward &mdash; Customer Engagement';
+        var outwardActive = (cfg.productsActive === 'outward' || cfg.productsActive === 'outward_ko') ? ' class="active"' : '';
 
         var contexaFile = isKo ? 'contexa_ko.html' : 'contexa.html';
         var contexaLabel = isKo ? 'Contexa &mdash; 트러스트 &amp; 세이프티' : 'Contexa &mdash; Trust &amp; Safety';
@@ -97,7 +97,7 @@
         return '<div class="nav-item">\n' +
             '                    <a href="' + rootPrefix + 'index.html#products">Products <span class="caret">&#9662;</span></a>\n' +
             '                    <div class="dropdown-menu">\n' +
-            '                        <a href="' + mktPrefix + convergoFile + '"' + convergoActive + '>' + convergoLabel + '</a>\n' +
+            '                        <a href="' + mktPrefix + outwardFile + '"' + outwardActive + '>' + outwardLabel + '</a>\n' +
             '                        <a href="' + mktPrefix + contexaFile + '"' + contexaActive + '>' + contexaLabel + '</a>\n' +
             '                    </div>\n' +
             '                </div>';
@@ -127,7 +127,7 @@
             products = '<div class="nav-item">\n' +
                 '                    <a href="#products">Products <span class="caret">&#9662;</span></a>\n' +
                 '                    <div class="dropdown-menu">\n' +
-                '                        <a href="marketing/convergo.html">Convergo &mdash; Customer Engagement</a>\n' +
+                '                        <a href="marketing/outward.html">Outward &mdash; Customer Engagement</a>\n' +
                 '                        <a href="marketing/contexa.html">Contexa &mdash; Trust &amp; Safety</a>\n' +
                 '                    </div>\n' +
                 '                </div>';
@@ -180,10 +180,10 @@
             var key = item[0], file = item[1], label = item[2], kind = item[3];
             var active = false, href, text = label;
 
-            if (key === 'convergo') {
-                href = mktPrefix + (isKo ? 'convergo_ko.html' : 'convergo.html');
-                text = isKo ? 'Convergo 플랫폼' : label;
-                active = cfg.id === 'convergo' || cfg.id === 'convergo_ko';
+            if (key === 'outward') {
+                href = mktPrefix + (isKo ? 'outward_ko.html' : 'outward.html');
+                text = isKo ? '잇다(ITDA) 플랫폼' : label;
+                active = cfg.id === 'outward' || cfg.id === 'outward_ko';
             } else if (key === 'contexa') {
                 href = mktPrefix + (isKo ? 'contexa_ko.html' : 'contexa.html');
                 text = isKo ? 'Contexa 플랫폼' : label;

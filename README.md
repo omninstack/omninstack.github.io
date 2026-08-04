@@ -43,7 +43,7 @@ graph TD
     style E fill:#001F3F,stroke:#00E5FF,stroke-width:2px,color:#fff
 ```
 
-- **Presentation Layer** — Unified command center for human-AI collaboration (Open WebUI, Convergo chat interfaces, native IDE plugins).
+- **Presentation Layer** — Unified command center for human-AI collaboration (Open WebUI, Outward chat interfaces, native IDE plugins).
 - **Governance Layer** — Policy-as-Code (OPA) and immutable, identity-aware auditing for every request.
 - **Orchestration Layer** — The cognitive engine managing agentic reasoning, omnichannel routing, and industrial AIoT bridging.
 - **Data Layer** — Sovereign RAG with secure vector stores and zero data leakage.
@@ -58,7 +58,7 @@ This repository hosts the OmniNStack marketing site, served via GitHub Pages at 
 ```
 index.html        # Homepage
 whitepaper.html   # Technical whitepaper
-marketing/        # Convergo & Contexa product pages (EN/KO)
+marketing/        # Outward & Contexa product pages (EN/KO)
 assets/           # Images and icons
 style.css         # Shared styles
 script.js         # Scroll reveal and interactions
@@ -81,7 +81,7 @@ Ready to deploy your AI workforce? Contact us to schedule a demo or learn more a
 
 - [Website](https://www.omninstack.com)
 - [Technical Whitepaper](https://www.omninstack.com/whitepaper.html)
-- [Convergo Platform](https://www.omninstack.com/marketing/convergo.html)
+- [Outward Platform](https://www.omninstack.com/marketing/outward.html)
 - [Contexa Platform](https://www.omninstack.com/marketing/contexa.html)
 - [LinkedIn](https://www.linkedin.com/in/omninstack/)
 

@@ -26,5 +26,5 @@ Core technical foundation: building curated datasets and a Retrieval-Augmented G
 
 Both platforms are built on the shared dataset + RAG foundation above:
 
-- **Convergo** — Customer Engagement platform. Uses SNS and user-input data for sentiment-aware messaging, and sales-catalog data for natural-language product/catalog search and AI-assisted copy generation.
+- **Outward** — Customer Engagement platform. Uses SNS and user-input data for sentiment-aware messaging, and sales-catalog data for natural-language product/catalog search and AI-assisted copy generation.
 - **Contexa** — Trust & Safety platform. Uses SNS and user-input data (posts, chats, reports) as the primary moderation surface, with RAG for context-aware policy retrieval and explainable moderation decisions.
