@@ -17,7 +17,7 @@ Core technical foundation: building curated datasets and a Retrieval-Augmented G
 | Stage | Description |
 | --- | --- |
 | **Data Ingestion & Chunking** | Normalize source data and split it into semantically coherent chunks. |
-| **Embedding Generation** | Convert chunks into vector embeddings using on-prem or air-gapped embedding models. |
+| **Embedding Generation** | Convert chunks into vector embeddings using on-prem or sovereign embedding models. |
 | **Vector Database** | Store and index embeddings (e.g., pgvector, Qdrant) for fast semantic search. |
 | **Retrieval** | Fetch the most relevant chunks for a given query via similarity search. |
 | **Augmentation & Generation** | Inject retrieved context into the LLM prompt and generate a grounded, citation-backed response. |

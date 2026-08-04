@@ -6,7 +6,7 @@ Cyberbullying and online toxicity present unique operational challenges: they ru
 
 ## The Solution: Contexa
 
-Contexa delivers real-time, identity-aware content moderation and dynamic enforcement across modern platforms. Operating fully on-premise or air-gapped, Contexa monitors multi-modal communications to identify toxic patterns, collect court-ready digital evidence, and execute automated policy actions.
+Contexa delivers real-time, identity-aware content moderation and dynamic enforcement across modern platforms. Operating fully on-premise or sovereign, Contexa monitors multi-modal communications to identify toxic patterns, collect court-ready digital evidence, and execute automated policy actions.
 
 ## Key Capabilities
 

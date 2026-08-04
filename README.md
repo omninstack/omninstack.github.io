@@ -2,7 +2,7 @@
 
 **OmniNStack is the AI Operations Platform for enterprise automation.** It lets companies replace repetitive work with AI-powered teams — deploying autonomous AI agents that run real workflows end-to-end, entirely on infrastructure the organization owns.
 
-Built for high-trust enterprises where data can't leave the building, OmniNStack is on-premise, sovereign, and network-air-gapped by design.
+Built for high-trust enterprises where data can't leave the building, OmniNStack is on-premise and sovereign by design.
 
 ## 🌟 Vision
 
@@ -13,7 +13,7 @@ In a world where data sovereignty is non-negotiable, OmniNStack serves as the ce
 OmniNStack puts AI-powered teams to work through four tightly integrated capabilities:
 
 - **Multi-Agent Orchestration** — Compose teams of autonomous agents that plan, delegate, and coordinate to complete end-to-end work.
-- **Enterprise Knowledge Retrieval** — A sovereign, air-gapped knowledge base delivering high-fidelity, citation-backed answers, without data ever leaving your network.
+- **Enterprise Knowledge Retrieval** — A sovereign knowledge base delivering high-fidelity, citation-backed answers, without data ever leaving your network.
 - **Workflow Automation** — Automate repetitive, multi-step operations, routing each task to the right public or private LLM with zero vendor lock-in.
 - **Analytics & Audit** — A live dashboard for every AI-powered team, backed by immutable, identity-aware audit trails on every action.
 
@@ -22,8 +22,8 @@ OmniNStack puts AI-powered teams to work through four tightly integrated capabil
 OmniNStack is a product company. Our defensibility comes from technology we engineer ourselves to solve problems off-the-shelf AI cannot:
 
 - **Agent Coordination Engine** — A multi-agent orchestration framework where agents plan, delegate, and self-correct reliably across long-running workflows.
-- **Sovereign Memory & Retrieval** — Original AI memory architecture and air-gapped retrieval that deliver citation-backed knowledge fully on-premise.
-- **Edge Inference Optimization** — Inference tuned for NVIDIA TensorRT and Apple MLX, bringing server-grade model performance to edge and air-gapped hardware.
+- **Sovereign Memory & Retrieval** — Original AI memory architecture and sovereign retrieval that deliver citation-backed knowledge fully on-premise.
+- **Edge Inference Optimization** — Inference tuned for NVIDIA TensorRT and Apple MLX, bringing server-grade model performance to edge and sovereign hardware.
 
 ## 🏗️ Architecture
 
@@ -46,8 +46,8 @@ graph TD
 - **Presentation Layer** — Unified command center for human-AI collaboration (Open WebUI, Convergo chat interfaces, native IDE plugins).
 - **Governance Layer** — Policy-as-Code (OPA) and immutable, identity-aware auditing for every request.
 - **Orchestration Layer** — The cognitive engine managing agentic reasoning, omnichannel routing, and industrial AIoT bridging.
-- **Data Layer** — Sovereign, air-gapped RAG with secure vector stores and zero data leakage.
-- **Infrastructure Layer** — Self-hosted, hardware-agnostic foundation optimized for edge and air-gapped nodes.
+- **Data Layer** — Sovereign RAG with secure vector stores and zero data leakage.
+- **Infrastructure Layer** — Self-hosted, hardware-agnostic foundation optimized for edge and sovereign nodes.
 
 See the [Technical Whitepaper](https://www.omninstack.com/whitepaper.html) for the full architecture.
 
