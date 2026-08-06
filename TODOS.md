@@ -88,3 +88,11 @@ Tracked separately from the website engineering items above — see the full des
 **Context:** Surfaced by outside-voice review during `/plan-ceo-review`. Revisit at the actual gate-check moment (2026-07-09) if the result lands in the ambiguous middle.
 **Depends on:** The actual gate-check result tomorrow.
 
+
+## 11. No no-JS/no-fetch fallback for scroll-reveal content
+**What:** Every page's content sections use `.reveal`/`.wp-section`/`.story-section`/animated `.section-block` classes that sit at `opacity:0` until JavaScript's IntersectionObserver adds `.active`. Confirmed via DOM inspection: on the homepage, 34 of 39 `.reveal` elements remain permanently invisible (computed `opacity: 0`) until script.js runs and the user scrolls. There is no `<noscript>` fallback and no CSS-only guarantee of visibility.
+**Why:** If JavaScript fails to load or execute (network issue, ad blocker, a JS error earlier in the page, browser JS disabled) — or if a crawler/social-media-unfurl bot that doesn't execute JS visits the page — roughly 87% of the homepage's content is invisible with no fallback. This is a real progressive-enhancement gap, not just a cosmetic one.
+**Pros:** Standard fix (a `no-js`/`js` class toggle on `<html>` via an early inline script, with `.reveal` etc. scoped to `.js .reveal` instead of bare `.reveal`) guarantees content is visible by default and only animates when JS is confirmed present.
+**Cons:** Touches the opening `<html>` tag and adds an inline script on all 13 pages, plus restructures the CSS selectors for every animated class — a bigger, more invasive change than a single CSS fix, so it was deferred rather than bundled into this review's fixes.
+**Context:** Found during `/design-review` (2026-08-06) while investigating why a full-page screenshot showed most of the homepage blank. `prefers-reduced-motion` support was fixed in the same session (style.css); this is the remaining, larger half of the same underlying issue.
+**Depends on:** Nothing — can be done anytime, but budget it as its own task rather than a quick fix.
