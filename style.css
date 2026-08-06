@@ -621,6 +621,24 @@ footer {
     transform: translateY(0);
 }
 
+/* Respect prefers-reduced-motion: neutralize every scroll/load-triggered
+   reveal animation sitewide, including the per-page .wp-section/.story-section/
+   animated .section-block variants that redeclare their own fadeIn keyframe.
+   !important is deliberate here — this must win over every component's own
+   animation styling regardless of source order or specificity. */
+@media (prefers-reduced-motion: reduce) {
+    .reveal,
+    .reveal.active,
+    .wp-section,
+    .story-section,
+    .section-block {
+        opacity: 1 !important;
+        transform: none !important;
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
 /* Responsive */
 @media (max-width: 1024px) {
     .hero .container {
