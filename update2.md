@@ -1,6 +1,6 @@
 After reviewing your homepage and the two product pages, I would **reposition the homepage completely**.
 
-Right now, your homepage appears to present OmniNStack as an AI services company. Instead, it should present OmniNStack as an **Enterprise AI Platform Company** with two flagship products: **IMAMAPP** and **PVDMP**. This aligns better with your actual products and strengthens your positioning for customers, grant programs, and investors.  
+Right now, your homepage appears to present OmniNStack as an AI services company. Instead, it should present OmniNStack as an **AI Solutions Company** with two flagship products: **IMAMAPP** and **PVDMP**. This aligns better with your actual products and strengthens your positioning for customers, grant programs, and investors.  
 
 ---
 
@@ -20,7 +20,7 @@ Right now, your homepage appears to present OmniNStack as an AI services company
 
 **Hero Text**
 
-> OmniNStack builds enterprise AI platforms that help organizations engage customers, automate operations, and protect digital communities.
+> OmniNStack builds and services AI platforms grounded in hyper-local community knowledge—regional store information, live inventories, operating hours, and localized offerings. that help organizations engage customers, automate operations, and protect digital communities.
 >
 > From AI-powered customer engagement to Trust & Safety infrastructure, our platforms are designed for enterprises that demand security, scalability, and measurable business outcomes.
 
@@ -355,7 +355,7 @@ with
 
 > OmniNStack
 >
-> Enterprise AI Platform Company
+> AI Solutions Company
 >
 > Building AI Infrastructure for Customer Engagement, Trust & Safety, and Enterprise Intelligence.
 

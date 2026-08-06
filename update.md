@@ -4,7 +4,7 @@ Your company should **not** position itself primarily as an "AI consulting compa
 
 It should position itself as:
 
-> **OmniNStack — Enterprise AI Platform Company**
+> **OmniNStack — AI Solutions Company**
 >
 > Building AI platforms for **Customer Engagement** and **Trust & Safety**.
 

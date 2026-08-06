@@ -204,7 +204,7 @@
             '        <div class="container">\n' +
             '            <div class="footer-logo logo" style="justify-content: center; margin-bottom: 2rem;">Omni<span>N</span>Stack</div>\n' +
             '            <div class="footer-tagline">\n' +
-            '                <span class="accent-text">Enterprise AI Platform Company</span>\n' +
+            '                <span class="accent-text">AI Solutions Company</span>\n' +
             '                <p>One shared AI platform. A growing portfolio. Built in Canada.</p>\n' +
             '            </div>\n' +
             '            <div class="footer-nav">\n' +
