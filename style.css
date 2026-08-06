@@ -295,6 +295,8 @@ nav {
 }
 
 .nav-links a {
+    display: inline-flex;
+    align-items: center;
     color: var(--text-secondary);
     font-weight: 700;
     font-size: 0.8rem;
@@ -304,6 +306,7 @@ nav {
     letter-spacing: 0.12em;
     white-space: nowrap;
     position: relative;
+    min-height: 44px;
     padding-bottom: 4px;
 }
 
@@ -390,7 +393,9 @@ nav {
 }
 
 .dropdown-menu a {
-    display: block;
+    display: flex;
+    align-items: center;
+    min-height: 44px;
     padding: 0.65rem 1rem;
     border-radius: 10px;
     font-size: 0.75rem;
