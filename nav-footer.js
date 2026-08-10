@@ -120,7 +120,6 @@
                 '                    <div class="dropdown-menu">\n' +
                 '                        <a href="#platform">Platform Overview</a>\n' +
                 '                        <a href="#how-it-works">How It Works</a>\n' +
-                '                        <a href="#architecture">Architecture</a>\n' +
                 '                        <a href="#innovation">Innovation</a>\n' +
                 '                    </div>\n' +
                 '                </div>';
