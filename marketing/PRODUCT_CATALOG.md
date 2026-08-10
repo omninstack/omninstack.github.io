@@ -34,6 +34,6 @@ Convergo is engineered from the ground up for high-availability enterprise envir
 
 ---
 
-**Are you ready to transform your instant messaging channels into measurable sales pipelines?**
+**Are you ready to transform your instant Chat Apps into measurable sales pipelines?**
 
 Contact the Convergo sales team today to set up a live operational demo or request sandbox access keypairs.

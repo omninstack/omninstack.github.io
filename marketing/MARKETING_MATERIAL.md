@@ -59,7 +59,7 @@ Never lose a lead due to delivery issues. Convergo supports global and regional 
 
 ## 📞 Get Started Today
 
-Are you ready to transform your instant messaging channels into high-converting, measurable sales pipelines?
+Are you ready to transform your instant Chat Apps into high-converting, measurable sales pipelines?
 
 👉 **[Read the Setup & Run Guide](../run/RUNNING.md)** to launch the platform locally.
 👉 Contact our team for an enterprise demonstration or API sandbox access.
