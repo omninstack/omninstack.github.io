@@ -4,6 +4,8 @@ module.exports = function (eleventyConfig) {
     'script.js': 'script.js',
     'nav-footer.js': 'nav-footer.js',
     'styles/site.css': 'style.css',
+    'styles/tokens.css': 'tokens.css',
+    'styles/components.css': 'components.css',
     CNAME: 'CNAME',
     marketing: 'marketing'
   });

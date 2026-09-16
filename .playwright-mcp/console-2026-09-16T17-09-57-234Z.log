@@ -1,0 +1,13 @@
+[     216ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://localhost:8000/tokens.css:0
+[     218ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://localhost:8000/components.css:0
+[   11361ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://localhost:8000/components.css:0
+[   11361ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://localhost:8000/tokens.css:0
+[   15255ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://localhost:8000/tokens.css:0
+[   15256ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://localhost:8000/components.css:0
+[   16332ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://localhost:8000/tokens.css:0
+[   16332ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://localhost:8000/components.css:0
+[   17095ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://localhost:8000/tokens.css:0
+[   17096ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://localhost:8000/components.css:0
+[   19273ms] [INFO] Launched external handler for 'mailto:info@omninstack.com'. @ http://localhost:8000/company.html:0
+[   24908ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://localhost:8000/tokens.css:0
+[   24909ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://localhost:8000/components.css:0
