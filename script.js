@@ -1,5 +1,33 @@
 // Reveal animation using Intersection Observer
 document.addEventListener('DOMContentLoaded', () => {
+    const themeToggle = document.querySelector('.theme-toggle');
+    const root = document.documentElement;
+    const savedTheme = localStorage.getItem('omninstack-theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const initialTheme = savedTheme || (prefersDark ? 'dark' : 'light');
+
+    const applyTheme = (theme) => {
+        const isDark = theme === 'dark';
+        root.setAttribute('data-theme', theme);
+        if (themeToggle) {
+            themeToggle.setAttribute('aria-pressed', String(isDark));
+            const icon = themeToggle.querySelector('.theme-toggle__icon');
+            const label = themeToggle.querySelector('.theme-toggle__label');
+            if (icon) icon.textContent = isDark ? '☾' : '☀';
+            if (label) label.textContent = isDark ? 'Dark' : 'Light';
+        }
+        localStorage.setItem('omninstack-theme', theme);
+    };
+
+    applyTheme(initialTheme);
+
+    if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+            const nextTheme = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            applyTheme(nextTheme);
+        });
+    }
+
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -100px 0px'
