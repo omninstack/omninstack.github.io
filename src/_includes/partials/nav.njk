@@ -1,0 +1,16 @@
+<div id="site-nav">
+  <nav>
+    <div class="container nav-content">
+      <a href="/" class="logo">Omni<span>N</span>Stack</a>
+      <div class="nav-links" id="nav-links">
+        {% for item in site.nav %}
+          <a href="{{ item.href }}">{{ item.label }}</a>
+        {% endfor %}
+        <a href="mailto:info@omninstack.com" class="btn btn-outline" style="padding: 0.7rem 1.8rem; font-size: 0.75rem; border-radius: 12px;">Contact Us</a>
+      </div>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+</div>

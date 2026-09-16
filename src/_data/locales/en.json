@@ -1,0 +1,12 @@
+{
+  "lang": "en",
+  "label": "English",
+  "home": {
+    "title": "AI Solutions Company",
+    "description": "OmniNStack builds sovereign AI platforms for customer engagement and trust & safety."
+  },
+  "products": {
+    "outward": "Outward",
+    "contexa": "Contexa"
+  }
+}

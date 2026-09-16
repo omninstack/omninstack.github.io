@@ -1,0 +1,42 @@
+{% extends "layouts/base.njk" %}
+
+{% block content %}
+  <section class="section-block reveal">
+    <div class="container">
+      <div class="page-header reveal">
+        {% if eyebrow %}
+          <h4 class="accent-text mono">{{ eyebrow }}</h4>
+        {% endif %}
+        <h1>{{ title }}</h1>
+        {% if intro %}
+          <p style="font-size: 1.2rem; color: var(--silver); max-width: 800px; margin: 1rem auto 0; line-height: 1.7;">{{ intro }}</p>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+
+  {% if cards %}
+    <section class="section-block reveal">
+      <div class="container">
+        <div class="features-grid">
+          {% for card in cards %}
+            <div class="glass-card reveal">
+              <h3>{{ card.title }}</h3>
+              <p style="color: var(--text-secondary);">{{ card.copy }}</p>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+  {% endif %}
+
+  {% if body %}
+    <section class="section-block reveal">
+      <div class="container">
+        <div class="glass-box">
+          {{ body | safe }}
+        </div>
+      </div>
+    </section>
+  {% endif %}
+{% endblock %}

@@ -1,0 +1,21 @@
+{
+  "name": "OmniNStack",
+  "url": "https://www.omninstack.com",
+  "defaultLocale": "en",
+  "locales": ["en", "ko"],
+  "description": "AI solutions company building sovereign AI platforms for customer engagement and trust & safety.",
+  "seo": {
+    "defaultTitle": "OmniNStack | Sovereign AI Platform",
+    "defaultDescription": "AI solutions company building sovereign AI platforms for customer engagement and trust & safety.",
+    "ogType": "website",
+    "ogImage": "/assets/OmniNStack.jpg"
+  },
+  "nav": [
+    { "label": "Home", "href": "/" },
+    { "label": "Platform", "href": "/#platform" },
+    { "label": "Products", "href": "/#products" },
+    { "label": "Developers", "href": "/developers.html" },
+    { "label": "Resources", "href": "/story.html" },
+    { "label": "Company", "href": "/company.html" }
+  ]
+}

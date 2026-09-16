@@ -1,0 +1,29 @@
+{
+  "slug": "outward",
+  "name": "Outward",
+  "tagline": "AI Customer Engagement Platform",
+  "heroTitle": "Bridge the gap between digital campaigns and physical retail sales",
+  "heroLead": "Turn everyday messaging apps into measurable, high-converting sales channels.",
+  "summary": "Outward brings conversational AI, omnichannel messaging, and offline POS attribution into a single customer engagement platform that works across WhatsApp, KakaoTalk, Telegram, SMS, and more.",
+  "highlights": [
+    {
+      "title": "Offline POS Attribution",
+      "copy": "Connect digital conversations to in-store transactions and verify campaign ROI with real-time coupon redemption."
+    },
+    {
+      "title": "AI Content and Search",
+      "copy": "Generate campaign copy and assist with local discovery using grounded search and database-verified answers."
+    },
+    {
+      "title": "Resilient Delivery",
+      "copy": "Route messages across channels with fallback logic, consent checks, and delivery guarantees."
+    }
+  ],
+  "capabilities": [
+    "POS Gateway Connector",
+    "AI Copywriter & RAG",
+    "Database-Verified Responses",
+    "Failover Routing Service",
+    "High-Volume Webhook Queue"
+  ]
+}

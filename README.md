@@ -53,23 +53,50 @@ See the [Technical Whitepaper](https://www.omninstack.com/whitepaper.html) for t
 
 ## 💻 Repository
 
-This repository hosts the OmniNStack marketing site, served via GitHub Pages at [www.omninstack.com](https://www.omninstack.com). It is a static site with no build step.
+This repository hosts the OmniNStack marketing site, served via GitHub Pages at [www.omninstack.com](https://www.omninstack.com). The site is being migrated from a purely hand-authored static HTML structure to a more maintainable template-driven static site.
 
-```
-index.html        # Homepage
-whitepaper.html   # Technical whitepaper
-marketing/        # Outward & Contexa product pages (EN/KO)
-assets/           # Images and icons
-style.css         # Shared styles
-script.js         # Scroll reveal and interactions
+### Current structure
+
+```text
+src/
+  _data/          # shared content and product metadata
+  _includes/      # layouts and partials
+  pages/          # page templates (homepage, product pages, content pages)
+styles/           # tokenized CSS system
+assets/           # images and icons
+script.js         # reveal and responsive navigation behavior
+nav-footer.js     # shared chrome injection for legacy pages
+package.json      # Eleventy build scripts
+.dist/            # generated output (not committed)
 ```
 
-Preview it locally from the repository root:
+### Local preview
 
 ```bash
-python -m http.server 8000
-# then open http://localhost:8000
+npm install
+npm run dev
 ```
+
+Then open the local Eleventy preview URL in the terminal.
+
+### Build output
+
+```bash
+npm run build
+```
+
+This generates the site into `dist/`, which is the output used for the static publishing pipeline.
+
+### Migration status
+
+The site is progressively moving to:
+
+- componentized page layouts
+- data-driven product content
+- tokenized styling
+- reduced duplication across pages and locales
+
+This reduces maintenance overhead while keeping the current GitHub Pages deployment model intact.
 
 ## 🌐 Contact
 

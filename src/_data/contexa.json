@@ -1,0 +1,29 @@
+{
+  "slug": "contexa",
+  "name": "Contexa",
+  "tagline": "AI Trust & Safety Platform",
+  "heroTitle": "Protect communities in real time with explainable moderation and policy-aware AI",
+  "heroLead": "Detect abuse early, prioritize risk, and maintain a defensible audit trail for every moderation decision.",
+  "summary": "Contexa helps organizations monitor harmful interactions across social, messaging, gaming, and community channels. It combines context-aware detection, human review workflows, and immutable decision logging so teams can act quickly without sacrificing transparency.",
+  "highlights": [
+    {
+      "title": "Real-Time Risk Scoring",
+      "copy": "Identify cyberbullying, harassment, and harmful behavior as messages are created, enabling intervention before damage spreads."
+    },
+    {
+      "title": "Explainable Moderation",
+      "copy": "Every decision is traceable, with context, policy rationale, and full audit records for compliance and operational review."
+    },
+    {
+      "title": "Modular Trust Controls",
+      "copy": "Support community safety teams with escalation, triage, workflow automation, and policy tuning across diverse environments."
+    }
+  ],
+  "capabilities": [
+    "Context-Aware Detection",
+    "Real-Time Risk Scoring",
+    "Policy-Grounded Moderation",
+    "Human Review Workflow",
+    "Immutable Audit Logs"
+  ]
+}

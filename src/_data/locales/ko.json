@@ -1,0 +1,12 @@
+{
+  "lang": "ko",
+  "label": "한국어",
+  "home": {
+    "title": "AI 솔루션 회사",
+    "description": "OmniNStack은 고객 참여와 신뢰 & 안전을 위한 자율적 AI 플랫폼을 구축합니다."
+  },
+  "products": {
+    "outward": "아웃워드",
+    "contexa": "컨텍사"
+  }
+}
