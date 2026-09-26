@@ -10,6 +10,11 @@ module.exports = function (eleventyConfig) {
     marketing: 'marketing'
   });
 
+  eleventyConfig.addFilter('dateIso', (value) => {
+    const d = value instanceof Date ? value : new Date(value);
+    return d.toISOString().slice(0, 10);
+  });
+
   return {
     dir: {
       input: 'src',

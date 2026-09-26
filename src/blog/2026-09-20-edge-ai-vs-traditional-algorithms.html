@@ -1,0 +1,321 @@
+---
+title: "Traditional Algorithms vs. Edge AI Models: Choosing the Right Approach at the Edge"
+date: "2026-09-20"
+permalink: "/blog/2026-09-20-edge-ai-vs-traditional-algorithms.html"
+description: "A practical comparison of rule-based traditional algorithms and quantized Edge AI models for embedded and IoT systems — pros, cons, and when each one wins."
+excerpt: "A practical comparison of rule-based logic and quantized Edge AI models for embedded and IoT systems — pros, cons, and real examples of when each one wins."
+tags_list: []
+canonicalUrl: "https://junehong-dominicus.github.io/posts/2026-09-20-edge-ai-vs-traditional-algorithms.html"
+---
+      
+
+      <p>
+        Every time I design a sensing pipeline for an MCU-class device, the same question comes up
+        before a single line of firmware gets written: <strong>does this need a model, or does it
+        need a threshold?</strong>
+      </p>
+      <p>
+        It's tempting to reach for machine learning by default in 2026. But on a $2 microcontroller
+        running on a coin cell, the wrong choice costs you battery life, latency, and certification
+        headaches. Here's how I actually decide between a traditional algorithm and an Edge AI model
+        — and why, more often than people expect, the boring answer wins.
+      </p>
+
+      <div class="diagram-frame">
+        <img src="/assets/blog/2026-09-20-Edge-AI-vs-Traditional-Algorithm.svg" alt="Diagram comparing a traditional algorithm's fixed-threshold flow against an Edge AI model's on-device inference flow" />
+        <p class="diagram-caption">Fig. 1 — Traditional threshold logic vs. an on-device Edge AI model</p>
+      </div>
+
+      <h2>What I Mean by "Traditional Algorithm"</h2>
+      <p>
+        A traditional algorithm here means deterministic, hand-authored logic: fixed thresholds,
+        finite state machines, PID control loops, moving averages, FFT-based frequency analysis,
+        and rule-based decision trees. The behavior is fully specified by the engineer — given the
+        same input, it always produces the same output, and you can trace every branch by hand.
+      </p>
+
+      <h2>What I Mean by "Edge AI Model"</h2>
+      <p>
+        An Edge AI model is a machine learning model — typically a quantized TFLite Micro network,
+        a small CNN, or a GRU/LSTM — trained on data and deployed to run inference directly on the
+        device, without a round trip to the cloud. It learns the decision boundary from examples
+        rather than from rules the engineer writes explicitly.
+      </p>
+
+      <hr />
+
+      <h2>Traditional Algorithm: Pros and Cons</h2>
+      <div class="table-responsive"><table>
+        <thead>
+          <tr><th>Pros</th><th>Cons</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Fully deterministic and explainable — every decision traces to a line of code</td>
+            <td>Brittle against noisy, drifting, or multi-variable real-world signals</td>
+          </tr>
+          <tr>
+            <td>Tiny memory and compute footprint, runs on the cheapest MCUs</td>
+            <td>Thresholds have to be hand-tuned per device, per environment, per install</td>
+          </tr>
+          <tr>
+            <td>Trivial to certify and audit for safety-critical systems</td>
+            <td>Doesn't generalize — a new failure pattern needs new code, not new data</td>
+          </tr>
+          <tr>
+            <td>No training data or labeling pipeline required</td>
+            <td>Struggles to fuse many sensor channels into one confident decision</td>
+          </tr>
+        </tbody>
+      </table></div>
+
+      <h2>Edge AI Model: Pros and Cons</h2>
+      <div class="table-responsive"><table>
+        <thead>
+          <tr><th>Pros</th><th>Cons</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Learns complex, nonlinear, multi-sensor patterns humans can't hand-encode</td>
+            <td>"Explainability" is harder — you get a confidence score, not a reason</td>
+          </tr>
+          <tr>
+            <td>Generalizes across devices and conditions once trained on representative data</td>
+            <td>Needs a labeled dataset and a training/validation pipeline before it ships</td>
+          </tr>
+          <tr>
+            <td>Improves by retraining on new data instead of rewriting logic</td>
+            <td>Larger memory/flash footprint, even after INT8 quantization</td>
+          </tr>
+          <tr>
+            <td>Handles sensor fusion (vibration + temperature + current) as one model</td>
+            <td>Model drift and edge cases require monitoring, not just a code review</td>
+          </tr>
+        </tbody>
+      </table></div>
+
+      <hr />
+
+      <h2>Why Edge AI Model Instead of Traditional Algorithm</h2>
+      <p>
+        I reach for an Edge AI model when at least one of these is true:
+      </p>
+      <ul>
+        <li>
+          <strong>The failure signature is multi-dimensional.</strong> A bearing about to fail
+          doesn't just vibrate louder — it changes frequency signature, temperature, and current
+          draw together. Encoding that as nested if/else thresholds gets unmaintainable fast; a
+          small GRU learns the joint pattern directly.
+        </li>
+        <li>
+          <strong>The environment isn't static.</strong> Threshold-based systems assume "normal"
+          looks the same everywhere. A model trained on diverse conditions generalizes across
+          machines, installs, and seasons without a re-tuning pass at every site.
+        </li>
+        <li>
+          <strong>False positives/negatives have a real cost.</strong> A single fixed threshold
+          forces a trade-off between missed detections and nuisance alarms. A trained classifier
+          can push the ROC curve further than a hand-picked cutoff ever will.
+        </li>
+        <li>
+          <strong>You have — or can generate — labeled data.</strong> Machine learning is only
+          worth the added complexity if there's a dataset to learn from. No data, no model.
+        </li>
+      </ul>
+      <p>
+        And I deliberately <em>don't</em> reach for a model when the opposite is true: a single
+        clean signal, a hard safety limit that must never be probabilistic, or a product that has
+        to ship before any training data exists. In those cases, a threshold or a state machine is
+        not a compromise — it's the correct engineering choice.
+      </p>
+
+      <hr />
+
+      <h2>Examples From Production Systems</h2>
+
+      <h3>Fire Suppression Trigger (Traditional → Edge AI)</h3>
+      <p>
+        On the Physical AI framework I built at Epic Safety, the first-generation trigger logic was
+        a fixed temperature/smoke-density threshold on a low-power microcontroller. It worked, but it couldn't tell a
+        real ignition event from a false alarm caused by welding sparks or steam. Replacing the
+        threshold with a quantized TFLite model — trained on labeled thermal and smoke sensor
+        traces — cut false positives significantly while holding sub-100ms inference latency on the
+        same hardware.
+      </p>
+
+      <h3>Industrial Vibration Monitoring (Threshold → GRU)</h3>
+      <p>
+        A classic vibration alarm trips when RMS amplitude crosses a fixed line. On the Industrial
+        Edge AI Gateway project, a GRU-based inference engine running on TFLite Micro replaced that
+        threshold, learning the difference between a normal startup transient and an actual bearing
+        fault — something a single amplitude cutoff structurally cannot distinguish.
+      </p>
+
+      <h3>Motion Detection (Traditional, and it stayed that way)</h3>
+      <p>
+        Early motion detection work I did on MPEG-2 TS streams at Varovision used frame-difference
+        and macroblock-based algorithms — no ML involved. For that use case, a lightweight
+        deterministic algorithm was the right call: the signal was simple, latency budgets were
+        tight, and the hardware of that era couldn't have run a model anyway. Not every problem
+        needs to wait for a neural network.
+      </p>
+
+      <hr />
+
+      <h2>A Simple Decision Model</h2>
+      <div class="table-responsive"><table>
+        <thead>
+          <tr><th>Question</th><th>Traditional Algorithm</th><th>Edge AI Model</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Single, clean signal?</td>
+            <td>✅ Yes</td>
+            <td>Overkill</td>
+          </tr>
+          <tr>
+            <td>Multi-sensor fusion needed?</td>
+            <td>Gets messy fast</td>
+            <td>✅ Yes</td>
+          </tr>
+          <tr>
+            <td>Hard safety limit, must be provable?</td>
+            <td>✅ Yes</td>
+            <td>Avoid as the sole gate</td>
+          </tr>
+          <tr>
+            <td>Conditions vary across deployments?</td>
+            <td>Needs per-site tuning</td>
+            <td>✅ Yes</td>
+          </tr>
+          <tr>
+            <td>No labeled data available yet?</td>
+            <td>✅ Yes, ship this first</td>
+            <td>Not yet</td>
+          </tr>
+        </tbody>
+      </table></div>
+
+      <hr />
+
+      <h2>Guardrails: Protecting Against a Wrong Model Decision in Critical Cases</h2>
+      <p>
+        Deciding a problem genuinely needs a model is only half the job. The other half is making
+        sure a wrong prediction never becomes a safety incident. On systems where the output drives
+        a fire suppression relay, a shutdown, or anything else with real consequences, I treat the
+        model as an <strong>advisor, never the sole authority</strong> — and I enforce that with a
+        specific set of guardrails, not good intentions.
+      </p>
+      <ul>
+        <li>
+          <strong>Keep a deterministic hard limit as the final veto.</strong> The model can raise or
+          lower confidence, but a hard-coded, provable safety limit still has independent authority
+          to trigger — and to block a model-driven action that would violate it. If the model says
+          "safe" but the hard limit says the smoke density is out of range, the hard limit wins.
+        </li>
+        <li>
+          <strong>Require a confidence threshold, and define what happens below it.</strong> Don't
+          act on a raw class label — act on "class X with confidence ≥ N." Below that threshold, the
+          system doesn't guess; it falls back to the traditional algorithm or escalates for review.
+        </li>
+        <li>
+          <strong>Demand temporal consistency, not a single inference.</strong> A single
+          high-confidence frame can be a sensor glitch. Require the model to agree across several
+          consecutive windows (an N-of-M pattern) before a critical action fires — the same debounce
+          principle a threshold system already uses, applied to model output.
+        </li>
+        <li>
+          <strong>Bound the action, not just the confidence.</strong> Whatever the model outputs,
+          clamp the resulting action to a physically plausible envelope. A model shouldn't be able to
+          command a state the hardware or the safety case never anticipated.
+        </li>
+        <li>
+          <strong>Validate the input before you trust the output.</strong> Detect out-of-range sensor
+          values, stuck sensors, and inputs far outside the training distribution before they reach
+          the model. A model asked to classify garbage will confidently classify garbage.
+        </li>
+        <li>
+          <strong>Choose a fail-safe default, deliberately.</strong> Decide in advance what happens on
+          model timeout, crash, or low confidence — and make that default the safe state, not "do
+          nothing." For a fire suppression system, ambiguous is closer to "trigger" than to "ignore."
+        </li>
+        <li>
+          <strong>Log every decision with its inputs.</strong> You lose the traceability of an
+          if/else chain the moment you add a model, so you have to build it back: log the feature
+          vector, confidence, and final action for every trip so a failure can be reconstructed.
+        </li>
+        <li>
+          <strong>Ship new models in shadow mode first.</strong> Before a model gets authority over a
+          critical action, run it in parallel with the existing deterministic system, logging what it
+          <em>would</em> have done without acting on it. Compare the two before cutting over.
+        </li>
+        <li>
+          <strong>Monitor for drift after deployment.</strong> A model validated on last year's sensor
+          data can quietly degrade as hardware ages or conditions shift. Track prediction confidence
+          and agreement with the deterministic layer over time — a slow decline is a signal to
+          retrain, not a mystery to explain later.
+        </li>
+      </ul>
+
+      <div class="table-responsive"><table>
+        <thead>
+          <tr><th>Guardrail</th><th>Failure Mode It Prevents</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Deterministic veto</td>
+            <td>Model overrides a known, provable safety limit</td>
+          </tr>
+          <tr>
+            <td>Confidence threshold + fallback</td>
+            <td>Low-confidence guess treated as a certain decision</td>
+          </tr>
+          <tr>
+            <td>N-of-M temporal consistency</td>
+            <td>Single noisy frame triggers a critical action</td>
+          </tr>
+          <tr>
+            <td>Bounded action envelope</td>
+            <td>Model commands a physically implausible or unsafe state</td>
+          </tr>
+          <tr>
+            <td>Input validation / OOD detection</td>
+            <td>Model confidently misclassifies a faulty or out-of-range sensor reading</td>
+          </tr>
+          <tr>
+            <td>Fail-safe default</td>
+            <td>Timeout or crash silently falls back to "do nothing"</td>
+          </tr>
+          <tr>
+            <td>Decision logging</td>
+            <td>A wrong call can't be reconstructed or audited afterward</td>
+          </tr>
+          <tr>
+            <td>Shadow-mode rollout</td>
+            <td>An unproven model gets authority on day one</td>
+          </tr>
+          <tr>
+            <td>Drift monitoring</td>
+            <td>A model that degrades in production goes unnoticed</td>
+          </tr>
+        </tbody>
+      </table></div>
+
+      <p>
+        None of this makes the model itself explainable. It makes the <strong>system around the
+        model</strong> accountable — which is the actual requirement in a safety review. A model
+        that's wrong 2% of the time is fine if the rest of the architecture is built to catch that 2%
+        before it ever reaches the relay.
+      </p>
+
+      <hr />
+
+      <h2>Final Thoughts</h2>
+      <p>
+        Edge AI doesn't replace traditional algorithms — it extends the toolbox for the problems
+        thresholds were never built to solve. The best embedded systems I've shipped usually mix
+        both: a deterministic safety floor built from simple rules, with a model layered on top for
+        the nuanced, multi-signal judgment calls. Pick the tool the problem actually needs, not the
+        one that's trending.
+      </p>
+    

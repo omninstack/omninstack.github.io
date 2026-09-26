@@ -1,18 +1,34 @@
 ---
-layout: page.njk
 permalink: blog.html
 title: Blog
 eyebrow: Insights & updates
-intro: Commentary on AI operations, governance, and the practical realities of deploying enterprise-grade AI systems.
-cards:
-  - title: AI ops in practice
-    copy: Lessons from real deployments, operational bottlenecks, and how teams scale autonomous workflows responsibly.
-  - title: Governance matters
-    copy: Policy, logging, retrieval controls, and auditability are essential ingredients in high-trust AI systems.
-  - title: Product strategy
-    copy: How platform thinking, modularity, and focused product design drive sustainable growth in AI businesses.
-body: |
-  <h3>Coming soon</h3>
-  <p>The OmniNStack blog is being structured as a lightweight knowledge layer for product thinking, platform engineering, and the realities of operational AI adoption.</p>
-  <p>As the platform grows, the blog will become a place for practical thinking on trust, governance, orchestration, and enterprise AI execution.</p>
+intro: Field notes on edge AI, industrial IoT, and the practical realities of deploying AI systems that sense, reason, and act.
 ---
+{% extends "layouts/base.njk" %}
+
+{% block content %}
+<section class="section-block reveal">
+  <div class="container">
+    <div class="page-header reveal">
+      <h4 class="accent-text mono">{{ eyebrow }}</h4>
+      <h1>{{ title }}</h1>
+      <p style="font-size: 1.2rem; color: var(--silver); max-width: 800px; margin: 1rem auto 0; line-height: 1.7;">{{ intro }}</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-block">
+  <div class="container">
+    <div class="features-grid post-list">
+      {% for post in collections.posts | reverse %}
+        <a class="glass-card post-card" href="{{ post.url }}">
+          <p class="post-meta mono">{{ post.date | dateIso }}</p>
+          <h3>{{ post.data.title }}</h3>
+          <p style="color: var(--text-secondary);">{{ post.data.excerpt }}</p>
+          <span class="post-read mono">Read post &rarr;</span>
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}

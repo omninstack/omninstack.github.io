@@ -1,0 +1,26 @@
+{% extends "layouts/base.njk" %}
+
+{% block content %}
+  <section class="section-block">
+    <div class="container post-container">
+      <header class="post-header">
+        <a href="/blog.html" class="post-back mono">&larr; All posts</a>
+        <h1>{{ title }}</h1>
+        <p class="post-meta mono">By June Hong &middot; <time datetime="{{ date | dateIso }}">{{ date | dateIso }}</time></p>
+        {% if tags_list and tags_list.length %}
+          <div class="post-tags">
+            {% for tag in tags_list %}<span class="post-tag">{{ tag }}</span>{% endfor %}
+          </div>
+        {% endif %}
+      </header>
+
+      <article class="glass-box post-body">
+        {{ content | safe }}
+      </article>
+
+      {% if canonicalUrl %}
+        <p class="post-origin">Originally published on <a href="{{ canonicalUrl }}">junehong-dominicus.github.io</a>.</p>
+      {% endif %}
+    </div>
+  </section>
+{% endblock %}
