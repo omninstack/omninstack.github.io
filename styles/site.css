@@ -72,6 +72,14 @@ p {
   color: var(--cyan);
 }
 
+/* The nav sits inside #site-nav, a wrapper exactly its height, so a sticky <nav>
+   has no room to stick. Pin the wrapper instead. */
+#site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
 .nav-content {
   display: flex;
   align-items: center;
