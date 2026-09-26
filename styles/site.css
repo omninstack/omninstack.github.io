@@ -188,7 +188,7 @@ p {
 
 .trust-strip strong {
   font-size: 1rem;
-  color: var(--navy);
+  color: var(--text-primary);
 }
 
 .trust-strip span {
@@ -264,7 +264,7 @@ p {
   font-size: clamp(1.8rem, 3vw, 2.6rem);
   font-weight: 800;
   letter-spacing: -0.08em;
-  color: var(--navy);
+  color: var(--text-primary);
   margin-bottom: 0.35rem;
 }
 
@@ -402,7 +402,7 @@ p {
   margin: 0;
   font-size: clamp(1.2rem, 2vw, 1.7rem);
   line-height: 1.5;
-  color: var(--navy);
+  color: var(--text-primary);
   letter-spacing: -0.03em;
 }
 
@@ -415,7 +415,7 @@ p {
 
 .quote-meta strong {
   font-size: 1rem;
-  color: var(--navy);
+  color: var(--text-primary);
 }
 
 .quote-meta span {
@@ -441,7 +441,7 @@ p {
 .mini-proof strong {
   display: block;
   font-size: clamp(1.6rem, 2.5vw, 2.2rem);
-  color: var(--navy);
+  color: var(--text-primary);
   letter-spacing: -0.06em;
 }
 
