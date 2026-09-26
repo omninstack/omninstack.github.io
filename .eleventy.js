@@ -6,8 +6,9 @@ module.exports = function (eleventyConfig) {
     'styles/site.css': 'style.css',
     'styles/tokens.css': 'tokens.css',
     'styles/components.css': 'components.css',
+    'styles/legacy.css': 'legacy.css',
     CNAME: 'CNAME',
-    marketing: 'marketing'
+    'marketing/*.html': 'marketing'
   });
 
   eleventyConfig.addFilter('dateIso', (value) => {

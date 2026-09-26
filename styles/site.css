@@ -1,4 +1,5 @@
 @import './tokens.css';
+@import './legacy.css';
 @import './components.css';
 
 * { box-sizing: border-box; }
@@ -637,7 +638,7 @@ footer {
     padding: 1rem;
     border: 1px solid var(--line);
     border-radius: 16px;
-    background: var(--bg-floating);
+    background: var(--bg-deep);
     box-shadow: var(--shadow-strong);
   }
 
