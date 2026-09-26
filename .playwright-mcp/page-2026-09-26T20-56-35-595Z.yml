@@ -1,0 +1,219 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e3]:
+    - generic [ref=e4]:
+      - link "OmniNStack" [ref=e5] [cursor=pointer]:
+        - /url: /
+      - generic [ref=e6]:
+        - link "Home" [ref=e7] [cursor=pointer]:
+          - /url: /
+        - link "Platform" [ref=e8] [cursor=pointer]:
+          - /url: /#platform
+        - link "Products" [ref=e9] [cursor=pointer]:
+          - /url: /#products
+        - link "Developers" [ref=e10] [cursor=pointer]:
+          - /url: /developers.html
+        - link "Resources" [ref=e11] [cursor=pointer]:
+          - /url: /story.html
+        - link "Company" [ref=e12] [cursor=pointer]:
+          - /url: /company.html
+        - group "Theme switcher" [ref=e13]:
+          - button "Use light mode" [pressed] [ref=e14] [cursor=pointer]:
+            - generic [ref=e15]: Light
+          - button "Use dark mode" [ref=e16] [cursor=pointer]:
+            - generic [ref=e17]: Dark
+        - link "Contact Us" [ref=e18] [cursor=pointer]:
+          - /url: mailto:info@omninstack.com
+  - main [ref=e19]:
+    - generic [ref=e21]:
+      - generic [ref=e22]:
+        - generic [ref=e23]:
+          - generic [ref=e24]: AI Operations
+          - generic [ref=e26]: Customer Engagement
+          - generic [ref=e28]: Trust & Safety
+        - heading "The AI operating system for enterprise teams." [level=2] [ref=e30]
+        - paragraph [ref=e31]: Making something people want.
+        - paragraph [ref=e32]: OmniNStack gives B2B teams one governed layer for AI across customer operations, internal workflows, and trust & safety.
+        - paragraph [ref=e33]: Built to improve efficiency without sacrificing transparency, compliance, or control, our platform brings orchestration, knowledge retrieval, and workflow automation into a single accountable system.
+        - generic [ref=e34]:
+          - link "Book a strategy call" [ref=e35] [cursor=pointer]:
+            - /url: "#products"
+          - link "See the platform" [ref=e36] [cursor=pointer]:
+            - /url: /whitepaper.html
+        - generic [ref=e37]:
+          - generic [ref=e38]:
+            - strong [ref=e39]: 40–70%
+            - generic [ref=e40]: faster workflow execution
+          - generic [ref=e41]:
+            - strong [ref=e42]: 100%
+            - generic [ref=e43]: sovereign infrastructure
+          - generic [ref=e44]:
+            - strong [ref=e45]: Enterprise-ready
+            - generic [ref=e46]: auditability and controls
+      - img "OmniNStack UI Preview" [ref=e48]
+    - generic [ref=e50]:
+      - generic [ref=e51]:
+        - heading "The Product Portfolio" [level=4] [ref=e52]
+        - heading "Our Products, One Shared AI Platform" [level=2] [ref=e53]
+        - paragraph [ref=e54]: "OmniNStack is a platform company: shared AI infrastructure powers a growing portfolio of enterprise AI products."
+      - generic [ref=e55]:
+        - generic [ref=e56]:
+          - img "Outward Icon" [ref=e58]
+          - generic [ref=e59]: Product 01
+          - heading "Outward" [level=3] [ref=e60]
+          - paragraph [ref=e61]: AI Customer Engagement Platform
+          - paragraph [ref=e62]: Outward combines messaging, AI content generation, and offline attribution so customer conversations can translate into measurable revenue.
+          - link "Explore Outward →" [ref=e63] [cursor=pointer]:
+            - /url: /marketing/outward.html
+        - generic [ref=e64]:
+          - img "Contexa Icon" [ref=e66]
+          - generic [ref=e67]: Product 02
+          - heading "Contexa" [level=3] [ref=e68]
+          - paragraph [ref=e69]: AI Trust & Safety Platform
+          - paragraph [ref=e70]: Contexa detects harassment and abuse in real time with explainable moderation, policy controls, and audit trails across every decision.
+          - link "Explore Contexa →" [ref=e71] [cursor=pointer]:
+            - /url: /marketing/contexa.html
+    - generic [ref=e73]:
+      - generic [ref=e74]:
+        - heading "The Platform" [level=4] [ref=e75]
+        - heading "One platform to deploy your AI workforce" [level=2] [ref=e76]
+        - paragraph [ref=e77]: Orchestration, governance, learning retrieval, and automation all combine into a single sovereign system.
+      - generic [ref=e78]:
+        - generic [ref=e79]:
+          - img "Multi-Agent Orchestration Icon" [ref=e81]
+          - heading "Multi-Agent Orchestration" [level=3] [ref=e82]
+          - paragraph [ref=e83]: Coordinate autonomous AI teams to complete end-to-end workflows with accountability and traceability.
+        - generic [ref=e84]:
+          - img "Knowledge Retrieval Icon" [ref=e86]
+          - heading "Enterprise Knowledge Retrieval" [level=3] [ref=e87]
+          - paragraph [ref=e88]: Ground every response in your internal systems, with citation-backed retrieval and no data leakage outside your environment.
+        - generic [ref=e89]:
+          - img "Workflow Automation Icon" [ref=e91]
+          - heading "Workflow Automation" [level=3] [ref=e92]
+          - paragraph [ref=e93]: Automate repetitive business processes with AI agents routed across the right models and systems.
+    - generic [ref=e95]:
+      - generic [ref=e96]:
+        - heading "Why enterprise teams choose OmniNStack" [level=4] [ref=e97]
+        - heading "Deploy AI that works inside the business" [level=2] [ref=e98]
+      - generic [ref=e99]:
+        - generic [ref=e100]:
+          - generic [ref=e101]: Operational efficiency
+          - heading "Reduce manual work across the customer lifecycle" [level=3] [ref=e102]
+          - paragraph [ref=e103]: Automate high-volume tasks while keeping decisions explainable, traceable, and governed by policy.
+        - generic [ref=e104]:
+          - generic [ref=e105]: Governance
+          - heading "Keep AI aligned with enterprise requirements" [level=3] [ref=e106]
+          - paragraph [ref=e107]: Maintain control over data access, admin permissions, workflow approvals, and observability across every deployment.
+        - generic [ref=e108]:
+          - generic [ref=e109]: Business impact
+          - heading "Turn AI into measurable outcomes" [level=3] [ref=e110]
+          - paragraph [ref=e111]: Track operational lift, acquisition improvements, safety performance, and ROI from a single system designed for scale.
+      - generic [ref=e112]:
+        - generic [ref=e113]:
+          - generic [ref=e114]: 3x
+          - paragraph [ref=e115]: faster deployment cycles
+        - generic [ref=e116]:
+          - generic [ref=e117]: 24/7
+          - paragraph [ref=e118]: always-on operations
+        - generic [ref=e119]:
+          - generic [ref=e120]: 100%
+          - paragraph [ref=e121]: sovereign control
+        - generic [ref=e122]:
+          - generic [ref=e123]: Zero
+          - paragraph [ref=e124]: vendor lock-in mandate
+    - generic [ref=e126]:
+      - generic [ref=e127]:
+        - generic [ref=e128]: Trusted infrastructure for
+        - generic [ref=e129]: Customer Ops
+        - generic [ref=e130]: Trust & Safety
+        - generic [ref=e131]: Revenue Teams
+        - generic [ref=e132]: Platform Leaders
+      - generic [ref=e133]:
+        - generic [ref=e134]:
+          - heading "Built for modern enterprise AI" [level=4] [ref=e135]
+          - heading "Choose a platform that stays in your control" [level=2] [ref=e136]
+        - generic [ref=e137]:
+          - generic [ref=e138]:
+            - heading "Legacy AI stack" [level=3] [ref=e139]
+            - list [ref=e140]:
+              - listitem [ref=e141]: Fragmented vendors and data silos
+              - listitem [ref=e142]: Limited observability and audit access
+              - listitem [ref=e143]: Slow rollout across business teams
+              - listitem [ref=e144]: Low confidence in policy compliance
+          - generic [ref=e145]:
+            - heading "OmniNStack" [level=3] [ref=e146]
+            - list [ref=e147]:
+              - listitem [ref=e148]: Single sovereign operating layer
+              - listitem [ref=e149]: Full governance, traceability, and controls
+              - listitem [ref=e150]: Fast deployment across workflows and teams
+              - listitem [ref=e151]: Built for safe, measurable, scalable AI
+    - generic [ref=e153]:
+      - generic [ref=e154]:
+        - heading "How it works" [level=4] [ref=e155]
+        - heading "Move from fragmented AI to a governed operating system" [level=2] [ref=e156]
+      - generic [ref=e157]:
+        - generic [ref=e158]:
+          - generic [ref=e159]: "01"
+          - heading "Connect your knowledge" [level=3] [ref=e160]
+          - paragraph [ref=e161]: Bring in internal systems, workflows, and policies so AI can work from the context your teams already trust.
+        - generic [ref=e162]:
+          - generic [ref=e163]: "02"
+          - heading "Orchestrate the workflow" [level=3] [ref=e164]
+          - paragraph [ref=e165]: Route tasks across AI agents, tools, and business logic to automate the work that slows down operations.
+        - generic [ref=e166]:
+          - generic [ref=e167]: "03"
+          - heading "Govern and optimize" [level=3] [ref=e168]
+          - paragraph [ref=e169]: Track every action, constrain sensitive behavior, and refine outcomes with policy-aware performance monitoring.
+    - generic [ref=e171]:
+      - generic [ref=e172]:
+        - heading "Customer proof" [level=4] [ref=e173]
+        - heading "Teams use OmniNStack to run AI with clarity and control" [level=2] [ref=e174]
+      - generic [ref=e175]:
+        - paragraph [ref=e176]: “
+        - blockquote [ref=e177]: OmniNStack gave our teams one accountable AI operating layer across customer operations and moderation. We reduced manual triage, improved response quality, and finally had the governance controls leadership expected.
+        - generic [ref=e178]:
+          - strong [ref=e179]: VP of Operations
+          - generic [ref=e180]: Global SaaS Platform
+      - generic [ref=e181]:
+        - generic [ref=e182]:
+          - strong [ref=e183]: 92%
+          - text: faster case handling
+        - generic [ref=e184]:
+          - strong [ref=e185]: 4.8/5
+          - text: operator confidence
+        - generic [ref=e186]:
+          - strong [ref=e187]: 2x
+          - text: more scalable operations
+    - generic [ref=e190]:
+      - generic [ref=e191]:
+        - heading "Ready to modernize your AI stack?" [level=4] [ref=e192]
+        - heading "Build your next AI operating model with a platform your teams can trust." [level=2] [ref=e193]
+      - generic [ref=e194]:
+        - generic [ref=e195]:
+          - generic [ref=e196]: Work email
+          - textbox "Work email" [ref=e197]:
+            - /placeholder: you@company.com
+        - generic [ref=e198]:
+          - generic [ref=e199]: Company
+          - textbox "Company" [ref=e200]:
+            - /placeholder: Your company
+        - button "Book a demo" [ref=e201]
+  - contentinfo [ref=e203]:
+    - generic [ref=e204]:
+      - generic [ref=e205]: OmniNStack
+      - generic [ref=e206]:
+        - text: AI Solutions Company
+        - paragraph [ref=e207]: One shared AI platform. A growing portfolio. Built in Canada.
+      - generic [ref=e208]:
+        - link "Home" [ref=e209] [cursor=pointer]:
+          - /url: /
+        - link "Developers" [ref=e210] [cursor=pointer]:
+          - /url: /developers.html
+        - link "Platform Whitepaper" [ref=e211] [cursor=pointer]:
+          - /url: /whitepaper.html
+        - link "Our Story" [ref=e212] [cursor=pointer]:
+          - /url: /story.html
+        - link "Company" [ref=e213] [cursor=pointer]:
+          - /url: /company.html
+      - paragraph [ref=e214]: "OMNINSTACK AI SOLUTIONS INC. Suite 1028 20055 Willowbrook Drive Unit #200 Langley, BC V2Y 2T5 Canada"
+      - paragraph [ref=e215]: Proudly designed & engineered in British Columbia, Canada.
+      - paragraph [ref=e216]: © 2026 OmniNStack. All Rights Reserved.

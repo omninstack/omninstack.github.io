@@ -78,6 +78,10 @@ p {
   gap: 1.5rem;
 }
 
+.nav-toggle {
+  display: none;
+}
+
 .nav-links {
   display: flex;
   align-items: center;
@@ -586,6 +590,69 @@ footer {
 }
 
 @media (max-width: 960px) {
+  .nav-content {
+    position: relative;
+  }
+
+  .nav-toggle {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 1px solid var(--line-strong);
+    border-radius: 10px;
+    background: var(--bg-panel);
+    color: var(--text-primary);
+    cursor: pointer;
+  }
+
+  .nav-toggle span {
+    display: block;
+    width: 18px;
+    height: 2px;
+    border-radius: 2px;
+    background: currentColor;
+  }
+
+  .nav-toggle:focus-visible,
+  .nav-links a:focus-visible {
+    outline: 2px solid var(--cyan);
+    outline-offset: 3px;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: calc(100% + 0.75rem);
+    right: 0;
+    left: 0;
+    z-index: 10;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.35rem;
+    padding: 1rem;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    background: var(--bg-floating);
+    box-shadow: var(--shadow-strong);
+  }
+
+  nav.mobile-open .nav-links {
+    display: flex;
+  }
+
+  .nav-links > a {
+    padding: 0.65rem 0.75rem;
+  }
+
+  .nav-links > .btn {
+    justify-content: center;
+  }
+
   .hero .container {
     grid-template-columns: 1fr;
   }
