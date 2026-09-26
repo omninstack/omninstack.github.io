@@ -112,38 +112,54 @@ p {
 .theme-switch {
   display: inline-flex;
   align-items: center;
-  gap: 0.35rem;
-  border: 1px solid var(--line);
-  background: var(--bg-panel);
+  gap: 2px;
+  border: 1px solid var(--line-strong);
+  background: var(--bg-panel-alt);
   border-radius: 999px;
-  padding: 0.18rem;
+  padding: 3px;
 }
 
 .theme-toggle {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 0.4rem;
   border: 0;
   background: transparent;
-  color: var(--text-secondary);
+  color: var(--text-muted);
   border-radius: 999px;
-  padding: 0.55rem 0.9rem;
+  padding: 0.45rem 0.8rem;
   font: inherit;
-  font-size: 0.72rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: 1;
   cursor: pointer;
-  transition: var(--ease);
+  transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.theme-toggle.is-active {
-  background: var(--bg-floating);
-  color: var(--text-primary);
-  box-shadow: var(--shadow-soft);
+.theme-toggle svg {
+  width: 15px;
+  height: 15px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .theme-toggle:hover {
   color: var(--text-primary);
+}
+
+.theme-toggle.is-active {
+  background: var(--grad-cyan);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(15, 103, 248, 0.25);
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 2px;
 }
 
 .hero {
@@ -682,6 +698,11 @@ footer {
 
   .nav-links > .btn {
     justify-content: center;
+  }
+
+  .nav-links > .theme-switch {
+    align-self: center;
+    margin: 0.5rem 0;
   }
 
   .hero .container {
