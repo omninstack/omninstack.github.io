@@ -16,6 +16,7 @@
     { "label": "Products", "href": "/#products" },
     { "label": "Developers", "href": "/developers.html" },
     { "label": "Resources", "href": "/story.html" },
+    { "label": "Blog", "href": "/blog.html" },
     { "label": "Company", "href": "/company.html" }
   ]
 }
