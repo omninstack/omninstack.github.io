@@ -23,7 +23,7 @@
     {% include "partials/nav.njk" %}
 
     <main>
-      {% block content %}{% endblock %}
+      {% block content %}{{ content | safe }}{% endblock %}
     </main>
 
     {% include "partials/footer.njk" %}
