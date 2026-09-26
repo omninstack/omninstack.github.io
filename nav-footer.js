@@ -71,7 +71,7 @@
         var items = RESOURCE_ITEMS.map(function (item) {
             var key = item[0], file = item[1], label = item[2];
             var active = cfg.resourcesActive === key ? ' class="active"' : '';
-            var soon = (cfg.variant === 'full' && (key === 'blog' || key === 'documentation'))
+            var soon = (cfg.variant === 'full' && key === 'documentation')
                 ? ' <span class="soon-badge">Soon</span>' : '';
             return '<a href="' + rootPrefix + file + '"' + active + '>' + label + soon + '</a>';
         }).join('\n                        ');
