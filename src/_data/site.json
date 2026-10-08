@@ -3,17 +3,17 @@
   "url": "https://www.omninstack.com",
   "defaultLocale": "en",
   "locales": ["en", "ko"],
-  "description": "AI solutions company building sovereign AI platforms for customer engagement and trust & safety.",
+  "description": "OmniNStack helps enterprises build and operate AI systems across their knowledge, workflows, and infrastructure—with governance and deployment choices designed for organizational control.",
   "seo": {
-    "defaultTitle": "OmniNStack | Sovereign AI Platform",
-    "defaultDescription": "AI solutions company building sovereign AI platforms for customer engagement and trust & safety.",
+    "defaultTitle": "OmniNStack | Enterprise AI Platform",
+    "defaultDescription": "A governed enterprise AI platform for connecting models, organizational knowledge, and workflows across infrastructure your organization controls.",
     "ogType": "website",
     "ogImage": "/assets/OmniNStack.jpg"
   },
   "nav": [
-    { "label": "Home", "href": "/" },
     { "label": "Platform", "href": "/#platform" },
-    { "label": "Products", "href": "/#products" },
+    { "label": "How it works", "href": "/#how-it-works" },
+    { "label": "Use cases", "href": "/#use-cases" },
     { "label": "Developers", "href": "/developers.html" },
     { "label": "Resources", "href": "/story.html" },
     { "label": "Blog", "href": "/blog.html" },
