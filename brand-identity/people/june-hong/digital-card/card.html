@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>June Hong — OmniNStack</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background:#0A1420; color:#12222F; }
+  .card { max-width:430px; margin:0 auto; background:#ffffff; min-height:100vh; }
+  .head { background:#001F3F; padding:40px 28px 30px; text-align:center; }
+  .head img { width:92px; height:92px; }
+  .wm { color:#fff; font-size:27px; font-weight:800; letter-spacing:-0.5px; margin-top:14px; }
+  .wm span { color:#00C0B0; }
+  .tag { color:#00C0B0; font-size:11.5px; font-weight:700; letter-spacing:2.6px; margin-top:7px; }
+  .body { padding:28px 26px 34px; }
+  .name { font-size:29px; font-weight:800; color:#001F3F; line-height:1.15; }
+  .title { font-size:15px; font-weight:700; color:#00A99A; margin-top:5px; line-height:1.35; }
+  .rule { width:52px; height:4px; background:#00C0B0; border-radius:2px; margin:16px 0 20px; }
+  .about-h { font-size:11px; font-weight:700; letter-spacing:2px; color:#00A99A; margin-bottom:7px; }
+  .about { font-size:14.5px; line-height:1.6; color:#38495C; margin-bottom:22px; }
+  .btn { display:flex; align-items:center; gap:13px; padding:15px 16px; border:1px solid #E1E8EF; border-radius:13px; margin-bottom:11px; text-decoration:none; color:#12222F; }
+  .btn .ic { font-size:19px; width:24px; text-align:center; }
+  .btn .lb { font-size:11px; color:#7A8794; display:block; }
+  .btn .vl { font-size:15.5px; font-weight:600; color:#001F3F; }
+  .save { display:block; text-align:center; background:#001F3F; color:#fff; font-weight:700; font-size:16px; padding:16px; border-radius:13px; text-decoration:none; margin-top:20px; }
+  .foot { text-align:center; color:#9AA8B5; font-size:11px; padding:0 26px 26px; line-height:1.6; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="head">
+    <img src="data:image/png;base64,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" alt="OmniNStack">
+    <div class="wm">Omni<span>N</span>Stack</div>
+    <div class="tag">ENTERPRISE AI PLATFORM</div>
+  </div>
+  <div class="body">
+    <div class="name">June Hong</div>
+    <div class="title">Chief of Technology Officer<br>Co-founder</div>
+    <div class="rule"></div>
+    <div class="about-h">ABOUT</div>
+    <p class="about">A seasoned Software Architect and Technical Leader with over 20 years of experience spanning embedded systems, cloud-native platforms, and AI-driven cyber-physical systems. June leads the engineering of OmniNStack's proprietary AI Operations Platform, applying a track record built at global technology leaders such as Samsung, NTT, and NEC. His work focuses on the agentic orchestration core that lets autonomous AI teams run enterprise workflows end-to-end, bridging software orchestration with Edge and Physical AI.</p>
+
+    <a class="btn" href="tel:+16046443448"><span class="ic">📞</span><span><span class="lb">Call</span><span class="vl">+1 (604) 644-3448</span></span></a>
+    <a class="btn" href="mailto:junehong@omninstack.com"><span class="ic">✉️</span><span><span class="lb">Email</span><span class="vl">junehong@omninstack.com</span></span></a>
+    <a class="btn" href="https://www.omninstack.com"><span class="ic">🌐</span><span><span class="lb">Website</span><span class="vl">www.omninstack.com</span></span></a>
+    <a class="save" href="data:text/vcard;base64,QkVHSU46VkNBUkQKVkVSU0lPTjozLjAKRk46SnVuZSBIb25nCk46SG9uZztKdW5lOzs7Ck9SRzpPTU5JTlNUQUNLIEFJIFNPTFVUSU9OUyBJTkMuO09tbmlOU3RhY2sKVElUTEU6Q2hpZWYgb2YgVGVjaG5vbG9neSBPZmZpY2VyXCwgQ28tZm91bmRlcgpURUw7VFlQRT1DRUxMLFZPSUNFOisxNjA0NjQ0MzQ0OApFTUFJTDtUWVBFPVdPUks6anVuZWhvbmdAb21uaW5zdGFjay5jb20KVVJMOmh0dHBzOi8vd3d3Lm9tbmluc3RhY2suY29tCkFEUjtUWVBFPVdPUks6OztTdWl0ZSAxMDI4XCwgMjAwLTIwMDU1IFdpbGxvd2Jyb29rIERyO0xhbmdsZXk7QkM7VjJZIDJUNTtDYW5hZGEKRU5EOlZDQVJECg==" download="june-hong.vcf">＋ Save Contact</a>
+  </div>
+  <div class="foot">OMNINSTACK AI SOLUTIONS INC.<br>Sovereign · On-Premise · Governed AI</div>
+</div>
+</body>
+</html>
