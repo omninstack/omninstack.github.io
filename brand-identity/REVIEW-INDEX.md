@@ -45,3 +45,4 @@ Same layout under `people/joseph-yu/` — `business-card/`, `email-signature/`, 
 ## 4. Title rule applied everywhere
 
 June Hong's public title is **Chief of Technology Officer, Co-founder** (homepage wording). "CEO" was removed from his title in all card/signature/digital assets, the company profile (`~/workspace/your_files/omninstack-company-info.md`), the Microgrant drafts, and the Innovate BC Demonstration LOI/outreach drafts on 2026-10-28 at his direction.
+
