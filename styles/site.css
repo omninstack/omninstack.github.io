@@ -1006,3 +1006,7 @@ footer {
   .home-cta-panel { gap: 1rem; }
   .home-cta-actions { min-width: 0; }
 }
+
+/* Brand logo mark (cube-N symbol) beside the wordmark */
+.logo { display: inline-flex; align-items: center; gap: 0.55rem; }
+.logo-mark { height: 1.9rem; width: 1.9rem; flex: none; }
