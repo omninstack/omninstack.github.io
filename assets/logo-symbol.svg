@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" fill="none">
+ <defs><clipPath id="k"><path clip-rule="evenodd" d="M120 28 L203 76 L203 172 L120 220 L37 172 L37 76 Z M82 78 L106 78 L134 146 L134 78 L158 78 L158 170 L134 170 L106 102 L106 170 L82 170 Z"/></clipPath></defs>
+ <g clip-path="url(#k)">
+  <polygon points="37,76 120,28 120,124 37,172" fill="#00C0B0"/>
+  <polygon points="120,28 203,76 203,172 120,124" fill="#0097C7"/>
+  <polygon points="120,124 203,172 120,220 37,172" fill="#14507E"/>
+ </g>
+</svg>
