@@ -104,7 +104,7 @@
     }
 
     function renderNav(cfg, rootPrefix, mktPrefix) {
-        var logo = '<a href="' + rootPrefix + 'index.html" class="logo">Omni<span>N</span>Stack</a>';
+        var logo = '<a href="' + rootPrefix + 'index.html" class="logo"><img src="' + rootPrefix + 'assets/logo-symbol.svg" alt="" aria-hidden="true" style="height:1.9rem;width:1.9rem;flex:none">Omni<span>N</span>Stack</a>';
         var home = '<a href="' + rootPrefix + 'index.html">Home</a>';
         var developers = '<a href="' + rootPrefix + 'developers.html"' + (cfg.navActive === 'developers' ? ' class="active"' : '') + '>Developers</a>';
         var company = '<a href="' + rootPrefix + 'company.html"' + (cfg.navActive === 'company' ? ' class="active"' : '') + '>Company</a>';
@@ -201,7 +201,7 @@
         return '<div id="site-footer">\n' +
             '    <footer>\n' +
             '        <div class="container">\n' +
-            '            <div class="footer-logo logo" style="justify-content: center; margin-bottom: 2rem;">Omni<span>N</span>Stack</div>\n' +
+            '            <div class="footer-logo logo" style="justify-content: center; margin-bottom: 2rem;"><img src="' + rootPrefix + 'assets/logo-symbol.svg" alt="" aria-hidden="true" style="height:1.9rem;width:1.9rem;flex:none">Omni<span>N</span>Stack</div>\n' +
             '            <div class="footer-tagline">\n' +
             '                <span class="accent-text">AI Solutions Company</span>\n' +
             '                <p>One shared AI platform. A growing portfolio. Built in Canada.</p>\n' +
