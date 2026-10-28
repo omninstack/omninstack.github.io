@@ -8,7 +8,11 @@ module.exports = function (eleventyConfig) {
     'styles/components.css': 'components.css',
     'styles/legacy.css': 'legacy.css',
     CNAME: 'CNAME',
-    'marketing/*.html': 'marketing'
+    'marketing/*.html': 'marketing',
+    'card.html': 'card.html',
+    'card-hyunseung.html': 'card-hyunseung.html',
+    'card-joseph.html': 'card-joseph.html',
+    'brand-identity': 'brand-identity'
   });
 
   eleventyConfig.addFilter('dateIso', (value) => {
