@@ -211,7 +211,7 @@
             '            </div>\n' +
             '            <p class="footer-address">\n' +
             '                OMNINSTACK AI SOLUTIONS INC.<br>\n' +
-            '                Suite 1028 20055 Willowbrook Drive Unit #200 Langley, BC V2Y 2T5 Canada\n' +
+            '                Suite 1028 200-20055 Willowbrook Dr, Langley, BC V2Y 2T5 Canada\n' +
             '            </p>\n' +
             '            <p class="footer-copy">Proudly designed &amp; engineered in British Columbia, Canada.</p>\n' +
             '            <p class="footer-copy">&copy; 2026 OmniNStack. All Rights Reserved.</p>\n' +
