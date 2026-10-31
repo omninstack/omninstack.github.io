@@ -112,15 +112,16 @@
         var profileLink = cfg.extraProfileLink
             ? '<a href="' + rootPrefix + 'documents/OmniNStack_Sovereign_AI_v2.pdf">Company Profile</a>\n                ' : '';
 
-        var platform, products, solutions;
+        var platform, products, solutions, pillars = '';
 
         if (cfg.variant === 'full') {
             platform = '<div class="nav-item">\n' +
                 '                    <a href="#platform">Platform <span class="caret">&#9662;</span></a>\n' +
                 '                    <div class="dropdown-menu">\n' +
+                '                        <a href="#pillars">What We Build</a>\n' +
                 '                        <a href="#platform">Platform Overview</a>\n' +
                 '                        <a href="#how-it-works">How It Works</a>\n' +
-                '                        <a href="#innovation">Innovation</a>\n' +
+                '                        <a href="#innovation">Research &amp; Roadmap</a>\n' +
                 '                    </div>\n' +
                 '                </div>';
             products = '<div class="nav-item">\n' +
@@ -143,10 +144,12 @@
                 '                </div>';
         } else if (cfg.variant === 'whitepaper') {
             platform = '<a href="' + rootPrefix + 'index.html#platform">Platform</a>';
+            pillars = '<a href="' + rootPrefix + 'index.html#pillars">What We Build</a>';
             products = productsDropdown(cfg, rootPrefix, mktPrefix);
             solutions = '';
         } else {
             platform = '<a href="' + rootPrefix + 'index.html#platform">Platform</a>';
+            pillars = '<a href="' + rootPrefix + 'index.html#pillars">What We Build</a>';
             products = '<a href="' + rootPrefix + 'index.html#products">Products</a>';
             solutions = '';
         }
@@ -157,6 +160,7 @@
             '            ' + logo + '\n' +
             '            <div class="nav-links" id="nav-links">\n' +
             '                ' + home + '\n' +
+            (pillars ? '                ' + pillars + '\n' : '') +
             '                ' + platform + '\n' +
             '                ' + products + '\n' +
             (solutions ? '                ' + solutions + '\n' : '') +
