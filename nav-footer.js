@@ -91,7 +91,7 @@
         var outwardActive = (cfg.productsActive === 'outward' || cfg.productsActive === 'outward_ko') ? ' class="active"' : '';
 
         var contexaFile = isKo ? 'contexa_ko.html' : 'contexa.html';
-        var contexaLabel = isKo ? 'Contexa &mdash; 트러스트 &amp; 세이프티' : 'Contexa &mdash; Trust &amp; Safety';
+        var contexaLabel = isKo ? 'Contexa &mdash; 트러스트 &amp; 세이프티' : 'Contexa &mdash; Trust, Safety &amp; Security';
         var contexaActive = (cfg.productsActive === 'contexa' || cfg.productsActive === 'contexa_ko') ? ' class="active"' : '';
 
         return '<div class="nav-item">\n' +
@@ -128,7 +128,7 @@
                 '                    <a href="#products">Products <span class="caret">&#9662;</span></a>\n' +
                 '                    <div class="dropdown-menu">\n' +
                 '                        <a href="marketing/outward.html">Outward &mdash; Customer Engagement</a>\n' +
-                '                        <a href="marketing/contexa.html">Contexa &mdash; Trust &amp; Safety</a>\n' +
+                '                        <a href="marketing/contexa.html">Contexa &mdash; Trust, Safety &amp; Security</a>\n' +
                 '                    </div>\n' +
                 '                </div>';
             solutions = '<div class="nav-item">\n' +
